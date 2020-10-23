@@ -1,0 +1,13 @@
+{
+  "orgName": "Bas orgName",
+  "edition": "Developer",
+  "features": ["Communities", "B2BCommerce"],
+  "settings": {
+    "communitiesSettings": {
+      "enableNetworksEnabled": true
+    },
+    "omniChannelSettings": {
+      "enableOmniChannel": true
+    }
+  }
+}
