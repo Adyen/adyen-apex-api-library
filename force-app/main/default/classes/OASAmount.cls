@@ -27,7 +27,7 @@ public class OASAmount {
     public Long value { get; set; }
 
     private static final Map<String, String> propertyMappings = new Map<String, String>{
-        'currency_x' => 'currency_x'
+        'currency' => 'currency_x'
     };
 
     public Map<String, String> getPropertyMappings() {

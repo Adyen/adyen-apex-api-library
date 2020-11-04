@@ -63,7 +63,7 @@ public class OASCard {
     public String startYear { get; set; }
 
     private static final Map<String, String> propertyMappings = new Map<String, String>{
-        'number_x' => 'number_x'
+        'number' => 'number_x'
     };
 
     public Map<String, String> getPropertyMappings() {
