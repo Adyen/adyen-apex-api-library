@@ -50,7 +50,7 @@ public class OASRecurringDetail {
      * Get group_x
      * @return group_x
      */
-    public OASPaymentMethodGroup group_x { get; set; }
+    public PaymentMethodGroup group_x { get; set; }
 
     /**
      * All input details to be provided to complete the payment with this payment method.
@@ -115,7 +115,7 @@ public class OASRecurringDetail {
           recurringDetail.configuration = new Map<String, String>{'key'=>''};
           recurringDetail.details = new List<OASInputDetail>{OASInputDetail.getExample()};
           recurringDetail.fundingSource = FundingSourceEnum.CREDIT;
-          recurringDetail.group_x = OASPaymentMethodGroup.getExample();
+          recurringDetail.group_x = PaymentMethodGroup.getExample();
           recurringDetail.inputDetails = new List<OASInputDetail>{OASInputDetail.getExample()};
           recurringDetail.name = '';
           recurringDetail.paymentMethodData = '';

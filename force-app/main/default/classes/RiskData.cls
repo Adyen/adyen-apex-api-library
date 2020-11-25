@@ -11,50 +11,32 @@
  */
 
 /**
- * OASPaymentMethodGroup
+ * RiskData
  */
-public class OASPaymentMethodGroup {
+public class RiskData {
     /**
-     * The name of the group.
-     * @return name
+     * Contains client-side data, like the device fingerprint, cookies, and specific browser settings.
+     * @return clientData
      */
-    public String name { get; set; }
+    public String clientData { get; set; }
 
-    /**
-     * Echo data to be used if the payment method is displayed as part of this group.
-     * @return paymentMethodData
-     */
-    public String paymentMethodData { get; set; }
-
-    /**
-     * The unique code of the group.
-     * @return type
-     */
-    public String type { get; set; }
-
-    public static OASPaymentMethodGroup getExample() {
-        OASPaymentMethodGroup paymentMethodGroup = new OASPaymentMethodGroup();
-          paymentMethodGroup.name = '';
-          paymentMethodGroup.paymentMethodData = '';
-          paymentMethodGroup.type = '';
-        return paymentMethodGroup;
+    public static RiskData getExample() {
+        RiskData riskData = new RiskData();
+          riskData.clientData = '';
+        return riskData;
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASPaymentMethodGroup) {           
-            OASPaymentMethodGroup paymentMethodGroup = (OASPaymentMethodGroup) obj;
-            return this.name == paymentMethodGroup.name
-                && this.paymentMethodData == paymentMethodGroup.paymentMethodData
-                && this.type == paymentMethodGroup.type;
+        if (obj instanceof RiskData) {
+            RiskData riskData = (RiskData) obj;
+            return this.clientData == riskData.clientData;
         }
         return false;
     }
 
     public Integer hashCode() {
         Integer hashCode = 43;
-        hashCode = (17 * hashCode) + (name == null ? 0 : System.hashCode(name));
-        hashCode = (17 * hashCode) + (paymentMethodData == null ? 0 : System.hashCode(paymentMethodData));
-        hashCode = (17 * hashCode) + (type == null ? 0 : System.hashCode(type));
+        hashCode = (17 * hashCode) + (clientData == null ? 0 : System.hashCode(clientData));
         return hashCode;
     }
 }

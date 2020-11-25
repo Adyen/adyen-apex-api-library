@@ -11,9 +11,9 @@
  */
 
 /**
- * OASBrowserInfo
+ * BrowserInfo
  */
-public class OASBrowserInfo {
+public class BrowserInfo {
     /**
      * The accept header value of the shopper\'s browser.
      * @return acceptHeader
@@ -68,12 +68,12 @@ public class OASBrowserInfo {
      */
     public String userAgent { get; set; }
 
-    public OASBrowserInfo() {
+    public BrowserInfo() {
         javaScriptEnabled = true;
     }
 
-    public static OASBrowserInfo getExample() {
-        OASBrowserInfo browserInfo = new OASBrowserInfo();
+    public static BrowserInfo getExample() {
+        BrowserInfo browserInfo = new BrowserInfo();
           browserInfo.acceptHeader = '';
           browserInfo.colorDepth = 0;
           browserInfo.javaEnabled = true;
@@ -87,8 +87,8 @@ public class OASBrowserInfo {
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASBrowserInfo) {           
-            OASBrowserInfo browserInfo = (OASBrowserInfo) obj;
+        if (obj instanceof BrowserInfo) {
+            BrowserInfo browserInfo = (BrowserInfo) obj;
             return this.acceptHeader == browserInfo.acceptHeader
                 && this.colorDepth == browserInfo.colorDepth
                 && this.javaEnabled == browserInfo.javaEnabled

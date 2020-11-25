@@ -11,9 +11,9 @@
  */
 
 /**
- * OASPaymentMethod
+ * PaymentMethod
  */
-public class OASPaymentMethod {
+public class PaymentMethod {
     /**
      * List of possible brands. For example: visa, mc.
      * @return brands
@@ -50,7 +50,7 @@ public class OASPaymentMethod {
      * Get group_x
      * @return group_x
      */
-    public OASPaymentMethodGroup group_x { get; set; }
+    public PaymentMethodGroup group_x { get; set; }
 
     /**
      * All input details to be provided to complete the payment with this payment method.
@@ -90,20 +90,20 @@ public class OASPaymentMethod {
         return propertyMappings;
     }
 
-    public OASPaymentMethod() {
+    public PaymentMethod() {
         brands = new List<String>();
         configuration = new Map<String, String>();
         details = new List<OASInputDetail>();
         inputDetails = new List<OASInputDetail>();
     }
 
-    public static OASPaymentMethod getExample() {
-        OASPaymentMethod paymentMethod = new OASPaymentMethod();
+    public static PaymentMethod getExample() {
+        PaymentMethod paymentMethod = new PaymentMethod();
           paymentMethod.brands = new List<String>{''};
           paymentMethod.configuration = new Map<String, String>{'key'=>''};
           paymentMethod.details = new List<OASInputDetail>{OASInputDetail.getExample()};
           paymentMethod.fundingSource = FundingSourceEnum.CREDIT;
-          paymentMethod.group_x = OASPaymentMethodGroup.getExample();
+          paymentMethod.group_x = PaymentMethodGroup.getExample();
           paymentMethod.inputDetails = new List<OASInputDetail>{OASInputDetail.getExample()};
           paymentMethod.name = '';
           paymentMethod.paymentMethodData = '';
@@ -113,8 +113,8 @@ public class OASPaymentMethod {
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASPaymentMethod) {           
-            OASPaymentMethod paymentMethod = (OASPaymentMethod) obj;
+        if (obj instanceof PaymentMethod) {
+            PaymentMethod paymentMethod = (PaymentMethod) obj;
             return this.brands == paymentMethod.brands
                 && this.configuration == paymentMethod.configuration
                 && this.details == paymentMethod.details

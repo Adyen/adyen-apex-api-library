@@ -11,9 +11,9 @@
  */
 
 /**
- * OASPaymentMethodsRequest
+ * PaymentMethodsRequest
  */
-public class OASPaymentMethodsRequest {
+public class PaymentMethodsRequest {
 
    /**
      * List of payments methods to be presented to the shopper. To refer to payment methods, use their `paymentMethod.type` from [Payment methods overview](https://docs.adyen.com/payment-methods).\n\nExample: `"allowedPaymentMethods":["ideal","giropay"]`
@@ -51,12 +51,12 @@ public class OASPaymentMethodsRequest {
      */
     public String shopperReference { get; set; }
 
-    public OASPaymentMethodsRequest() {
+    public PaymentMethodsRequest() {
         allowedPaymentMethods = new List<String>();
     }
 
-    public static OASPaymentMethodsRequest getExample() {
-        OASPaymentMethodsRequest paymentMethodsRequest = new OASPaymentMethodsRequest();
+    public static PaymentMethodsRequest getExample() {
+        PaymentMethodsRequest paymentMethodsRequest = new PaymentMethodsRequest();
           paymentMethodsRequest.allowedPaymentMethods = new List<String>{''};
           paymentMethodsRequest.amount = OASAmount.getExample();
           paymentMethodsRequest.countryCode = '';
@@ -67,8 +67,8 @@ public class OASPaymentMethodsRequest {
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASPaymentMethodsRequest) {           
-            OASPaymentMethodsRequest paymentMethodsRequest = (OASPaymentMethodsRequest) obj;
+        if (obj instanceof PaymentMethodsRequest) {
+            PaymentMethodsRequest paymentMethodsRequest = (PaymentMethodsRequest) obj;
             return this.allowedPaymentMethods == paymentMethodsRequest.allowedPaymentMethods
                 && this.amount == paymentMethodsRequest.amount
                 && this.countryCode == paymentMethodsRequest.countryCode

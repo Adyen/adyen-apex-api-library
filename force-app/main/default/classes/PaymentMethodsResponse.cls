@@ -11,14 +11,14 @@
  */
 
 /**
- * OASPaymentMethodsResponse
+ * PaymentMethodsResponse
  */
-public class OASPaymentMethodsResponse {
+public class PaymentMethodsResponse {
     /**
      * Groups of payment methods.
      * @return groups
      */
-    public List<OASPaymentMethodGroup> groups { get; set; }
+    public List<PaymentMethodGroup> groups { get; set; }
 
     /**
      * Detailed list of one-click payment methods.
@@ -30,7 +30,7 @@ public class OASPaymentMethodsResponse {
      * Detailed list of payment methods required to generate payment forms.
      * @return paymentMethods
      */
-    public List<OASPaymentMethod> paymentMethods { get; set; }
+    public List<PaymentMethod> paymentMethods { get; set; }
 
     /**
      * List of all stored payment methods.
@@ -38,25 +38,25 @@ public class OASPaymentMethodsResponse {
      */
     public List<OASStoredPaymentMethod> storedPaymentMethods { get; set; }
 
-    public OASPaymentMethodsResponse() {
-        groups = new List<OASPaymentMethodGroup>();
+    public PaymentMethodsResponse() {
+        groups = new List<PaymentMethodGroup>();
         oneClickPaymentMethods = new List<OASRecurringDetail>();
-        paymentMethods = new List<OASPaymentMethod>();
+        paymentMethods = new List<PaymentMethod>();
         storedPaymentMethods = new List<OASStoredPaymentMethod>();
     }
 
-    public static OASPaymentMethodsResponse getExample() {
-        OASPaymentMethodsResponse paymentMethodsResponse = new OASPaymentMethodsResponse();
-          paymentMethodsResponse.groups = new List<OASPaymentMethodGroup>{OASPaymentMethodGroup.getExample()};
+    public static PaymentMethodsResponse getExample() {
+        PaymentMethodsResponse paymentMethodsResponse = new PaymentMethodsResponse();
+          paymentMethodsResponse.groups = new List<PaymentMethodGroup>{PaymentMethodGroup.getExample()};
           paymentMethodsResponse.oneClickPaymentMethods = new List<OASRecurringDetail>{OASRecurringDetail.getExample()};
-          paymentMethodsResponse.paymentMethods = new List<OASPaymentMethod>{OASPaymentMethod.getExample()};
+          paymentMethodsResponse.paymentMethods = new List<PaymentMethod>{PaymentMethod.getExample()};
           paymentMethodsResponse.storedPaymentMethods = new List<OASStoredPaymentMethod>{OASStoredPaymentMethod.getExample()};
         return paymentMethodsResponse;
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASPaymentMethodsResponse) {           
-            OASPaymentMethodsResponse paymentMethodsResponse = (OASPaymentMethodsResponse) obj;
+        if (obj instanceof PaymentMethodsResponse) {
+            PaymentMethodsResponse paymentMethodsResponse = (PaymentMethodsResponse) obj;
             return this.groups == paymentMethodsResponse.groups
                 && this.oneClickPaymentMethods == paymentMethodsResponse.oneClickPaymentMethods
                 && this.paymentMethods == paymentMethodsResponse.paymentMethods

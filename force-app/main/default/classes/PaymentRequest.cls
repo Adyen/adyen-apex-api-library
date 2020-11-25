@@ -11,10 +11,10 @@
  */
 
 /**
- * OASPaymentRequest
+ * PaymentRequest
  */
  @namespaceAccessible
-public class OASPaymentRequest {
+public class PaymentRequest {
     /**
      * Get amount
      * @return amount
@@ -37,7 +37,7 @@ public class OASPaymentRequest {
      * Get browserInfo
      * @return browserInfo
      */
-    public OASBrowserInfo browserInfo { get; set; }
+    public BrowserInfo browserInfo { get; set; }
 
     /**
      * Get card
@@ -49,7 +49,7 @@ public class OASPaymentRequest {
      * Get cardDetails
      * @return cardDetails
      */
-    public OASCardDetails cardDetails { get; set; }
+    public CardDetails cardDetails { get; set; }
 
     /**
      * Get card
@@ -86,6 +86,12 @@ public class OASPaymentRequest {
      * @return reference
      */
     public String reference { get; set; }
+
+    /**
+     * Get riskData
+     * @return riskData
+     */
+    public RiskData riskData { get; set; }
 
     /**
      * Some payment methods require defining a value for this field to specify how to process the transaction.\n\nFor the Bancontact payment method, it can be set to:\n* `maestro` (default), to be processed like a Maestro card, or\n* `bcmc`, to be processed like a Bancontact card.
@@ -137,7 +143,7 @@ public class OASPaymentRequest {
      * Get shopperName
      * @return shopperName
      */
-    public OASName shopperName { get; set; }
+    public Name shopperName { get; set; }
 
     /**
      * The shopper\'s reference to uniquely identify this shopper (e.g. user ID or account ID).\n> This field is required for recurring payments.
@@ -151,37 +157,38 @@ public class OASPaymentRequest {
      */
     public Boolean storePaymentMethod { get; set; }
 
-    public OASPaymentRequest() {
+    public PaymentRequest() {
     }
 
-    public static OASPaymentRequest getExample() {
-        OASPaymentRequest paymentRequest = new OASPaymentRequest();
+    public static PaymentRequest getExample() {
+        PaymentRequest paymentRequest = new PaymentRequest();
           paymentRequest.amount = OASAmount.getExample();
           paymentRequest.applicationInfo = OASApplicationInfo.getExample();
           paymentRequest.billingAddress = OASAddress.getExample();
-          paymentRequest.browserInfo = OASBrowserInfo.getExample();
+          paymentRequest.browserInfo = BrowserInfo.getExample();
           paymentRequest.card = OASCard.getExample();
-          paymentRequest.cardDetails = OASCardDetails.getExample();
+          paymentRequest.cardDetails = CardDetails.getExample();
           paymentRequest.deliveryAddress = OASAddress.getExample();
           paymentRequest.deviceFingerprint = '';
           paymentRequest.merchantAccount = '';
-          paymentRequest.paymentMethod = OASCardDetails.getExample();
+          paymentRequest.paymentMethod = CardDetails.getExample();
           paymentRequest.reference = '';
+          paymentRequest.riskData = RiskData.getExample();
           paymentRequest.selectedBrand = '';
           paymentRequest.selectedRecurringDetailReference = '';
           paymentRequest.shopperEmail = '';
           paymentRequest.shopperIP = '';
           paymentRequest.shopperInteraction = ShopperInteractionEnum.ECOMMERCE;
           paymentRequest.shopperLocale = '';
-          paymentRequest.shopperName = OASName.getExample();
+          paymentRequest.shopperName = Name.getExample();
           paymentRequest.shopperReference = '';
           paymentRequest.storePaymentMethod = false;
         return paymentRequest;
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASPaymentRequest) {           
-            OASPaymentRequest paymentRequest = (OASPaymentRequest) obj;
+        if (obj instanceof PaymentRequest) {
+            PaymentRequest paymentRequest = (PaymentRequest) obj;
             return this.amount == paymentRequest.amount
                 && this.applicationInfo == paymentRequest.applicationInfo
                 && this.billingAddress == paymentRequest.billingAddress
@@ -193,6 +200,7 @@ public class OASPaymentRequest {
                 && this.merchantAccount == paymentRequest.merchantAccount
                 && this.paymentMethod == paymentRequest.paymentMethod
                 && this.reference == paymentRequest.reference
+                && this.riskData == paymentRequest.riskData
                 && this.selectedBrand == paymentRequest.selectedBrand
                 && this.selectedRecurringDetailReference == paymentRequest.selectedRecurringDetailReference
                 && this.shopperEmail == paymentRequest.shopperEmail
@@ -218,6 +226,7 @@ public class OASPaymentRequest {
         hashCode = (17 * hashCode) + (deviceFingerprint == null ? 0 : System.hashCode(deviceFingerprint));
         hashCode = (17 * hashCode) + (merchantAccount == null ? 0 : System.hashCode(merchantAccount));
         hashCode = (17 * hashCode) + (reference == null ? 0 : System.hashCode(reference));
+        hashCode = (17 * hashCode) + (riskData == null ? 0 : System.hashCode(riskData));
         hashCode = (17 * hashCode) + (paymentMethod == null ? 0 : System.hashCode(paymentMethod));
         hashCode = (17 * hashCode) + (selectedBrand == null ? 0 : System.hashCode(selectedBrand));
         hashCode = (17 * hashCode) + (selectedRecurringDetailReference == null ? 0 : System.hashCode(selectedRecurringDetailReference));

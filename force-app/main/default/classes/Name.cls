@@ -11,9 +11,9 @@
  */
 
 /**
- * OASName
+ * Name
  */
-public class OASName {
+public class Name {
     /**
      * The first name.
      * @return firstName
@@ -47,8 +47,8 @@ public class OASName {
      */
     public String lastName { get; set; }
 
-    public static OASName getExample() {
-        OASName name = new OASName();
+    public static Name getExample() {
+        Name name = new Name();
           name.firstName = '';
           name.gender = GenderEnum.MALE;
           name.infix = '';
@@ -57,8 +57,8 @@ public class OASName {
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASName) {           
-            OASName name = (OASName) obj;
+        if (obj instanceof Name) {
+            Name name = (Name) obj;
             return this.firstName == name.firstName
                 && this.gender == name.gender
                 && this.infix == name.infix

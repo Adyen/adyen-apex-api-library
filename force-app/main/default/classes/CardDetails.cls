@@ -11,9 +11,9 @@
  */
 
 /**
- * OASCardDetails
+ * CardDetails
  */
-public class OASCardDetails implements PaymentMethodDetails {
+public class CardDetails implements PaymentMethodDetails {
     /**
      * Get cvc
      * @return cvc
@@ -37,6 +37,12 @@ public class OASCardDetails implements PaymentMethodDetails {
      * @return encryptedExpiryYear
      */
     public String encryptedExpiryYear { get; set; }
+
+    /**
+     * Get encryptedSecurityCode
+     * @return encryptedSecurityCode
+     */
+    public String encryptedSecurityCode { get; set; }
 
     /**
      * Get expiryMonth
@@ -74,7 +80,7 @@ public class OASCardDetails implements PaymentMethodDetails {
      */
     public String type { get; set; }
 
-    public OASCardDetails() {
+    public CardDetails() {
         type = 'scheme';
     }
 
@@ -86,12 +92,13 @@ public class OASCardDetails implements PaymentMethodDetails {
         this.type = type;
     }
 
-    public static OASCardDetails getExample() {
-        OASCardDetails cardDetails = new OASCardDetails();
+    public static CardDetails getExample() {
+        CardDetails cardDetails = new CardDetails();
           cardDetails.cvc = '';
           cardDetails.encryptedCardNumber = '';
           cardDetails.encryptedExpiryMonth = '';
           cardDetails.encryptedExpiryYear = '';
+          cardDetails.encryptedSecurityCode = '';
           cardDetails.expiryMonth = '';
           cardDetails.expiryYear = '';
           cardDetails.holderName = '';
@@ -102,12 +109,13 @@ public class OASCardDetails implements PaymentMethodDetails {
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASCardDetails) {           
-            OASCardDetails cardDetails = (OASCardDetails) obj;
+        if (obj instanceof CardDetails) {
+            CardDetails cardDetails = (CardDetails) obj;
             return this.cvc == cardDetails.cvc
                 && this.encryptedCardNumber == cardDetails.encryptedCardNumber
                 && this.encryptedExpiryMonth == cardDetails.encryptedExpiryMonth
                 && this.encryptedExpiryYear == cardDetails.encryptedExpiryYear
+                && this.encryptedSecurityCode == cardDetails.encryptedSecurityCode
                 && this.expiryMonth == cardDetails.expiryMonth
                 && this.expiryYear == cardDetails.expiryYear
                 && this.holderName == cardDetails.holderName
@@ -124,6 +132,7 @@ public class OASCardDetails implements PaymentMethodDetails {
         hashCode = (17 * hashCode) + (encryptedCardNumber == null ? 0 : System.hashCode(encryptedCardNumber));
         hashCode = (17 * hashCode) + (encryptedExpiryMonth == null ? 0 : System.hashCode(encryptedExpiryMonth));
         hashCode = (17 * hashCode) + (encryptedExpiryYear == null ? 0 : System.hashCode(encryptedExpiryYear));
+        hashCode = (17 * hashCode) + (encryptedSecurityCode == null ? 0 : System.hashCode(encryptedSecurityCode));
         hashCode = (17 * hashCode) + (expiryMonth == null ? 0 : System.hashCode(expiryMonth));
         hashCode = (17 * hashCode) + (expiryYear == null ? 0 : System.hashCode(expiryYear));
         hashCode = (17 * hashCode) + (holderName == null ? 0 : System.hashCode(holderName));
