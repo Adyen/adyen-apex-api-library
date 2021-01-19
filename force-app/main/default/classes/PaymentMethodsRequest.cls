@@ -25,7 +25,7 @@ public class PaymentMethodsRequest {
      * Get amount
      * @return amount
      */
-    public OASAmount amount { get; set; }
+    public Amount amount { get; set; }
 
     /**
      * The shopper\'s country code.
@@ -58,7 +58,7 @@ public class PaymentMethodsRequest {
     public static PaymentMethodsRequest getExample() {
         PaymentMethodsRequest paymentMethodsRequest = new PaymentMethodsRequest();
           paymentMethodsRequest.allowedPaymentMethods = new List<String>{''};
-          paymentMethodsRequest.amount = OASAmount.getExample();
+          paymentMethodsRequest.amount = Amount.getExample();
           paymentMethodsRequest.countryCode = '';
           paymentMethodsRequest.merchantAccount = '';
           paymentMethodsRequest.shopperLocale = '';

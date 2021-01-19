@@ -11,15 +11,21 @@
  */
 
 /**
- * PaymentRequest
+ * PaymentsRequest
  */
  @namespaceAccessible
-public class PaymentRequest {
+public class PaymentsRequest {
+     /**
+      * Get additionalData
+      * @return additionalData
+      */
+     public Map<String, String> additionalData { get; set; }
+
     /**
      * Get amount
      * @return amount
      */
-    public OASAmount amount { get; set; }
+    public Amount amount { get; set; }
 
     /**
      * Get applicationInfo
@@ -51,11 +57,11 @@ public class PaymentRequest {
      */
     public CardDetails cardDetails { get; set; }
 
-    /**
-     * Get card
-     * @return card
-     */
-    public PaymentMethodDetails paymentMethod { get; set; }
+     /**
+    * Get channel
+    * @return channel
+    */
+     public String channel { get; set; }
 
     /**
      * The shopper\'s date of birth.\n\nFormat [ISO-8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DD
@@ -81,11 +87,29 @@ public class PaymentRequest {
      */
     public String merchantAccount { get; set; }
 
-    /**
-     * The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. We recommend using a unique value per payment; however, it is not a requirement.\nIf you need to provide multiple references for a transaction, separate them with hyphens ("-").\nMaximum length: 80 characters.
-     * @return reference
+     /**
+    * Get card
+    * @return card
      */
+     public PaymentMethodDetails paymentMethod { get; set; }
+
+     /**
+   * Get origin
+   * @return origin
+    */
+     public String origin { get; set; }
+
+     /**
+      * The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. We recommend using a unique value per payment; however, it is not a requirement.\nIf you need to provide multiple references for a transaction, separate them with hyphens ("-").\nMaximum length: 80 characters.
+      * @return reference
+      */
     public String reference { get; set; }
+
+     /**
+     * The URL to return to in case of a redirection.\nThe format depends on the channel. This URL can have a maximum of 1024 characters.\n* For web, include the protocol `http://` or `https://`. You can also include your own additional query parameters, for example, shopper ID or order reference number.\nExample: `https://your-company.com/checkout?shopperOrder=12xy`\n* For iOS, use the custom URL for your app. To know more about setting custom URL schemes, refer to the [Apple Developer documentation](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app).\nExample: `my-app://`\n* For Android, use a custom URL handled by an Activity on your app. You can configure it with an [intent filter](https://developer.android.com/guide/components/intents-filters).\nExample: `my-app://your.package.name`
+     * @return returnUrl
+     */
+     public String returnUrl { get; set; }
 
     /**
      * Get riskData
@@ -157,71 +181,77 @@ public class PaymentRequest {
      */
     public Boolean storePaymentMethod { get; set; }
 
-    public PaymentRequest() {
+    public PaymentsRequest() {
     }
 
-    public static PaymentRequest getExample() {
-        PaymentRequest paymentRequest = new PaymentRequest();
-          paymentRequest.amount = OASAmount.getExample();
-          paymentRequest.applicationInfo = OASApplicationInfo.getExample();
-          paymentRequest.billingAddress = OASAddress.getExample();
-          paymentRequest.browserInfo = BrowserInfo.getExample();
-          paymentRequest.card = OASCard.getExample();
-          paymentRequest.cardDetails = CardDetails.getExample();
-          paymentRequest.deliveryAddress = OASAddress.getExample();
-          paymentRequest.deviceFingerprint = '';
-          paymentRequest.merchantAccount = '';
-          paymentRequest.paymentMethod = CardDetails.getExample();
-          paymentRequest.reference = '';
-          paymentRequest.riskData = RiskData.getExample();
-          paymentRequest.selectedBrand = '';
-          paymentRequest.selectedRecurringDetailReference = '';
-          paymentRequest.shopperEmail = '';
-          paymentRequest.shopperIP = '';
-          paymentRequest.shopperInteraction = ShopperInteractionEnum.ECOMMERCE;
-          paymentRequest.shopperLocale = '';
-          paymentRequest.shopperName = Name.getExample();
-          paymentRequest.shopperReference = '';
-          paymentRequest.storePaymentMethod = false;
-        return paymentRequest;
+    public static PaymentsRequest getExample() {
+        PaymentsRequest paymentsRequest = new PaymentsRequest();
+          paymentsRequest.amount = Amount.getExample();
+          paymentsRequest.additionalData = new Map<String, String>();
+          paymentsRequest.applicationInfo = OASApplicationInfo.getExample();
+          paymentsRequest.billingAddress = OASAddress.getExample();
+          paymentsRequest.browserInfo = BrowserInfo.getExample();
+          paymentsRequest.card = OASCard.getExample();
+          paymentsRequest.cardDetails = CardDetails.getExample();
+          paymentsRequest.channel = '';
+          paymentsRequest.deliveryAddress = OASAddress.getExample();
+          paymentsRequest.deviceFingerprint = '';
+          paymentsRequest.merchantAccount = '';
+          paymentsRequest.paymentMethod = CardDetails.getExample();
+          paymentsRequest.reference = '';
+          paymentsRequest.riskData = RiskData.getExample();
+          paymentsRequest.selectedBrand = '';
+          paymentsRequest.selectedRecurringDetailReference = '';
+          paymentsRequest.shopperEmail = '';
+          paymentsRequest.shopperIP = '';
+          paymentsRequest.shopperInteraction = ShopperInteractionEnum.ECOMMERCE;
+          paymentsRequest.shopperLocale = '';
+          paymentsRequest.shopperName = Name.getExample();
+          paymentsRequest.shopperReference = '';
+          paymentsRequest.storePaymentMethod = false;
+        return paymentsRequest;
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof PaymentRequest) {
-            PaymentRequest paymentRequest = (PaymentRequest) obj;
-            return this.amount == paymentRequest.amount
-                && this.applicationInfo == paymentRequest.applicationInfo
-                && this.billingAddress == paymentRequest.billingAddress
-                && this.browserInfo == paymentRequest.browserInfo
-                && this.card == paymentRequest.card
-                && this.cardDetails == paymentRequest.cardDetails
-                && this.deliveryAddress == paymentRequest.deliveryAddress
-                && this.deviceFingerprint == paymentRequest.deviceFingerprint
-                && this.merchantAccount == paymentRequest.merchantAccount
-                && this.paymentMethod == paymentRequest.paymentMethod
-                && this.reference == paymentRequest.reference
-                && this.riskData == paymentRequest.riskData
-                && this.selectedBrand == paymentRequest.selectedBrand
-                && this.selectedRecurringDetailReference == paymentRequest.selectedRecurringDetailReference
-                && this.shopperEmail == paymentRequest.shopperEmail
-                && this.shopperIP == paymentRequest.shopperIP
-                && this.shopperInteraction == paymentRequest.shopperInteraction
-                && this.shopperLocale == paymentRequest.shopperLocale
-                && this.shopperName == paymentRequest.shopperName
-                && this.shopperReference == paymentRequest.shopperReference
-                && this.storePaymentMethod == paymentRequest.storePaymentMethod;
+        if (obj instanceof PaymentsRequest) {
+            PaymentsRequest paymentsRequest = (PaymentsRequest) obj;
+            return this.amount == paymentsRequest.amount
+                && this.additionalData == paymentsRequest.additionalData
+                && this.applicationInfo == paymentsRequest.applicationInfo
+                && this.billingAddress == paymentsRequest.billingAddress
+                && this.browserInfo == paymentsRequest.browserInfo
+                && this.card == paymentsRequest.card
+                && this.cardDetails == paymentsRequest.cardDetails
+                && this.channel == paymentsRequest.channel
+                && this.deliveryAddress == paymentsRequest.deliveryAddress
+                && this.deviceFingerprint == paymentsRequest.deviceFingerprint
+                && this.merchantAccount == paymentsRequest.merchantAccount
+                && this.paymentMethod == paymentsRequest.paymentMethod
+                && this.reference == paymentsRequest.reference
+                && this.riskData == paymentsRequest.riskData
+                && this.selectedBrand == paymentsRequest.selectedBrand
+                && this.selectedRecurringDetailReference == paymentsRequest.selectedRecurringDetailReference
+                && this.shopperEmail == paymentsRequest.shopperEmail
+                && this.shopperIP == paymentsRequest.shopperIP
+                && this.shopperInteraction == paymentsRequest.shopperInteraction
+                && this.shopperLocale == paymentsRequest.shopperLocale
+                && this.shopperName == paymentsRequest.shopperName
+                && this.shopperReference == paymentsRequest.shopperReference
+                && this.storePaymentMethod == paymentsRequest.storePaymentMethod;
         }
         return false;
     }
 
     public Integer hashCode() {
         Integer hashCode = 43;
+        hashCode = (17 * hashCode) + (additionalData == null ? 0 : System.hashCode(additionalData));
         hashCode = (17 * hashCode) + (amount == null ? 0 : System.hashCode(amount));
         hashCode = (17 * hashCode) + (applicationInfo == null ? 0 : System.hashCode(applicationInfo));
         hashCode = (17 * hashCode) + (billingAddress == null ? 0 : System.hashCode(billingAddress));
         hashCode = (17 * hashCode) + (browserInfo == null ? 0 : System.hashCode(browserInfo));
         hashCode = (17 * hashCode) + (card == null ? 0 : System.hashCode(card));
         hashCode = (17 * hashCode) + (cardDetails == null ? 0 : System.hashCode(cardDetails));
+        hashCode = (17 * hashCode) + (channel == null ? 0 : System.hashCode(channel));
         hashCode = (17 * hashCode) + (deliveryAddress == null ? 0 : System.hashCode(deliveryAddress));
         hashCode = (17 * hashCode) + (deviceFingerprint == null ? 0 : System.hashCode(deviceFingerprint));
         hashCode = (17 * hashCode) + (merchantAccount == null ? 0 : System.hashCode(merchantAccount));

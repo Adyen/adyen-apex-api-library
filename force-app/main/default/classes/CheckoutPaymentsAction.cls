@@ -39,6 +39,18 @@ public class CheckoutPaymentsAction {
     public String paymentMethodType { get; set; }
 
     /**
+    * Specifies the token of the action.
+    * @return token
+    */
+    public String token { get; set; }
+
+    /**
+    * Specifies the type of the action.
+    * @return type
+    */
+    public String type { get; set; }
+
+    /**
      * Specifies the URL to redirect to.
      * @return url
      */
@@ -54,6 +66,7 @@ public class CheckoutPaymentsAction {
           checkoutPaymentsAction.method = '';
           checkoutPaymentsAction.paymentData = '';
           checkoutPaymentsAction.paymentMethodType = '';
+          checkoutPaymentsAction.type = '';
           checkoutPaymentsAction.url = '';
         return checkoutPaymentsAction;
     }
@@ -65,6 +78,7 @@ public class CheckoutPaymentsAction {
                 && this.method == checkoutRedirectAction.method
                 && this.paymentData == checkoutRedirectAction.paymentData
                 && this.paymentMethodType == checkoutRedirectAction.paymentMethodType
+                && this.type == checkoutRedirectAction.type
                 && this.url == checkoutRedirectAction.url;
         }
         return false;
@@ -76,6 +90,7 @@ public class CheckoutPaymentsAction {
         hashCode = (17 * hashCode) + (method == null ? 0 : System.hashCode(method));
         hashCode = (17 * hashCode) + (paymentData == null ? 0 : System.hashCode(paymentData));
         hashCode = (17 * hashCode) + (paymentMethodType == null ? 0 : System.hashCode(paymentMethodType));
+        hashCode = (17 * hashCode) + (type == null ? 0 : System.hashCode(type));
         hashCode = (17 * hashCode) + (url == null ? 0 : System.hashCode(url));
         return hashCode;
     }

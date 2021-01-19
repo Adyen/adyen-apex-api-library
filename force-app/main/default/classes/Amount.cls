@@ -11,9 +11,9 @@
  */
 
 /**
- * OASAmount
+ * Amount
  */
-public class OASAmount {
+public class Amount {
     /**
      * The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes).
      * @return currency
@@ -34,16 +34,16 @@ public class OASAmount {
         return propertyMappings;
     }
 
-    public static OASAmount getExample() {
-        OASAmount amount = new OASAmount();
+    public static Amount getExample() {
+        Amount amount = new Amount();
           amount.currency_x = '';
           amount.value = 123456789L;
         return amount;
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASAmount) {           
-            OASAmount amount = (OASAmount) obj;
+        if (obj instanceof Amount) {
+            Amount amount = (Amount) obj;
             return this.currency_x == amount.currency_x
                 && this.value == amount.value;
         }

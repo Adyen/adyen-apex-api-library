@@ -11,9 +11,9 @@
  */
 
 /**
- * PaymentResponse
+ * PaymentsResponse
  */
-public class PaymentResponse {
+public class PaymentsResponse {
     /**
      * Action to be taken for completing the payment.
      * @return action
@@ -30,7 +30,7 @@ public class PaymentResponse {
      * Get amount
      * @return amount
      */
-    public OASAmount amount { get; set; }
+    public Amount amount { get; set; }
 
     /**
      * Contains `threeds2.fingerprint` or `threeds2.challengeToken` values to be used in further calls to `/payments/details` endpoint. 
@@ -115,48 +115,48 @@ public class PaymentResponse {
      */
     public ResultCodeEnum resultCode { get; set; }
 
-    public PaymentResponse() {
+    public PaymentsResponse() {
         authentication = new Map<String, String>();
         details = new List<OASInputDetail>();
         outputDetails = new Map<String, String>();
     }
 
-    public static PaymentResponse getExample() {
-        PaymentResponse paymentResponse = new PaymentResponse();
-          paymentResponse.amount = OASAmount.getExample();
-          paymentResponse.action = CheckoutPaymentsAction.getExample();
-          paymentResponse.additionalData = new Map<String, String>{'key'=>''};
-          paymentResponse.authentication = new Map<String, String>{'key'=>''};
-          paymentResponse.details = new List<OASInputDetail>{OASInputDetail.getExample()};
-          paymentResponse.fraudResult = FraudResult.getExample();
-          paymentResponse.merchantReference = '';
-          paymentResponse.outputDetails = new Map<String, String>{'key'=>''};
-          paymentResponse.paymentData = '';
-          paymentResponse.pspReference = '';
-          paymentResponse.redirect = Redirect.getExample();
-          paymentResponse.refusalReason = '';
-          paymentResponse.refusalReasonCode = '';
-          paymentResponse.resultCode = ResultCodeEnum.AUTHENTICATIONFINISHED;
-        return paymentResponse;
+    public static PaymentsResponse getExample() {
+        PaymentsResponse paymentsResponse = new PaymentsResponse();
+          paymentsResponse.amount = Amount.getExample();
+          paymentsResponse.action = CheckoutPaymentsAction.getExample();
+          paymentsResponse.additionalData = new Map<String, String>{'key'=>''};
+          paymentsResponse.authentication = new Map<String, String>{'key'=>''};
+          paymentsResponse.details = new List<OASInputDetail>{OASInputDetail.getExample()};
+          paymentsResponse.fraudResult = FraudResult.getExample();
+          paymentsResponse.merchantReference = '';
+          paymentsResponse.outputDetails = new Map<String, String>{'key'=>''};
+          paymentsResponse.paymentData = '';
+          paymentsResponse.pspReference = '';
+          paymentsResponse.redirect = Redirect.getExample();
+          paymentsResponse.refusalReason = '';
+          paymentsResponse.refusalReasonCode = '';
+          paymentsResponse.resultCode = ResultCodeEnum.AUTHENTICATIONFINISHED;
+        return paymentsResponse;
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof PaymentResponse) {
-            PaymentResponse paymentResponse = (PaymentResponse) obj;
-            return this.action == paymentResponse.action
-                && this.additionalData == paymentResponse.additionalData
-                && this.amount == paymentResponse.amount
-                && this.authentication == paymentResponse.authentication
-                && this.details == paymentResponse.details
-                && this.fraudResult == paymentResponse.fraudResult
-                && this.merchantReference == paymentResponse.merchantReference
-                && this.outputDetails == paymentResponse.outputDetails
-                && this.paymentData == paymentResponse.paymentData
-                && this.pspReference == paymentResponse.pspReference
-                && this.redirect == paymentResponse.redirect
-                && this.refusalReason == paymentResponse.refusalReason
-                && this.refusalReasonCode == paymentResponse.refusalReasonCode
-                && this.resultCode == paymentResponse.resultCode;
+        if (obj instanceof PaymentsResponse) {
+            PaymentsResponse paymentsResponse = (PaymentsResponse) obj;
+            return this.action == paymentsResponse.action
+                && this.additionalData == paymentsResponse.additionalData
+                && this.amount == paymentsResponse.amount
+                && this.authentication == paymentsResponse.authentication
+                && this.details == paymentsResponse.details
+                && this.fraudResult == paymentsResponse.fraudResult
+                && this.merchantReference == paymentsResponse.merchantReference
+                && this.outputDetails == paymentsResponse.outputDetails
+                && this.paymentData == paymentsResponse.paymentData
+                && this.pspReference == paymentsResponse.pspReference
+                && this.redirect == paymentsResponse.redirect
+                && this.refusalReason == paymentsResponse.refusalReason
+                && this.refusalReasonCode == paymentsResponse.refusalReasonCode
+                && this.resultCode == paymentsResponse.resultCode;
         }
         return false;
     }
