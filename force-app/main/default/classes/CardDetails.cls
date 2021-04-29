@@ -74,6 +74,10 @@ public class CardDetails implements PaymentMethodDetails {
      */
     public String storedPaymentMethodId { get; set; }
 
+    public String getStoredPaymentMethodId(){
+        return storedPaymentMethodId;
+    }
+
     /**
      * **scheme**
      * @return type

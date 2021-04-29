@@ -13,8 +13,7 @@
 /**
  * PaymentsRequest
  */
- @namespaceAccessible
-public class PaymentsRequest {
+public without sharing class PaymentsRequest {
      /**
       * Get additionalData
       * @return additionalData
@@ -99,6 +98,21 @@ public class PaymentsRequest {
     */
      public String origin { get; set; }
 
+      /**
+     * Defines a recurring payment type.\nAllowed values:\n* `Subscription` – A transaction for a fixed or variable amount, which follows a fixed schedule.\n* `CardOnFile` – With a card-on-file (CoF) transaction, card details are stored to enable one-click or omnichannel journeys, or simply to streamline the checkout process. Any subscription not following a fixed schedule is also considered a card-on-file transaction.\n* `UnscheduledCardOnFile` – An unscheduled card-on-file (UCoF) transaction is a transaction that occurs on a non-fixed schedule and/or have variable amounts. For example, automatic top-ups when a cardholder\'s balance drops below a certain amount.\n
+     */
+    public enum RecurringProcessingModelEnum {
+        CardOnFile,
+        Subscription,
+        UnscheduledCardOnFile
+    }
+
+    /**
+     * Defines a recurring payment type.\nAllowed values:\n* `Subscription` – A transaction for a fixed or variable amount, which follows a fixed schedule.\n* `CardOnFile` – With a card-on-file (CoF) transaction, card details are stored to enable one-click or omnichannel journeys, or simply to streamline the checkout process. Any subscription not following a fixed schedule is also considered a card-on-file transaction.\n* `UnscheduledCardOnFile` – An unscheduled card-on-file (UCoF) transaction is a transaction that occurs on a non-fixed schedule and/or have variable amounts. For example, automatic top-ups when a cardholder\'s balance drops below a certain amount.\n
+     * @return recurringProcessingModel
+     */
+    public RecurringProcessingModelEnum recurringProcessingModel { get; set; }
+
      /**
       * The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. We recommend using a unique value per payment; however, it is not a requirement.\nIf you need to provide multiple references for a transaction, separate them with hyphens ("-").\nMaximum length: 80 characters.
       * @return reference
@@ -145,9 +159,9 @@ public class PaymentsRequest {
      * Specifies the sales channel, through which the shopper gives their card details, and whether the shopper is a returning customer.\nFor the web service API, Adyen assumes Ecommerce shopper interaction by default.\n\nThis field has the following possible values:\n* `Ecommerce` - Online transactions where the cardholder is present (online). For better authorisation rates, we recommend sending the card security code (CSC) along with the request.\n* `ContAuth` - Card on file and/or subscription transactions, where the cardholder is known to the merchant (returning customer). If the shopper is present (online), you can supply also the CSC to improve authorisation (one-click payment).\n* `Moto` - Mail-order and telephone-order transactions where the shopper is in contact with the merchant via email or telephone.\n* `POS` - Point-of-sale transactions where the shopper is physically present to make a payment using a secure payment terminal.
      */
     public enum ShopperInteractionEnum {
-        ECOMMERCE,
-        CONTAUTH,
-        MOTO,
+        Ecommerce,
+        ContAuth,
+        Moto,
         POS
     }
 
@@ -198,6 +212,7 @@ public class PaymentsRequest {
           paymentsRequest.deviceFingerprint = '';
           paymentsRequest.merchantAccount = '';
           paymentsRequest.paymentMethod = CardDetails.getExample();
+          paymentsRequest.recurringProcessingModel = RecurringProcessingModelEnum.CARDONFILE;
           paymentsRequest.reference = '';
           paymentsRequest.riskData = RiskData.getExample();
           paymentsRequest.selectedBrand = '';
@@ -227,6 +242,7 @@ public class PaymentsRequest {
                 && this.deviceFingerprint == paymentsRequest.deviceFingerprint
                 && this.merchantAccount == paymentsRequest.merchantAccount
                 && this.paymentMethod == paymentsRequest.paymentMethod
+                && this.recurringProcessingModel == paymentsRequest.recurringProcessingModel
                 && this.reference == paymentsRequest.reference
                 && this.riskData == paymentsRequest.riskData
                 && this.selectedBrand == paymentsRequest.selectedBrand
@@ -255,6 +271,7 @@ public class PaymentsRequest {
         hashCode = (17 * hashCode) + (deliveryAddress == null ? 0 : System.hashCode(deliveryAddress));
         hashCode = (17 * hashCode) + (deviceFingerprint == null ? 0 : System.hashCode(deviceFingerprint));
         hashCode = (17 * hashCode) + (merchantAccount == null ? 0 : System.hashCode(merchantAccount));
+        hashCode = (17 * hashCode) + (recurringProcessingModel == null ? 0 : System.hashCode(recurringProcessingModel));
         hashCode = (17 * hashCode) + (reference == null ? 0 : System.hashCode(reference));
         hashCode = (17 * hashCode) + (riskData == null ? 0 : System.hashCode(riskData));
         hashCode = (17 * hashCode) + (paymentMethod == null ? 0 : System.hashCode(paymentMethod));
