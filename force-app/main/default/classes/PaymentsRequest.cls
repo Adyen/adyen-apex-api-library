@@ -30,13 +30,13 @@ public without sharing class PaymentsRequest {
      * Get applicationInfo
      * @return applicationInfo
      */
-    public OASApplicationInfo applicationInfo { get; set; }
+    public ApplicationInfo applicationInfo { get; set; }
 
     /**
      * Get billingAddress
      * @return billingAddress
      */
-    public OASAddress billingAddress { get; set; }
+    public Address billingAddress { get; set; }
 
     /**
      * Get browserInfo
@@ -48,7 +48,7 @@ public without sharing class PaymentsRequest {
      * Get card
      * @return card
      */
-    public OASCard card { get; set; }
+    public Card card { get; set; }
 
     /**
      * Get cardDetails
@@ -72,7 +72,7 @@ public without sharing class PaymentsRequest {
      * Get deliveryAddress
      * @return deliveryAddress
      */
-    public OASAddress deliveryAddress { get; set; }
+    public Address deliveryAddress { get; set; }
 
     /**
      * A string containing the shopper\'s device fingerprint. For more information, refer to [Device fingerprinting](https://docs.adyen.com/risk-management/device-fingerprinting).
@@ -202,13 +202,13 @@ public without sharing class PaymentsRequest {
         PaymentsRequest paymentsRequest = new PaymentsRequest();
           paymentsRequest.amount = Amount.getExample();
           paymentsRequest.additionalData = new Map<String, String>();
-          paymentsRequest.applicationInfo = OASApplicationInfo.getExample();
-          paymentsRequest.billingAddress = OASAddress.getExample();
+          paymentsRequest.applicationInfo = ApplicationInfo.getExample();
+          paymentsRequest.billingAddress = Address.getExample();
           paymentsRequest.browserInfo = BrowserInfo.getExample();
-          paymentsRequest.card = OASCard.getExample();
+          paymentsRequest.card = Card.getExample();
           paymentsRequest.cardDetails = CardDetails.getExample();
           paymentsRequest.channel = '';
-          paymentsRequest.deliveryAddress = OASAddress.getExample();
+          paymentsRequest.deliveryAddress = Address.getExample();
           paymentsRequest.deviceFingerprint = '';
           paymentsRequest.merchantAccount = '';
           paymentsRequest.paymentMethod = CardDetails.getExample();

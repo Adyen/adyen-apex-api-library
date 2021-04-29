@@ -11,9 +11,9 @@
  */
 
 /**
- * OASRecurringDetail
+ * RecurringDetail
  */
-public class OASRecurringDetail {
+public class RecurringDetail {
     /**
      * List of possible brands. For example: visa, mc.
      * @return brands
@@ -30,7 +30,7 @@ public class OASRecurringDetail {
      * All input details to be provided to complete the payment with this payment method.
      * @return details
      */
-    public List<OASInputDetail> details { get; set; }
+    public List<InputDetail> details { get; set; }
 
     /**
      * The funding source of the payment method.
@@ -56,7 +56,7 @@ public class OASRecurringDetail {
      * All input details to be provided to complete the payment with this payment method.
      * @return inputDetails
      */
-    public List<OASInputDetail> inputDetails { get; set; }
+    public List<InputDetail> inputDetails { get; set; }
 
     /**
      * The displayable name of this payment method.
@@ -80,7 +80,7 @@ public class OASRecurringDetail {
      * Get storedDetails
      * @return storedDetails
      */
-    public OASStoredDetails storedDetails { get; set; }
+    public StoredDetails storedDetails { get; set; }
 
     /**
      * Indicates whether this payment method supports tokenization or not.
@@ -102,33 +102,33 @@ public class OASRecurringDetail {
         return propertyMappings;
     }
 
-    public OASRecurringDetail() {
+    public RecurringDetail() {
         brands = new List<String>();
         configuration = new Map<String, String>();
-        details = new List<OASInputDetail>();
-        inputDetails = new List<OASInputDetail>();
+        details = new List<InputDetail>();
+        inputDetails = new List<InputDetail>();
     }
 
-    public static OASRecurringDetail getExample() {
-        OASRecurringDetail recurringDetail = new OASRecurringDetail();
+    public static RecurringDetail getExample() {
+        RecurringDetail recurringDetail = new RecurringDetail();
           recurringDetail.brands = new List<String>{''};
           recurringDetail.configuration = new Map<String, String>{'key'=>''};
-          recurringDetail.details = new List<OASInputDetail>{OASInputDetail.getExample()};
+          recurringDetail.details = new List<InputDetail>{InputDetail.getExample()};
           recurringDetail.fundingSource = FundingSourceEnum.CREDIT;
           recurringDetail.group_x = PaymentMethodGroup.getExample();
-          recurringDetail.inputDetails = new List<OASInputDetail>{OASInputDetail.getExample()};
+          recurringDetail.inputDetails = new List<InputDetail>{InputDetail.getExample()};
           recurringDetail.name = '';
           recurringDetail.paymentMethodData = '';
           recurringDetail.recurringDetailReference = '';
-          recurringDetail.storedDetails = OASStoredDetails.getExample();
+          recurringDetail.storedDetails = StoredDetails.getExample();
           recurringDetail.supportsRecurring = true;
           recurringDetail.type = '';
         return recurringDetail;
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASRecurringDetail) {           
-            OASRecurringDetail recurringDetail = (OASRecurringDetail) obj;
+        if (obj instanceof RecurringDetail) {
+            RecurringDetail recurringDetail = (RecurringDetail) obj;
             return this.brands == recurringDetail.brands
                 && this.configuration == recurringDetail.configuration
                 && this.details == recurringDetail.details

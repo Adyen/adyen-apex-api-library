@@ -11,9 +11,9 @@
  */
 
 /**
- * OASSubInputDetail
+ * InputDetail
  */
-public class OASSubInputDetail {
+public class InputDetail {
     /**
      * Configuration parameters for the required input.
      * @return configuration
@@ -21,10 +21,28 @@ public class OASSubInputDetail {
     public Map<String, String> configuration { get; set; }
 
     /**
+     * Input details can also be provided recursively.
+     * @return details
+     */
+    public List<SubInputDetail> details { get; set; }
+
+    /**
+     * Input details can also be provided recursively (deprecated).
+     * @return inputDetails
+     */
+    public List<SubInputDetail> inputDetails { get; set; }
+
+    /**
+     * In case of a select, the URL from which to query the items.
+     * @return itemSearchUrl
+     */
+    public String itemSearchUrl { get; set; }
+
+    /**
      * In case of a select, the items to choose from.
      * @return items
      */
-    public List<OASItem> items { get; set; }
+    public List<Item> items { get; set; }
 
     /**
      * The value to provide in the result.
@@ -33,7 +51,7 @@ public class OASSubInputDetail {
     public String key { get; set; }
 
     /**
-     * True if this input is optional to provide.
+     * True if this input value is optional.
      * @return optional
      */
     public Boolean optional { get; set; }
@@ -50,31 +68,39 @@ public class OASSubInputDetail {
      */
     public String value { get; set; }
 
-    public OASSubInputDetail() {
+    public InputDetail() {
         configuration = new Map<String, String>();
-        items = new List<OASItem>();
+        details = new List<SubInputDetail>();
+        inputDetails = new List<SubInputDetail>();
+        items = new List<Item>();
     }
 
-    public static OASSubInputDetail getExample() {
-        OASSubInputDetail subInputDetail = new OASSubInputDetail();
-          subInputDetail.configuration = new Map<String, String>{'key'=>''};
-          subInputDetail.items = new List<OASItem>{OASItem.getExample()};
-          subInputDetail.key = '';
-          subInputDetail.optional = true;
-          subInputDetail.type = '';
-          subInputDetail.value = '';
-        return subInputDetail;
+    public static InputDetail getExample() {
+        InputDetail inputDetail = new InputDetail();
+          inputDetail.configuration = new Map<String, String>{'key'=>''};
+          inputDetail.details = new List<SubInputDetail>{SubInputDetail.getExample()};
+          inputDetail.inputDetails = new List<SubInputDetail>{SubInputDetail.getExample()};
+          inputDetail.itemSearchUrl = '';
+          inputDetail.items = new List<Item>{Item.getExample()};
+          inputDetail.key = '';
+          inputDetail.optional = true;
+          inputDetail.type = '';
+          inputDetail.value = '';
+        return inputDetail;
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASSubInputDetail) {           
-            OASSubInputDetail subInputDetail = (OASSubInputDetail) obj;
-            return this.configuration == subInputDetail.configuration
-                && this.items == subInputDetail.items
-                && this.key == subInputDetail.key
-                && this.optional == subInputDetail.optional
-                && this.type == subInputDetail.type
-                && this.value == subInputDetail.value;
+        if (obj instanceof InputDetail) {
+            InputDetail inputDetail = (InputDetail) obj;
+            return this.configuration == inputDetail.configuration
+                && this.details == inputDetail.details
+                && this.inputDetails == inputDetail.inputDetails
+                && this.itemSearchUrl == inputDetail.itemSearchUrl
+                && this.items == inputDetail.items
+                && this.key == inputDetail.key
+                && this.optional == inputDetail.optional
+                && this.type == inputDetail.type
+                && this.value == inputDetail.value;
         }
         return false;
     }
@@ -82,6 +108,9 @@ public class OASSubInputDetail {
     public Integer hashCode() {
         Integer hashCode = 43;
         hashCode = (17 * hashCode) + (configuration == null ? 0 : System.hashCode(configuration));
+        hashCode = (17 * hashCode) + (details == null ? 0 : System.hashCode(details));
+        hashCode = (17 * hashCode) + (inputDetails == null ? 0 : System.hashCode(inputDetails));
+        hashCode = (17 * hashCode) + (itemSearchUrl == null ? 0 : System.hashCode(itemSearchUrl));
         hashCode = (17 * hashCode) + (items == null ? 0 : System.hashCode(items));
         hashCode = (17 * hashCode) + (key == null ? 0 : System.hashCode(key));
         hashCode = (17 * hashCode) + (optional == null ? 0 : System.hashCode(optional));

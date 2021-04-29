@@ -11,46 +11,46 @@
  */
 
 /**
- * OASApplicationInfo
+ * ApplicationInfo
  */
-public class OASApplicationInfo {
+public class ApplicationInfo {
     /**
      * Get adyenLibrary
      * @return adyenLibrary
      */
-    public OASCommonField adyenLibrary { get; set; }
+    public CommonField adyenLibrary { get; set; }
 
     /**
      * Get adyenPaymentSource
      * @return adyenPaymentSource
      */
-    public OASCommonField adyenPaymentSource { get; set; }
+    public CommonField adyenPaymentSource { get; set; }
 
     /**
      * Get externalPlatform
      * @return externalPlatform
      */
-    public OASExternalPlatform externalPlatform { get; set; }
+    public ExternalPlatform externalPlatform { get; set; }
 
     /**
      * Get merchantApplication
      * @return merchantApplication
      */
-    public OASCommonField merchantApplication { get; set; }
+    public CommonField merchantApplication { get; set; }
 
 
-    public static OASApplicationInfo getExample() {
-        OASApplicationInfo applicationInfo = new OASApplicationInfo();
-          applicationInfo.adyenLibrary = OASCommonField.getExample();
-          applicationInfo.adyenPaymentSource = OASCommonField.getExample();
-          applicationInfo.externalPlatform = OASExternalPlatform.getExample();
-          applicationInfo.merchantApplication = OASCommonField.getExample();
+    public static ApplicationInfo getExample() {
+        ApplicationInfo applicationInfo = new ApplicationInfo();
+          applicationInfo.adyenLibrary = CommonField.getExample();
+          applicationInfo.adyenPaymentSource = CommonField.getExample();
+          applicationInfo.externalPlatform = ExternalPlatform.getExample();
+          applicationInfo.merchantApplication = CommonField.getExample();
         return applicationInfo;
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASApplicationInfo) {           
-            OASApplicationInfo applicationInfo = (OASApplicationInfo) obj;
+        if (obj instanceof ApplicationInfo) {
+            ApplicationInfo applicationInfo = (ApplicationInfo) obj;
             return this.adyenLibrary == applicationInfo.adyenLibrary
                 && this.adyenPaymentSource == applicationInfo.adyenPaymentSource
                 && this.externalPlatform == applicationInfo.externalPlatform

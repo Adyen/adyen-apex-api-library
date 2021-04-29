@@ -11,7 +11,7 @@
  */
 
 /**
- * OASFraudResult
+ * FraudResult
  */
 public class FraudResult {
     /**

@@ -30,7 +30,7 @@ public class PaymentMethod {
      * All input details to be provided to complete the payment with this payment method.
      * @return details
      */
-    public List<OASInputDetail> details { get; set; }
+    public List<InputDetail> details { get; set; }
 
     /**
      * The funding source of the payment method.
@@ -56,7 +56,7 @@ public class PaymentMethod {
      * All input details to be provided to complete the payment with this payment method.
      * @return inputDetails
      */
-    public List<OASInputDetail> inputDetails { get; set; }
+    public List<InputDetail> inputDetails { get; set; }
 
     /**
      * The displayable name of this payment method.
@@ -93,18 +93,18 @@ public class PaymentMethod {
     public PaymentMethod() {
         brands = new List<String>();
         configuration = new Map<String, String>();
-        details = new List<OASInputDetail>();
-        inputDetails = new List<OASInputDetail>();
+        details = new List<InputDetail>();
+        inputDetails = new List<InputDetail>();
     }
 
     public static PaymentMethod getExample() {
         PaymentMethod paymentMethod = new PaymentMethod();
           paymentMethod.brands = new List<String>{''};
           paymentMethod.configuration = new Map<String, String>{'key'=>''};
-          paymentMethod.details = new List<OASInputDetail>{OASInputDetail.getExample()};
+          paymentMethod.details = new List<InputDetail>{InputDetail.getExample()};
           paymentMethod.fundingSource = FundingSourceEnum.CREDIT;
           paymentMethod.group_x = PaymentMethodGroup.getExample();
-          paymentMethod.inputDetails = new List<OASInputDetail>{OASInputDetail.getExample()};
+          paymentMethod.inputDetails = new List<InputDetail>{InputDetail.getExample()};
           paymentMethod.name = '';
           paymentMethod.paymentMethodData = '';
           paymentMethod.supportsRecurring = true;

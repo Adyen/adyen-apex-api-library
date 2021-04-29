@@ -11,14 +11,14 @@
  */
 
 /**
- * OASStoredDetails
+ * StoredDetails
  */
-public class OASStoredDetails {
+public class StoredDetails {
     /**
      * Get card
      * @return card
      */
-    public OASCard card { get; set; }
+    public Card card { get; set; }
 
     /**
      * The email associated with stored payment details.
@@ -26,16 +26,16 @@ public class OASStoredDetails {
      */
     public String emailAddress { get; set; }
 
-    public static OASStoredDetails getExample() {
-        OASStoredDetails storedDetails = new OASStoredDetails();
-          storedDetails.card = OASCard.getExample();
+    public static StoredDetails getExample() {
+        StoredDetails storedDetails = new StoredDetails();
+          storedDetails.card = Card.getExample();
           storedDetails.emailAddress = '';
         return storedDetails;
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASStoredDetails) {           
-            OASStoredDetails storedDetails = (OASStoredDetails) obj;
+        if (obj instanceof StoredDetails) {
+            StoredDetails storedDetails = (StoredDetails) obj;
             return this.card == storedDetails.card
                 && this.emailAddress == storedDetails.emailAddress;
         }
