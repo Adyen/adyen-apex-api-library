@@ -11,9 +11,9 @@
  */
 
 /**
- * OASStoredPaymentMethod
+ * StoredPaymentMethod
  */
-public class OASStoredPaymentMethod {
+public class StoredPaymentMethod {
     /**
      * The brand of the card.
      * @return brand
@@ -74,12 +74,12 @@ public class OASStoredPaymentMethod {
      */
     public String type { get; set; }
 
-    public OASStoredPaymentMethod() {
+    public StoredPaymentMethod() {
         supportedShopperInteractions = new List<String>();
     }
 
-    public static OASStoredPaymentMethod getExample() {
-        OASStoredPaymentMethod storedPaymentMethod = new OASStoredPaymentMethod();
+    public static StoredPaymentMethod getExample() {
+        StoredPaymentMethod storedPaymentMethod = new StoredPaymentMethod();
           storedPaymentMethod.brand = '';
           storedPaymentMethod.expiryMonth = '';
           storedPaymentMethod.expiryYear = '';
@@ -94,8 +94,8 @@ public class OASStoredPaymentMethod {
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASStoredPaymentMethod) {           
-            OASStoredPaymentMethod storedPaymentMethod = (OASStoredPaymentMethod) obj;
+        if (obj instanceof StoredPaymentMethod) {
+            StoredPaymentMethod storedPaymentMethod = (StoredPaymentMethod) obj;
             return this.brand == storedPaymentMethod.brand
                 && this.expiryMonth == storedPaymentMethod.expiryMonth
                 && this.expiryYear == storedPaymentMethod.expiryYear

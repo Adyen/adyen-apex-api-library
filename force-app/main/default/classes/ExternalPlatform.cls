@@ -11,9 +11,9 @@
  */
 
 /**
- * OASExternalPlatform
+ * ExternalPlatform
  */
-public class OASExternalPlatform {
+public class ExternalPlatform {
     /**
      * External platform integrator.
      * @return integrator
@@ -32,8 +32,8 @@ public class OASExternalPlatform {
      */
     public String version { get; set; }
 
-    public static OASExternalPlatform getExample() {
-        OASExternalPlatform externalPlatform = new OASExternalPlatform();
+    public static ExternalPlatform getExample() {
+        ExternalPlatform externalPlatform = new ExternalPlatform();
           externalPlatform.integrator = '';
           externalPlatform.name = '';
           externalPlatform.version = '';
@@ -41,8 +41,8 @@ public class OASExternalPlatform {
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASExternalPlatform) {           
-            OASExternalPlatform externalPlatform = (OASExternalPlatform) obj;
+        if (obj instanceof ExternalPlatform) {
+            ExternalPlatform externalPlatform = (ExternalPlatform) obj;
             return this.integrator == externalPlatform.integrator
                 && this.name == externalPlatform.name
                 && this.version == externalPlatform.version;

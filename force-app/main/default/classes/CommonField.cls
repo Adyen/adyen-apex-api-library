@@ -11,9 +11,9 @@
  */
 
 /**
- * OASCommonField
+ * CommonField
  */
-public class OASCommonField {
+public class CommonField {
     /**
      * Name of the field. For example, Name of External Platform.
      * @return name
@@ -26,16 +26,16 @@ public class OASCommonField {
      */
     public String version { get; set; }
 
-    public static OASCommonField getExample() {
-        OASCommonField commonField = new OASCommonField();
+    public static CommonField getExample() {
+        CommonField commonField = new CommonField();
           commonField.name = '';
           commonField.version = '';
         return commonField;
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASCommonField) {           
-            OASCommonField commonField = (OASCommonField) obj;
+        if (obj instanceof CommonField) {
+            CommonField commonField = (CommonField) obj;
             return this.name == commonField.name
                 && this.version == commonField.version;
         }

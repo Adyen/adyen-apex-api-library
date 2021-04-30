@@ -42,7 +42,7 @@ public class PaymentsResponse {
      * When non-empty, contains all the fields that you must submit to the `/payments/details` endpoint.
      * @return details
      */
-    public List<OASInputDetail> details { get; set; }
+    public List<InputDetail> details { get; set; }
 
     /**
      * Get fraudResult
@@ -117,7 +117,7 @@ public class PaymentsResponse {
 
     public PaymentsResponse() {
         authentication = new Map<String, String>();
-        details = new List<OASInputDetail>();
+        details = new List<InputDetail>();
         outputDetails = new Map<String, String>();
     }
 
@@ -127,7 +127,7 @@ public class PaymentsResponse {
           paymentsResponse.action = CheckoutPaymentsAction.getExample();
           paymentsResponse.additionalData = new Map<String, String>{'key'=>''};
           paymentsResponse.authentication = new Map<String, String>{'key'=>''};
-          paymentsResponse.details = new List<OASInputDetail>{OASInputDetail.getExample()};
+          paymentsResponse.details = new List<InputDetail>{InputDetail.getExample()};
           paymentsResponse.fraudResult = FraudResult.getExample();
           paymentsResponse.merchantReference = '';
           paymentsResponse.outputDetails = new Map<String, String>{'key'=>''};

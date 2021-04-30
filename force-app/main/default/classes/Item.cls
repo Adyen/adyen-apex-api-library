@@ -11,9 +11,9 @@
  */
 
 /**
- * OASItem
+ * Item
  */
-public class OASItem {
+public class Item {
     /**
      * The value to provide in the result.
      * @return id
@@ -26,16 +26,16 @@ public class OASItem {
      */
     public String name { get; set; }
 
-    public static OASItem getExample() {
-        OASItem item = new OASItem();
+    public static Item getExample() {
+        Item item = new Item();
           item.id = '';
           item.name = '';
         return item;
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASItem) {           
-            OASItem item = (OASItem) obj;
+        if (obj instanceof Item) {
+            Item item = (Item) obj;
             return this.id == item.id
                 && this.name == item.name;
         }

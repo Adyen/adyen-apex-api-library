@@ -11,9 +11,9 @@
  */
 
 /**
- * OASAddress
+ * Address
  */
-public class OASAddress {
+public class Address {
     /**
      * The name of the city.
      * @return city
@@ -50,8 +50,8 @@ public class OASAddress {
      */
     public String street { get; set; }
 
-    public static OASAddress getExample() {
-        OASAddress address = new OASAddress();
+    public static Address getExample() {
+        Address address = new Address();
           address.city = '';
           address.country = '';
           address.houseNumberOrName = '';
@@ -62,8 +62,8 @@ public class OASAddress {
     }
 
     public Boolean equals(Object obj) {
-        if (obj instanceof OASAddress) {           
-            OASAddress address = (OASAddress) obj;
+        if (obj instanceof Address) {
+            Address address = (Address) obj;
             return this.city == address.city
                 && this.country == address.country
                 && this.houseNumberOrName == address.houseNumberOrName

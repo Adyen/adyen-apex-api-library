@@ -24,7 +24,7 @@ public class PaymentMethodsResponse {
      * Detailed list of one-click payment methods.
      * @return oneClickPaymentMethods
      */
-    public List<OASRecurringDetail> oneClickPaymentMethods { get; set; }
+    public List<RecurringDetail> oneClickPaymentMethods { get; set; }
 
     /**
      * Detailed list of payment methods required to generate payment forms.
@@ -36,21 +36,21 @@ public class PaymentMethodsResponse {
      * List of all stored payment methods.
      * @return storedPaymentMethods
      */
-    public List<OASStoredPaymentMethod> storedPaymentMethods { get; set; }
+    public List<StoredPaymentMethod> storedPaymentMethods { get; set; }
 
     public PaymentMethodsResponse() {
         groups = new List<PaymentMethodGroup>();
-        oneClickPaymentMethods = new List<OASRecurringDetail>();
+        oneClickPaymentMethods = new List<RecurringDetail>();
         paymentMethods = new List<PaymentMethod>();
-        storedPaymentMethods = new List<OASStoredPaymentMethod>();
+        storedPaymentMethods = new List<StoredPaymentMethod>();
     }
 
     public static PaymentMethodsResponse getExample() {
         PaymentMethodsResponse paymentMethodsResponse = new PaymentMethodsResponse();
           paymentMethodsResponse.groups = new List<PaymentMethodGroup>{PaymentMethodGroup.getExample()};
-          paymentMethodsResponse.oneClickPaymentMethods = new List<OASRecurringDetail>{OASRecurringDetail.getExample()};
+          paymentMethodsResponse.oneClickPaymentMethods = new List<RecurringDetail>{RecurringDetail.getExample()};
           paymentMethodsResponse.paymentMethods = new List<PaymentMethod>{PaymentMethod.getExample()};
-          paymentMethodsResponse.storedPaymentMethods = new List<OASStoredPaymentMethod>{OASStoredPaymentMethod.getExample()};
+          paymentMethodsResponse.storedPaymentMethods = new List<StoredPaymentMethod>{StoredPaymentMethod.getExample()};
         return paymentMethodsResponse;
     }
 
