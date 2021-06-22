@@ -1,5 +1,7 @@
 # Adyen Apex API Library
-  
+
+> ⚠ **This is a Beta release**
+
 This repository contains the client and the models that are used for the requests/responses for Adyen's Checkout API. 
 This library will be used in combination with other Salesforce managed packages from Adyen (e.g. Salesforce B2B Commerce). 
 
