@@ -3,6 +3,10 @@
 This repository contains the client and the models that are used for the requests/responses for Adyen's Checkout API. 
 This library will be used in combination with other Salesforce managed packages from Adyen (e.g. Salesforce B2B Commerce). 
 
+The library supports the following services:
+ 
+* [Checkout API](https://docs.adyen.com/api-explorer/#/CheckoutService/v64/overview) - Payments: Our latest integration for accepting online payments. Current supported version: **v64**
+
 ## Contributing
 We strongly encourage you to contribute to our repository. Find out more in our [contribution guidelines](https://github.com/Adyen/.github/blob/master/CONTRIBUTING.md)
 
