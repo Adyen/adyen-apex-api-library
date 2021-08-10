@@ -13,39 +13,39 @@
 public class PaymentMethodsRequest {
 
     /**
-* List of payments methods to be presented to the shopper. To refer to payment methods, use their `paymentMethod.type` from [Payment methods overview](https://docs.adyen.com/payment-methods).\n\nExample: `"allowedPaymentMethods":["ideal","giropay"]`
-* @return allowedPaymentMethods
-*/
+    * List of payments methods to be presented to the shopper. To refer to payment methods, use their `paymentMethod.type` from [Payment methods overview](https://docs.adyen.com/payment-methods).\n\nExample: `"allowedPaymentMethods":["ideal","giropay"]`
+    * @return allowedPaymentMethods
+    */
     public List<String> allowedPaymentMethods { get; set; }
 
     /**
-* Get amount
-* @return amount
-*/
+    * Get amount
+    * @return amount
+    */
     public Amount amount { get; set; }
 
     /**
-* The shopper\'s country code.
-* @return countryCode
-*/
+    * The shopper\'s country code.
+    * @return countryCode
+    */
     public String countryCode { get; set; }
 
     /**
-* The merchant account identifier, with which you want to process the transaction.
-* @return merchantAccount
-*/
+    * The merchant account identifier, with which you want to process the transaction.
+    * @return merchantAccount
+    */
     public String merchantAccount { get; set; }
 
     /**
-* The combination of a language code and a country code to specify the language to be used in the payment.
-* @return shopperLocale
-*/
+    * The combination of a language code and a country code to specify the language to be used in the payment.
+    * @return shopperLocale
+    */
     public String shopperLocale { get; set; }
 
     /**
-* The shopper\'s reference to uniquely identify this shopper (e.g. user ID or account ID).\n> This field is required for recurring payments.
-* @return shopperReference
-*/
+    * The shopper\'s reference to uniquely identify this shopper (e.g. user ID or account ID).\n> This field is required for recurring payments.
+    * @return shopperReference
+    */
     public String shopperReference { get; set; }
 
     @namespaceAccessible
@@ -57,7 +57,7 @@ public class PaymentMethodsRequest {
     public static PaymentMethodsRequest getExample() {
         PaymentMethodsRequest paymentMethodsRequest = new PaymentMethodsRequest();
         paymentMethodsRequest.allowedPaymentMethods = new List<String>{''};
-            paymentMethodsRequest.amount = Amount.getExample();
+        paymentMethodsRequest.amount = Amount.getExample();
         paymentMethodsRequest.countryCode = '';
         paymentMethodsRequest.merchantAccount = '';
         paymentMethodsRequest.shopperLocale = '';

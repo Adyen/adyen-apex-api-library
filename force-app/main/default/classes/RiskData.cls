@@ -12,9 +12,9 @@
 @namespaceAccessible
 public class RiskData {
     /**
-* Contains client-side data, like the device fingerprint, cookies, and specific browser settings.
-* @return clientData
-*/
+    * Contains client-side data, like the device fingerprint, cookies, and specific browser settings.
+    * @return clientData
+    */
     public String clientData { get; set; }
 
     @namespaceAccessible

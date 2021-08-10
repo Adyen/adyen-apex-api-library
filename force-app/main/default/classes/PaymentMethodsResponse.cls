@@ -12,27 +12,27 @@
 @namespaceAccessible
 public class PaymentMethodsResponse {
     /**
-* Groups of payment methods.
-* @return groups
-*/
+    * Groups of payment methods.
+    * @return groups
+    */
     public List<PaymentMethodGroup> groups { get; set; }
 
     /**
-* Detailed list of one-click payment methods.
-* @return oneClickPaymentMethods
-*/
+    * Detailed list of one-click payment methods.
+    * @return oneClickPaymentMethods
+    */
     public List<RecurringDetail> oneClickPaymentMethods { get; set; }
 
     /**
-* Detailed list of payment methods required to generate payment forms.
-* @return paymentMethods
-*/
+    * Detailed list of payment methods required to generate payment forms.
+    * @return paymentMethods
+    */
     public List<PaymentMethod> paymentMethods { get; set; }
 
     /**
-* List of all stored payment methods.
-* @return storedPaymentMethods
-*/
+    * List of all stored payment methods.
+    * @return storedPaymentMethods
+    */
     public List<StoredPaymentMethod> storedPaymentMethods { get; set; }
 
     @namespaceAccessible
@@ -47,10 +47,10 @@ public class PaymentMethodsResponse {
     public static PaymentMethodsResponse getExample() {
         PaymentMethodsResponse paymentMethodsResponse = new PaymentMethodsResponse();
         paymentMethodsResponse.groups = new List<PaymentMethodGroup>{PaymentMethodGroup.getExample()};
-            paymentMethodsResponse.oneClickPaymentMethods = new List<RecurringDetail>{RecurringDetail.getExample()};
-                paymentMethodsResponse.paymentMethods = new List<PaymentMethod>{PaymentMethod.getExample()};
-                    paymentMethodsResponse.storedPaymentMethods = new List<StoredPaymentMethod>{StoredPaymentMethod.getExample()};
-                        return paymentMethodsResponse;
+        paymentMethodsResponse.oneClickPaymentMethods = new List<RecurringDetail>{RecurringDetail.getExample()};
+        paymentMethodsResponse.paymentMethods = new List<PaymentMethod>{PaymentMethod.getExample()};
+        paymentMethodsResponse.storedPaymentMethods = new List<StoredPaymentMethod>{StoredPaymentMethod.getExample()};
+        return paymentMethodsResponse;
     }
 
     @namespaceAccessible

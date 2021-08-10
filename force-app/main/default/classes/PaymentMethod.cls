@@ -12,81 +12,81 @@
 @namespaceAccessible
 public class PaymentMethod {
     /**
-* List of possible brands. For example: visa, mc.
-* @return brands
-*/
+    * List of possible brands. For example: visa, mc.
+    * @return brands
+    */
     public List<String> brands { get; set; }
 
     /**
-* The configuration of the payment method.
-* @return configuration
-*/
+    * The configuration of the payment method.
+    * @return configuration
+    */
     public Map<String, String> configuration { get; set; }
 
     /**
-* All input details to be provided to complete the payment with this payment method.
-* @return details
-*/
+    * All input details to be provided to complete the payment with this payment method.
+    * @return details
+    */
     public List<InputDetail> details { get; set; }
 
     /**
-* The funding source of the payment method.
-*/
+    * The funding source of the payment method.
+    */
     public enum FundingSourceEnum {
         CREDIT,
-            DEBIT
-            }
+        DEBIT
+    }
 
     /**
-* The funding source of the payment method.
-* @return fundingSource
-*/
+    * The funding source of the payment method.
+    * @return fundingSource
+    */
     public FundingSourceEnum fundingSource { get; set; }
 
     /**
-* Get group_x
-* @return group_x
-*/
+    * Get group_x
+    * @return group_x
+    */
     public PaymentMethodGroup group_x { get; set; }
 
     /**
-* All input details to be provided to complete the payment with this payment method.
-* @return inputDetails
-*/
+    * All input details to be provided to complete the payment with this payment method.
+    * @return inputDetails
+    */
     public List<InputDetail> inputDetails { get; set; }
 
     /**
-* The displayable name of this payment method.
-* @return name
-*/
+    * The displayable name of this payment method.
+    * @return name
+    */
     public String name { get; set; }
 
     /**
-* Echo data required to send in next calls.
-* @return paymentMethodData
-*/
+    * Echo data required to send in next calls.
+    * @return paymentMethodData
+    */
     public String paymentMethodData { get; set; }
 
     /**
-* Indicates whether this payment method supports tokenization or not.
-* @return supportsRecurring
-*/
+    * Indicates whether this payment method supports tokenization or not.
+    * @return supportsRecurring
+    */
     public Boolean supportsRecurring { get; set; }
 
     /**
-* The unique payment method code.
-* @return type
-*/
+    * The unique payment method code.
+    * @return type
+    */
     public String type { get; set; }
 
     private static final Map<String, String> propertyMappings = new Map<String, String>{
         'group' => 'group_x'
-            };
+    };
 
-                @namespaceAccessible
-                public Map<String, String> getPropertyMappings() {
-                    return propertyMappings;
-                }
+    @namespaceAccessible
+    public Map<String, String> getPropertyMappings() {
+        return propertyMappings;
+    }
 
     @namespaceAccessible
     public PaymentMethod() {
@@ -100,12 +100,12 @@ public class PaymentMethod {
     public static PaymentMethod getExample() {
         PaymentMethod paymentMethod = new PaymentMethod();
         paymentMethod.brands = new List<String>{''};
-            paymentMethod.configuration = new Map<String, String>{'key'=>''};
-                paymentMethod.details = new List<InputDetail>{InputDetail.getExample()};
-                    paymentMethod.fundingSource = FundingSourceEnum.CREDIT;
+        paymentMethod.configuration = new Map<String, String>{'key'=>''};
+        paymentMethod.details = new List<InputDetail>{InputDetail.getExample()};
+        paymentMethod.fundingSource = FundingSourceEnum.CREDIT;
         paymentMethod.group_x = PaymentMethodGroup.getExample();
         paymentMethod.inputDetails = new List<InputDetail>{InputDetail.getExample()};
-            paymentMethod.name = '';
+        paymentMethod.name = '';
         paymentMethod.paymentMethodData = '';
         paymentMethod.supportsRecurring = true;
         paymentMethod.type = '';

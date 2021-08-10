@@ -12,15 +12,15 @@
 @namespaceAccessible
 public class Item {
     /**
-* The value to provide in the result.
-* @return id
-*/
+    * The value to provide in the result.
+    * @return id
+    */
     public String id { get; set; }
 
     /**
-* The display name.
-* @return name
-*/
+    * The display name.
+    * @return name
+    */
     public String name { get; set; }
 
     @namespaceAccessible

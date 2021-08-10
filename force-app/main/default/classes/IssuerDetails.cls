@@ -12,15 +12,15 @@
 @namespaceAccessible
 public class IssuerDetails implements PaymentMethodDetails {
     /**
-* Get issuer
-* @return issuer
-*/
+    * Get issuer
+    * @return issuer
+    */
     public String issuer { get; set; }
 
     /**
-* **scheme**
-* @return type
-*/
+    * **scheme**
+    * @return type
+    */
     public String type { get; set; }
 
     @namespaceAccessible

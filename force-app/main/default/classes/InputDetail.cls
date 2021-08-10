@@ -12,57 +12,57 @@
 @namespaceAccessible
 public class InputDetail {
     /**
-* Configuration parameters for the required input.
-* @return configuration
-*/
+    * Configuration parameters for the required input.
+    * @return configuration
+    */
     public Map<String, String> configuration { get; set; }
 
     /**
-* Input details can also be provided recursively.
-* @return details
-*/
+    * Input details can also be provided recursively.
+    * @return details
+    */
     public List<SubInputDetail> details { get; set; }
 
     /**
-* Input details can also be provided recursively (deprecated).
-* @return inputDetails
-*/
+    * Input details can also be provided recursively (deprecated).
+    * @return inputDetails
+    */
     public List<SubInputDetail> inputDetails { get; set; }
 
     /**
-* In case of a select, the URL from which to query the items.
-* @return itemSearchUrl
-*/
+    * In case of a select, the URL from which to query the items.
+    * @return itemSearchUrl
+    */
     public String itemSearchUrl { get; set; }
 
     /**
-* In case of a select, the items to choose from.
-* @return items
-*/
+    * In case of a select, the items to choose from.
+    * @return items
+    */
     public List<Item> items { get; set; }
 
     /**
-* The value to provide in the result.
-* @return key
-*/
+    * The value to provide in the result.
+    * @return key
+    */
     public String key { get; set; }
 
     /**
-* True if this input value is optional.
-* @return optional
-*/
+    * True if this input value is optional.
+    * @return optional
+    */
     public Boolean optional { get; set; }
 
     /**
-* The type of the required input.
-* @return type
-*/
+    * The type of the required input.
+    * @return type
+    */
     public String type { get; set; }
 
     /**
-* The value can be pre-filled, if available.
-* @return value
-*/
+    * The value can be pre-filled, if available.
+    * @return value
+    */
     public String value { get; set; }
 
     @namespaceAccessible
@@ -77,11 +77,11 @@ public class InputDetail {
     public static InputDetail getExample() {
         InputDetail inputDetail = new InputDetail();
         inputDetail.configuration = new Map<String, String>{'key'=>''};
-            inputDetail.details = new List<SubInputDetail>{SubInputDetail.getExample()};
-                inputDetail.inputDetails = new List<SubInputDetail>{SubInputDetail.getExample()};
-                    inputDetail.itemSearchUrl = '';
+        inputDetail.details = new List<SubInputDetail>{SubInputDetail.getExample()};
+        inputDetail.inputDetails = new List<SubInputDetail>{SubInputDetail.getExample()};
+        inputDetail.itemSearchUrl = '';
         inputDetail.items = new List<Item>{Item.getExample()};
-            inputDetail.key = '';
+        inputDetail.key = '';
         inputDetail.optional = true;
         inputDetail.type = '';
         inputDetail.value = '';

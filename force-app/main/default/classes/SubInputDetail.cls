@@ -12,39 +12,39 @@
 @namespaceAccessible
 public class SubInputDetail {
     /**
-* Configuration parameters for the required input.
-* @return configuration
-*/
+    * Configuration parameters for the required input.
+    * @return configuration
+    */
     public Map<String, String> configuration { get; set; }
 
     /**
-* In case of a select, the items to choose from.
-* @return items
-*/
+    * In case of a select, the items to choose from.
+    * @return items
+    */
     public List<Item> items { get; set; }
 
     /**
-* The value to provide in the result.
-* @return key
-*/
+    * The value to provide in the result.
+    * @return key
+    */
     public String key { get; set; }
 
     /**
-* True if this input is optional to provide.
-* @return optional
-*/
+    * True if this input is optional to provide.
+    * @return optional
+    */
     public Boolean optional { get; set; }
 
     /**
-* The type of the required input.
-* @return type
-*/
+    * The type of the required input.
+    * @return type
+    */
     public String type { get; set; }
 
     /**
-* The value can be pre-filled, if available.
-* @return value
-*/
+    * The value can be pre-filled, if available.
+    * @return value
+    */
     public String value { get; set; }
 
     @namespaceAccessible
@@ -57,8 +57,8 @@ public class SubInputDetail {
     public static SubInputDetail getExample() {
         SubInputDetail subInputDetail = new SubInputDetail();
         subInputDetail.configuration = new Map<String, String>{'key'=>''};
-            subInputDetail.items = new List<Item>{Item.getExample()};
-                subInputDetail.key = '';
+        subInputDetail.items = new List<Item>{Item.getExample()};
+        subInputDetail.key = '';
         subInputDetail.optional = true;
         subInputDetail.type = '';
         subInputDetail.value = '';

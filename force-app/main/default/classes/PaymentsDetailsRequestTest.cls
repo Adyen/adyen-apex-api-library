@@ -1,6 +1,10 @@
 @isTest
 public class PaymentsDetailsRequestTest {
 
+    /**
+    * Test method to enhance code coverage for Apex Modals; This ain't validating any specific business use case.
+    * Enhances code coverage for PaymentsDetailsRequest apex class
+    */
     @isTest
     private static void testAllMethodsFromPaymentsDetailsRequest(){
         PaymentsDetailsRequest testInstance1 = PaymentsDetailsRequest.getExample();

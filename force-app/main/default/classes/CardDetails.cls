@@ -12,63 +12,63 @@
 @namespaceAccessible
 public class CardDetails implements PaymentMethodDetails {
     /**
-* Get cvc
-* @return cvc
-*/
+    * Get cvc
+    * @return cvc
+    */
     public String cvc { get; set; }
 
     /**
-* Get encryptedCardNumber
-* @return encryptedCardNumber
-*/
+    * Get encryptedCardNumber
+    * @return encryptedCardNumber
+    */
     public String encryptedCardNumber { get; set; }
 
     /**
-* Get encryptedExpiryMonth
-* @return encryptedExpiryMonth
-*/
+    * Get encryptedExpiryMonth
+    * @return encryptedExpiryMonth
+    */
     public String encryptedExpiryMonth { get; set; }
 
     /**
-* Get encryptedExpiryYear
-* @return encryptedExpiryYear
-*/
+    * Get encryptedExpiryYear
+    * @return encryptedExpiryYear
+    */
     public String encryptedExpiryYear { get; set; }
 
     /**
-* Get encryptedSecurityCode
-* @return encryptedSecurityCode
-*/
+    * Get encryptedSecurityCode
+    * @return encryptedSecurityCode
+    */
     public String encryptedSecurityCode { get; set; }
 
     /**
-* Get expiryMonth
-* @return expiryMonth
-*/
+    * Get expiryMonth
+    * @return expiryMonth
+    */
     public String expiryMonth { get; set; }
 
     /**
-* Get expiryYear
-* @return expiryYear
-*/
+    * Get expiryYear
+    * @return expiryYear
+    */
     public String expiryYear { get; set; }
 
     /**
-* Get holderName
-* @return holderName
-*/
+    * Get holderName
+    * @return holderName
+    */
     public String holderName { get; set; }
 
     /**
-* Get number_x
-* @return number_x
-*/
+    * Get number_x
+    * @return number_x
+    */
     public String number_x { get; set; }
 
     /**
-* This is the `recurringDetailReference` returned in the response when you created the token.
-* @return storedPaymentMethodId
-*/
+    * This is the `recurringDetailReference` returned in the response when you created the token.
+    * @return storedPaymentMethodId
+    */
     public String storedPaymentMethodId { get; set; }
 
     @namespaceAccessible
@@ -77,9 +77,9 @@ public class CardDetails implements PaymentMethodDetails {
     }
 
     /**
-* **scheme**
-* @return type
-*/
+    * **scheme**
+    * @return type
+    */
     public String type { get; set; }
 
     @namespaceAccessible

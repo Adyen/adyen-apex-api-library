@@ -12,8 +12,8 @@
 @namespaceAccessible
 public class DefaultPaymentMethodDetails implements PaymentMethodDetails {
     /**
-* @return type
-*/
+    * @return type
+    */
     public String type { get; set; }
 
     @namespaceAccessible

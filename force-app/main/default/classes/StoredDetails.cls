@@ -12,15 +12,15 @@
 @namespaceAccessible
 public class StoredDetails {
     /**
-* Get card
-* @return card
-*/
+    * Get card
+    * @return card
+    */
     public Card card { get; set; }
 
     /**
-* The email associated with stored payment details.
-* @return emailAddress
-*/
+    * The email associated with stored payment details.
+    * @return emailAddress
+    */
     public String emailAddress { get; set; }
 
     @namespaceAccessible

@@ -1,6 +1,10 @@
 @isTest
 public class IssuerDetailsTest {
 
+    /**
+    * Test method to enhance code coverage for Apex Modals; This ain't validating any specific business use case.
+    * Enhances code coverage for IssuerDetails apex class
+    */
     @isTest
     private static void testAllMethodsFromIssuerDetails(){
         IssuerDetails testInstance1 = IssuerDetails.getExample();

@@ -1,6 +1,10 @@
 @isTest
 public class DisableRequestTest {
 
+    /**
+    * Test method to enhance code coverage for Apex Modals; This ain't validating any specific business use case.
+    * Enhances code coverage for DisableRequest apex class
+    */
     @isTest
     private static void testAllMethodsFromDisableRequest(){
         DisableRequest testInstance1 = DisableRequest.getExample();

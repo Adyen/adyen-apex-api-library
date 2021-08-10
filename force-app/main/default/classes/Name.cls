@@ -12,36 +12,36 @@
 @namespaceAccessible
 public class Name {
     /**
-* The first name.
-* @return firstName
-*/
+    * The first name.
+    * @return firstName
+    */
     public String firstName { get; set; }
 
     /**
-* The gender.\n>The following values are permitted: `MALE`, `FEMALE`, `UNKNOWN`.
-*/
+    * The gender.\n>The following values are permitted: `MALE`, `FEMALE`, `UNKNOWN`.
+    */
     public enum GenderEnum {
         MALE,
-            FEMALE,
-            UNKNOWN
-            }
+        FEMALE,
+        UNKNOWN
+    }
 
     /**
-* The gender.\n>The following values are permitted: `MALE`, `FEMALE`, `UNKNOWN`.
-* @return gender
-*/
+    * The gender.\n>The following values are permitted: `MALE`, `FEMALE`, `UNKNOWN`.
+    * @return gender
+    */
     public GenderEnum gender { get; set; }
 
     /**
-* The name\'s infix, if applicable.\n>A maximum length of twenty (20) characters is imposed.
-* @return infix
-*/
+    * The name\'s infix, if applicable.\n>A maximum length of twenty (20) characters is imposed.
+    * @return infix
+    */
     public String infix { get; set; }
 
     /**
-* The last name.
-* @return lastName
-*/
+    * The last name.
+    * @return lastName
+    */
     public String lastName { get; set; }
 
     @namespaceAccessible

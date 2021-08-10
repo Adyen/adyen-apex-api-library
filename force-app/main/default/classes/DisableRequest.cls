@@ -1,21 +1,21 @@
 @namespaceAccessible
 public class DisableRequest {
     /**
-* The shopperReference from Stored payment.
-* @return shopperReference
-*/
+    * The shopperReference from Stored payment.
+    * @return shopperReference
+    */
     public String shopperReference { get; set; }
     
     /**
-* The recurringDetailReference of Stored payment.
-* @return recurringDetailReference
-*/
+    * The recurringDetailReference of Stored payment.
+    * @return recurringDetailReference
+    */
     public String recurringDetailReference { get; set; }
     
     /**
-* The name of the Merchant account
-* @return merchantAccount
-*/
+    * The name of the Merchant account
+    * @return merchantAccount
+    */
     public String merchantAccount { get; set; }
     
     @namespaceAccessible

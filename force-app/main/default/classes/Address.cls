@@ -1,8 +1,6 @@
 /*
 * Adyen Payment API
 * A set of API endpoints that allow you to initiate, settle, and modify payments on the Adyen payments platform.
-* You can use the API to accept card payments (including One-Click and 3D Secure), bank transfers, ewallets, and many other payment methods.
-* To learn more about the API, visit [Classic integration](https://docs.adyen.com/classic-integration).\n\n## Authentication\nTo connect to the Payments API, you must use your basic authentication credentials. For this, create your web service user, as described in [How to get the WS user password](https://docs.adyen.com/user-management/how-to-get-the-web-service-ws-user-password). Then use its credentials to authenticate your request, for example:\n\n```\ncurl\n-U "ws@Company.YourCompany":"YourWsPassword" \\n-H "Content-Type: application/json" \\n...\n```\nNote that when going live, you need to generate new web service user credentials to access the [live endpoints](https://docs.adyen.com/development-resources/live-endpoints).\n\n## Versioning\nPayments API supports versioning of its endpoints through a version suffix in the endpoint URL. This suffix has the following format: "vXX", where XX is the version number.\n\nFor example:\n```\nhttps://pal-test.adyen.com/pal/servlet/Payment/v64/authorise\n```
 *
 * Contact: support@adyen.com
 *
@@ -12,39 +10,39 @@
 @namespaceAccessible
 public class Address {
     /**
-* The name of the city.
-* @return city
-*/
+    * The name of the city.
+    * @return city
+    */
     public String city { get; set; }
 
     /**
-* The two-character country code as defined in ISO-3166-1 alpha-2. For example, **US**.\n> If you don\'t know the country or are not collecting the country from the shopper, provide `country` as `ZZ`.
-* @return country
-*/
+    * The two-character country code as defined in ISO-3166-1 alpha-2. For example, **US**.\n> If you don\'t know the country or are not collecting the country from the shopper, provide `country` as `ZZ`.
+    * @return country
+    */
     public String country { get; set; }
 
     /**
-* The number or name of the house.
-* @return houseNumberOrName
-*/
+    * The number or name of the house.
+    * @return houseNumberOrName
+    */
     public String houseNumberOrName { get; set; }
 
     /**
-* A maximum of five digits for an address in the US, or a maximum of ten characters for an address in all other countries.
-* @return postalCode
-*/
+    * A maximum of five digits for an address in the US, or a maximum of ten characters for an address in all other countries.
+    * @return postalCode
+    */
     public String postalCode { get; set; }
 
     /**
-* State or province codes as defined in ISO 3166-2. For example, **CA** in the US or **ON** in Canada.\n> Required for the US and Canada.
-* @return stateOrProvince
-*/
+    * State or province codes as defined in ISO 3166-2. For example, **CA** in the US or **ON** in Canada.\n> Required for the US and Canada.
+    * @return stateOrProvince
+    */
     public String stateOrProvince { get; set; }
 
     /**
-* The name of the street.\n> The house number should not be included in this field; it should be separately provided via `houseNumberOrName`.
-* @return street
-*/
+    * The name of the street.\n> The house number should not be included in this field; it should be separately provided via `houseNumberOrName`.
+    * @return street
+    */
     public String street { get; set; }
 
     @namespaceAccessible

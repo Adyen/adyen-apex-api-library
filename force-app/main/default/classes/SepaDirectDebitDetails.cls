@@ -12,21 +12,21 @@
 @namespaceAccessible
 public class SepaDirectDebitDetails implements PaymentMethodDetails {
     /**
-* Get ibanNumber
-* @return ibanNumber
-*/
+    * Get ibanNumber
+    * @return ibanNumber
+    */
     public String ibanNumber { get; set; }
 
     /**
-* Get ownerName
-* @return ownerName
-*/
+    * Get ownerName
+    * @return ownerName
+    */
     public String ownerName { get; set; }
 
     /**
-* **scheme**
-* @return type
-*/
+    * **scheme**
+    * @return type
+    */
     public String type { get; set; }
 
     @namespaceAccessible

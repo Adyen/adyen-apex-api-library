@@ -12,184 +12,184 @@
 @namespaceAccessible
 public without sharing class PaymentsRequest {
     /**
-* Get additionalData
-* @return additionalData
-*/
+    * Get additionalData
+    * @return additionalData
+    */
     public Map<String, String> additionalData { get; set; }
 
     /**
-* Get amount
-* @return amount
-*/
+    * Get amount
+    * @return amount
+    */
     public Amount amount { get; set; }
 
     /**
-* Get applicationInfo
-* @return applicationInfo
-*/
+    * Get applicationInfo
+    * @return applicationInfo
+    */
     public ApplicationInfo applicationInfo { get; set; }
 
     /**
-* Get billingAddress
-* @return billingAddress
-*/
+    * Get billingAddress
+    * @return billingAddress
+    */
     public Address billingAddress { get; set; }
 
     /**
-* Get browserInfo
-* @return browserInfo
-*/
+    * Get browserInfo
+    * @return browserInfo
+    */
     public BrowserInfo browserInfo { get; set; }
 
     /**
-* Get card
-* @return card
-*/
+    * Get card
+    * @return card
+    */
     public Card card { get; set; }
 
     /**
-* Get cardDetails
-* @return cardDetails
-*/
+    * Get cardDetails
+    * @return cardDetails
+    */
     public CardDetails cardDetails { get; set; }
 
     /**
-* Get channel
-* @return channel
-*/
+    * Get channel
+    * @return channel
+    */
     public String channel { get; set; }
 
     /**
-* The shopper\'s date of birth.\n\nFormat [ISO-8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DD
-* @return dateOfBirth
-*/
+    * The shopper\'s date of birth.\n\nFormat [ISO-8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DD
+    * @return dateOfBirth
+    */
     public Datetime dateOfBirth { get; set; }
 
     /**
-* Get deliveryAddress
-* @return deliveryAddress
-*/
+    * Get deliveryAddress
+    * @return deliveryAddress
+    */
     public Address deliveryAddress { get; set; }
 
     /**
-* A string containing the shopper\'s device fingerprint. For more information, refer to [Device fingerprinting](https://docs.adyen.com/risk-management/device-fingerprinting).
-* @return deviceFingerprint
-*/
+    * A string containing the shopper\'s device fingerprint. For more information, refer to [Device fingerprinting](https://docs.adyen.com/risk-management/device-fingerprinting).
+    * @return deviceFingerprint
+    */
     public String deviceFingerprint { get; set; }
 
     /**
-* The merchant account identifier, with which you want to process the transaction.
-* @return merchantAccount
-*/
+    * The merchant account identifier, with which you want to process the transaction.
+    * @return merchantAccount
+    */
     public String merchantAccount { get; set; }
 
     /**
-* Get card
-* @return card
-*/
+    * Get card
+    * @return card
+    */
     public PaymentMethodDetails paymentMethod { get; set; }
 
     /**
-* Get origin
-* @return origin
-*/
+    * Get origin
+    * @return origin
+    */
     public String origin { get; set; }
 
     /**
-* Defines a recurring payment type.\nAllowed values:\n* `Subscription` – A transaction for a fixed or variable amount, which follows a fixed schedule.\n* `CardOnFile` – With a card-on-file (CoF) transaction, card details are stored to enable one-click or omnichannel journeys, or simply to streamline the checkout process. Any subscription not following a fixed schedule is also considered a card-on-file transaction.\n* `UnscheduledCardOnFile` – An unscheduled card-on-file (UCoF) transaction is a transaction that occurs on a non-fixed schedule and/or have variable amounts. For example, automatic top-ups when a cardholder\'s balance drops below a certain amount.\n
-*/
+    * Defines a recurring payment type.\nAllowed values:\n* `Subscription` – A transaction for a fixed or variable amount, which follows a fixed schedule.\n* `CardOnFile` – With a card-on-file (CoF) transaction, card details are stored to enable one-click or omnichannel journeys, or simply to streamline the checkout process. Any subscription not following a fixed schedule is also considered a card-on-file transaction.\n* `UnscheduledCardOnFile` – An unscheduled card-on-file (UCoF) transaction is a transaction that occurs on a non-fixed schedule and/or have variable amounts. For example, automatic top-ups when a cardholder\'s balance drops below a certain amount.\n
+    */
     public enum RecurringProcessingModelEnum {
         CardOnFile,
-            Subscription,
-            UnscheduledCardOnFile
-            }
+        Subscription,
+        UnscheduledCardOnFile
+    }
 
     /**
-* Defines a recurring payment type.\nAllowed values:\n* `Subscription` – A transaction for a fixed or variable amount, which follows a fixed schedule.\n* `CardOnFile` – With a card-on-file (CoF) transaction, card details are stored to enable one-click or omnichannel journeys, or simply to streamline the checkout process. Any subscription not following a fixed schedule is also considered a card-on-file transaction.\n* `UnscheduledCardOnFile` – An unscheduled card-on-file (UCoF) transaction is a transaction that occurs on a non-fixed schedule and/or have variable amounts. For example, automatic top-ups when a cardholder\'s balance drops below a certain amount.\n
-* @return recurringProcessingModel
-*/
+    * Defines a recurring payment type.\nAllowed values:\n* `Subscription` – A transaction for a fixed or variable amount, which follows a fixed schedule.\n* `CardOnFile` – With a card-on-file (CoF) transaction, card details are stored to enable one-click or omnichannel journeys, or simply to streamline the checkout process. Any subscription not following a fixed schedule is also considered a card-on-file transaction.\n* `UnscheduledCardOnFile` – An unscheduled card-on-file (UCoF) transaction is a transaction that occurs on a non-fixed schedule and/or have variable amounts. For example, automatic top-ups when a cardholder\'s balance drops below a certain amount.\n
+    * @return recurringProcessingModel
+    */
     public RecurringProcessingModelEnum recurringProcessingModel { get; set; }
 
     /**
-* The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. We recommend using a unique value per payment; however, it is not a requirement.\nIf you need to provide multiple references for a transaction, separate them with hyphens ("-").\nMaximum length: 80 characters.
-* @return reference
-*/
+    * The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. We recommend using a unique value per payment; however, it is not a requirement.\nIf you need to provide multiple references for a transaction, separate them with hyphens ("-").\nMaximum length: 80 characters.
+    * @return reference
+    */
     public String reference { get; set; }
 
     /**
-* The URL to return to in case of a redirection.\nThe format depends on the channel. This URL can have a maximum of 1024 characters.\n* For web, include the protocol `http://` or `https://`. You can also include your own additional query parameters, for example, shopper ID or order reference number.\nExample: `https://your-company.com/checkout?shopperOrder=12xy`\n* For iOS, use the custom URL for your app. To know more about setting custom URL schemes, refer to the [Apple Developer documentation](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app).\nExample: `my-app://`\n* For Android, use a custom URL handled by an Activity on your app. You can configure it with an [intent filter](https://developer.android.com/guide/components/intents-filters).\nExample: `my-app://your.package.name`
-* @return returnUrl
-*/
+    * The URL to return to in case of a redirection.\nThe format depends on the channel. This URL can have a maximum of 1024 characters.\n* For web, include the protocol `http://` or `https://`. You can also include your own additional query parameters, for example, shopper ID or order reference number.\nExample: `https://your-company.com/checkout?shopperOrder=12xy`\n* For iOS, use the custom URL for your app. To know more about setting custom URL schemes, refer to the [Apple Developer documentation](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app).\nExample: `my-app://`\n* For Android, use a custom URL handled by an Activity on your app. You can configure it with an [intent filter](https://developer.android.com/guide/components/intents-filters).\nExample: `my-app://your.package.name`
+    * @return returnUrl
+    */
     public String returnUrl { get; set; }
 
     /**
-* Get riskData
-* @return riskData
-*/
+    * Get riskData
+    * @return riskData
+    */
     public RiskData riskData { get; set; }
 
     /**
-* Some payment methods require defining a value for this field to specify how to process the transaction.\n\nFor the Bancontact payment method, it can be set to:\n* `maestro` (default), to be processed like a Maestro card, or\n* `bcmc`, to be processed like a Bancontact card.
-* @return selectedBrand
-*/
+    * Some payment methods require defining a value for this field to specify how to process the transaction.\n\nFor the Bancontact payment method, it can be set to:\n* `maestro` (default), to be processed like a Maestro card, or\n* `bcmc`, to be processed like a Bancontact card.
+    * @return selectedBrand
+    */
     public String selectedBrand { get; set; }
 
     /**
-* The `recurringDetailReference` you want to use for this payment. The value `LATEST` can be used to select the most recently stored recurring detail.
-* @return selectedRecurringDetailReference
-*/
+    * The `recurringDetailReference` you want to use for this payment. The value `LATEST` can be used to select the most recently stored recurring detail.
+    * @return selectedRecurringDetailReference
+    */
     public String selectedRecurringDetailReference { get; set; }
 
     /**
-* The shopper\'s email address. We recommend that you provide this data, as it is used in velocity fraud checks.\n> For 3D Secure 2 transactions, schemes require the `shopperEmail` for both `deviceChannel` **browser** and **app**.
-* @return shopperEmail
-*/
+    * The shopper\'s email address. We recommend that you provide this data, as it is used in velocity fraud checks.\n> For 3D Secure 2 transactions, schemes require the `shopperEmail` for both `deviceChannel` **browser** and **app**.
+    * @return shopperEmail
+    */
     public String shopperEmail { get; set; }
 
     /**
-* The shopper\'s IP address. In general, we recommend that you provide this data, as it is used in a number of risk checks (for instance, number of payment attempts or location-based checks).\n> Required for 3D Secure 2 transactions. This field is also mandatory for some merchants depending on your business model. For more information, [contact Support](https://support.adyen.com/hc/en-us/requests/new).
-* @return shopperIP
-*/
+    * The shopper\'s IP address. In general, we recommend that you provide this data, as it is used in a number of risk checks (for instance, number of payment attempts or location-based checks).\n> Required for 3D Secure 2 transactions. This field is also mandatory for some merchants depending on your business model. For more information, [contact Support](https://support.adyen.com/hc/en-us/requests/new).
+    * @return shopperIP
+    */
     public String shopperIP { get; set; }
 
     /**
-* Specifies the sales channel, through which the shopper gives their card details, and whether the shopper is a returning customer.\nFor the web service API, Adyen assumes Ecommerce shopper interaction by default.\n\nThis field has the following possible values:\n* `Ecommerce` - Online transactions where the cardholder is present (online). For better authorisation rates, we recommend sending the card security code (CSC) along with the request.\n* `ContAuth` - Card on file and/or subscription transactions, where the cardholder is known to the merchant (returning customer). If the shopper is present (online), you can supply also the CSC to improve authorisation (one-click payment).\n* `Moto` - Mail-order and telephone-order transactions where the shopper is in contact with the merchant via email or telephone.\n* `POS` - Point-of-sale transactions where the shopper is physically present to make a payment using a secure payment terminal.
-*/
+    * Specifies the sales channel, through which the shopper gives their card details, and whether the shopper is a returning customer.\nFor the web service API, Adyen assumes Ecommerce shopper interaction by default.\n\nThis field has the following possible values:\n* `Ecommerce` - Online transactions where the cardholder is present (online). For better authorisation rates, we recommend sending the card security code (CSC) along with the request.\n* `ContAuth` - Card on file and/or subscription transactions, where the cardholder is known to the merchant (returning customer). If the shopper is present (online), you can supply also the CSC to improve authorisation (one-click payment).\n* `Moto` - Mail-order and telephone-order transactions where the shopper is in contact with the merchant via email or telephone.\n* `POS` - Point-of-sale transactions where the shopper is physically present to make a payment using a secure payment terminal.
+    */
     public enum ShopperInteractionEnum {
         Ecommerce,
-            ContAuth,
-            Moto,
-            POS
-            }
+        ContAuth,
+        Moto,
+        POS
+    }
 
     /**
-* Specifies the sales channel, through which the shopper gives their card details, and whether the shopper is a returning customer.\nFor the web service API, Adyen assumes Ecommerce shopper interaction by default.\n\nThis field has the following possible values:\n* `Ecommerce` - Online transactions where the cardholder is present (online). For better authorisation rates, we recommend sending the card security code (CSC) along with the request.\n* `ContAuth` - Card on file and/or subscription transactions, where the cardholder is known to the merchant (returning customer). If the shopper is present (online), you can supply also the CSC to improve authorisation (one-click payment).\n* `Moto` - Mail-order and telephone-order transactions where the shopper is in contact with the merchant via email or telephone.\n* `POS` - Point-of-sale transactions where the shopper is physically present to make a payment using a secure payment terminal.
-* @return shopperInteraction
-*/
+    * Specifies the sales channel, through which the shopper gives their card details, and whether the shopper is a returning customer.\nFor the web service API, Adyen assumes Ecommerce shopper interaction by default.\n\nThis field has the following possible values:\n* `Ecommerce` - Online transactions where the cardholder is present (online). For better authorisation rates, we recommend sending the card security code (CSC) along with the request.\n* `ContAuth` - Card on file and/or subscription transactions, where the cardholder is known to the merchant (returning customer). If the shopper is present (online), you can supply also the CSC to improve authorisation (one-click payment).\n* `Moto` - Mail-order and telephone-order transactions where the shopper is in contact with the merchant via email or telephone.\n* `POS` - Point-of-sale transactions where the shopper is physically present to make a payment using a secure payment terminal.
+    * @return shopperInteraction
+    */
     public ShopperInteractionEnum shopperInteraction { get; set; }
 
     /**
-* The combination of a language code and a country code to specify the language to be used in the payment.
-* @return shopperLocale
-*/
+    * The combination of a language code and a country code to specify the language to be used in the payment.
+    * @return shopperLocale
+    */
     public String shopperLocale { get; set; }
 
     /**
-* Get shopperName
-* @return shopperName
-*/
+    * Get shopperName
+    * @return shopperName
+    */
     public Name shopperName { get; set; }
 
     /**
-* The shopper\'s reference to uniquely identify this shopper (e.g. user ID or account ID).\n> This field is required for recurring payments.
-* @return shopperReference
-*/
+    * The shopper\'s reference to uniquely identify this shopper (e.g. user ID or account ID).\n> This field is required for recurring payments.
+    * @return shopperReference
+    */
     public String shopperReference { get; set; }
 
     /**
-* When this is set to **true** and the `shopperReference` is provided, the payment details will be stored.
-* @return storePaymentMethod
-*/
+    * When this is set to **true** and the `shopperReference` is provided, the payment details will be stored.
+    * @return storePaymentMethod
+    */
     public Boolean storePaymentMethod { get; set; }
 
     @namespaceAccessible

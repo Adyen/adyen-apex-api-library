@@ -1,6 +1,9 @@
 @isTest
 public class ACHDetailsTest {
-
+    /**
+    * Test method to enhance code coverage for Apex Modals; This ain't validating any specific business use cases.
+    * Enhances code coverage for ACHDetails apex class
+    */
     @isTest
     private static void testAllMethodsFromACHDetails(){
         ACHDetails achTestInstance0 = ACHDetails.getExample();

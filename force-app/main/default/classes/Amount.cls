@@ -12,25 +12,25 @@
 @namespaceAccessible
 public class Amount {
     /**
-* The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes).
-* @return currency
-*/
+    * The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes).
+    * @return currency
+    */
     public String currency_x { get; set; }
 
     /**
-* The amount of the transaction, in [minor units](https://docs.adyen.com/development-resources/currency-codes).
-* @return value
-*/
+    * The amount of the transaction, in [minor units](https://docs.adyen.com/development-resources/currency-codes).
+    * @return value
+    */
     public Long value { get; set; }
 
     private static final Map<String, String> propertyMappings = new Map<String, String>{
         'currency' => 'currency_x'
-            };
+    };
 
-                @namespaceAccessible
-                public Map<String, String> getPropertyMappings() {
-                    return propertyMappings;
-                }
+    @namespaceAccessible
+    public Map<String, String> getPropertyMappings() {
+        return propertyMappings;
+    }
 
     @namespaceAccessible
     public static Amount getExample() {

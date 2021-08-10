@@ -12,63 +12,63 @@
 @namespaceAccessible
 public class StoredPaymentMethod {
     /**
-* The brand of the card.
-* @return brand
-*/
+    * The brand of the card.
+    * @return brand
+    */
     public String brand { get; set; }
 
     /**
-* The month the card expires.
-* @return expiryMonth
-*/
+    * The month the card expires.
+    * @return expiryMonth
+    */
     public String expiryMonth { get; set; }
 
     /**
-* The year the card expires.
-* @return expiryYear
-*/
+    * The year the card expires.
+    * @return expiryYear
+    */
     public String expiryYear { get; set; }
 
     /**
-* The unique payment method code.
-* @return holderName
-*/
+    * The unique payment method code.
+    * @return holderName
+    */
     public String holderName { get; set; }
 
     /**
-* A unique identifier of this stored payment method.
-* @return id
-*/
+    * A unique identifier of this stored payment method.
+    * @return id
+    */
     public String id { get; set; }
 
     /**
-* The last four digits of the PAN.
-* @return lastFour
-*/
+    * The last four digits of the PAN.
+    * @return lastFour
+    */
     public String lastFour { get; set; }
 
     /**
-* The display name of the stored payment method.
-* @return name
-*/
+    * The display name of the stored payment method.
+    * @return name
+    */
     public String name { get; set; }
 
     /**
-* The shopper’s email address.
-* @return shopperEmail
-*/
+    * The shopper’s email address.
+    * @return shopperEmail
+    */
     public String shopperEmail { get; set; }
 
     /**
-* The supported shopper interactions for this stored payment method.
-* @return supportedShopperInteractions
-*/
+    * The supported shopper interactions for this stored payment method.
+    * @return supportedShopperInteractions
+    */
     public List<String> supportedShopperInteractions { get; set; }
 
     /**
-* The type of payment method.
-* @return type
-*/
+    * The type of payment method.
+    * @return type
+    */
     public String type { get; set; }
 
     @namespaceAccessible
@@ -88,7 +88,7 @@ public class StoredPaymentMethod {
         storedPaymentMethod.name = '';
         storedPaymentMethod.shopperEmail = '';
         storedPaymentMethod.supportedShopperInteractions = new List<String>{''};
-            storedPaymentMethod.type = '';
+        storedPaymentMethod.type = '';
         return storedPaymentMethod;
     }
 

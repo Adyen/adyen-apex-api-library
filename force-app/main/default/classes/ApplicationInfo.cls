@@ -12,27 +12,27 @@
 @namespaceAccessible
 public class ApplicationInfo {
     /**
-* Get adyenLibrary
-* @return adyenLibrary
-*/
+    * Get adyenLibrary
+    * @return adyenLibrary
+    */
     public CommonField adyenLibrary { get; set; }
 
     /**
-* Get adyenPaymentSource
-* @return adyenPaymentSource
-*/
+    * Get adyenPaymentSource
+    * @return adyenPaymentSource
+    */
     public CommonField adyenPaymentSource { get; set; }
 
     /**
-* Get externalPlatform
-* @return externalPlatform
-*/
+    * Get externalPlatform
+    * @return externalPlatform
+    */
     public ExternalPlatform externalPlatform { get; set; }
 
     /**
-* Get merchantApplication
-* @return merchantApplication
-*/
+    * Get merchantApplication
+    * @return merchantApplication
+    */
     public CommonField merchantApplication { get; set; }
 
     @namespaceAccessible

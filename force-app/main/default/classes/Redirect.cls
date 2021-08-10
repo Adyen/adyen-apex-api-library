@@ -12,29 +12,29 @@
 @namespaceAccessible
 public class Redirect {
     /**
-* When the redirect URL must be accessed via POST, use this data to post to the redirect URL.
-* @return data
-*/
+    * When the redirect URL must be accessed via POST, use this data to post to the redirect URL.
+    * @return data
+    */
     public Map<String, String> data { get; set; }
 
     /**
-* The web method that you must use to access the redirect URL.\n\nPossible values: GET, POST.
-*/
+    * The web method that you must use to access the redirect URL.\n\nPossible values: GET, POST.
+    */
     public enum MethodEnum {
         GET,
-            POST
-            }
+        POST
+    }
 
     /**
-* The web method that you must use to access the redirect URL.\n\nPossible values: GET, POST.
-* @return method
-*/
+    * The web method that you must use to access the redirect URL.\n\nPossible values: GET, POST.
+    * @return method
+    */
     public MethodEnum method { get; set; }
 
     /**
-* The URL, to which you must redirect a shopper to complete a payment.
-* @return url
-*/
+    * The URL, to which you must redirect a shopper to complete a payment.
+    * @return url
+    */
     public String url { get; set; }
 
     @namespaceAccessible
@@ -46,7 +46,7 @@ public class Redirect {
     public static Redirect getExample() {
         Redirect redirect = new Redirect();
         redirect.data = new Map<String, String>{'key'=>''};
-            redirect.method = MethodEnum.GET;
+        redirect.method = MethodEnum.GET;
         redirect.url = '';
         return redirect;
     }

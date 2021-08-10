@@ -12,21 +12,21 @@
 @namespaceAccessible
 public class PaymentMethodGroup {
     /**
-* The name of the group.
-* @return name
-*/
+    * The name of the group.
+    * @return name
+    */
     public String name { get; set; }
 
     /**
-* Echo data to be used if the payment method is displayed as part of this group.
-* @return paymentMethodData
-*/
+    * Echo data to be used if the payment method is displayed as part of this group.
+    * @return paymentMethodData
+    */
     public String paymentMethodData { get; set; }
 
     /**
-* The unique code of the group.
-* @return type
-*/
+    * The unique code of the group.
+    * @return type
+    */
     public String type { get; set; }
 
     @namespaceAccessible

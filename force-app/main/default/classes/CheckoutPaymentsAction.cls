@@ -12,45 +12,45 @@
 @namespaceAccessible
 public class CheckoutPaymentsAction {
     /**
-* When the redirect URL must be accessed via POST, use this data to post to the redirect URL.
-* @return data
-*/
+    * When the redirect URL must be accessed via POST, use this data to post to the redirect URL.
+    * @return data
+    */
     public Map<String, String> data { get; set; }
 
     /**
-* Specifies the HTTP method, for example GET or POST.
-* @return method
-*/
+    * Specifies the HTTP method, for example GET or POST.
+    * @return method
+    */
     public String method { get; set; }
 
     /**
-* When non-empty, contains a value that you must submit to the `/payments/details` endpoint. In some cases, required for polling.
-* @return paymentData
-*/
+    * When non-empty, contains a value that you must submit to the `/payments/details` endpoint. In some cases, required for polling.
+    * @return paymentData
+    */
     public String paymentData { get; set; }
 
     /**
-* Specifies the payment method.
-* @return paymentMethodType
-*/
+    * Specifies the payment method.
+    * @return paymentMethodType
+    */
     public String paymentMethodType { get; set; }
 
     /**
-* Specifies the token of the action.
-* @return token
-*/
+    * Specifies the token of the action.
+    * @return token
+    */
     public String token { get; set; }
 
     /**
-* Specifies the type of the action.
-* @return type
-*/
+    * Specifies the type of the action.
+    * @return type
+    */
     public String type { get; set; }
 
     /**
-* Specifies the URL to redirect to.
-* @return url
-*/
+    * Specifies the URL to redirect to.
+    * @return url
+    */
     public String url { get; set; }
 
     @namespaceAccessible
@@ -62,7 +62,7 @@ public class CheckoutPaymentsAction {
     public static CheckoutPaymentsAction getExample() {
         CheckoutPaymentsAction checkoutPaymentsAction = new CheckoutPaymentsAction();
         checkoutPaymentsAction.data = new Map<String, String>{'key'=>''};
-            checkoutPaymentsAction.method = '';
+        checkoutPaymentsAction.method = '';
         checkoutPaymentsAction.paymentData = '';
         checkoutPaymentsAction.paymentMethodType = '';
         checkoutPaymentsAction.type = '';

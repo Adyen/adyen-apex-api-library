@@ -12,27 +12,27 @@
 @namespaceAccessible
 public class PaymentsDetailsRequest {
     /**
-* Get details
-* @return details
-*/
+    * Get details
+    * @return details
+    */
     public Map<String, String> details { get; set; }
 
     /**
-* The `paymentData` value that you received in the response to the `/payments` call.
-* @return paymentData
-*/
+    * The `paymentData` value that you received in the response to the `/payments` call.
+    * @return paymentData
+    */
     public String paymentData { get; set; }
 
     /**
-* Get riskData
-* @return riskData
-*/
+    * Get riskData
+    * @return riskData
+    */
     public RiskData riskData { get; set; }
 
     /**
-* Change the `authenticationOnly` indicator originally set in the `/payments` request. Only needs to be set if you want to modify the value set previously.
-* @return threeDSAuthenticationOnly
-*/
+    * Change the `authenticationOnly` indicator originally set in the `/payments` request. Only needs to be set if you want to modify the value set previously.
+    * @return threeDSAuthenticationOnly
+    */
     public Boolean threeDSAuthenticationOnly { get; set; }
 
     @namespaceAccessible

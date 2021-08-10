@@ -1,6 +1,10 @@
 @isTest
 public class DisableResponseTest {
 
+    /**
+    * Test method to enhance code coverage for Apex Modals; This ain't validating any specific business use case.
+    * Enhances code coverage for DisableResponse apex class
+    */
     @isTest
     private static void testAllMethodsFromDisableResponse(){
         DisableResponse dResp = new DisableResponse();
