@@ -1,30 +1,33 @@
+@namespaceAccessible
 public class DisableRequest {
     /**
-     * The shopperReference from Stored payment.
-     * @return shopperReference
-     */
+    * The shopperReference from Stored payment.
+    * @return shopperReference
+    */
     public String shopperReference { get; set; }
-
+    
     /**
-     * The recurringDetailReference of Stored payment.
-     * @return recurringDetailReference
-     */
+    * The recurringDetailReference of Stored payment.
+    * @return recurringDetailReference
+    */
     public String recurringDetailReference { get; set; }
-
+    
     /**
-     * The name of the Merchant account
-     * @return merchantAccount
-     */
+    * The name of the Merchant account
+    * @return merchantAccount
+    */
     public String merchantAccount { get; set; }
-
+    
+    @namespaceAccessible
     public static DisableRequest getExample() {
         DisableRequest disableRequest = new DisableRequest();
-          disableRequest.shopperReference = '';
-          disableRequest.recurringDetailReference = '';
-          disableRequest.merchantAccount = '';
+        disableRequest.shopperReference = '';
+        disableRequest.recurringDetailReference = '';
+        disableRequest.merchantAccount = '';
         return disableRequest;
     }
-
+    
+    @namespaceAccessible
     public Boolean equals(Object obj) {
         if (obj instanceof DisableRequest) {
             DisableRequest disableRequest = (DisableRequest) obj;
@@ -34,7 +37,8 @@ public class DisableRequest {
         }
         return false;
     }
-
+    
+    @namespaceAccessible
     public Integer hashCode() {
         Integer hashCode = 43;
         hashCode = (17 * hashCode) + (shopperReference == null ? 0 : System.hashCode(shopperReference));
