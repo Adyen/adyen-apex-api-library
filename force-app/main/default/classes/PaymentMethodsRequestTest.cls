@@ -2,7 +2,7 @@
 public class PaymentMethodsRequestTest {
 
     /**
-    * Test method to enhance code coverage for Apex Modals; This ain't validating any specific business use case.
+    * Test method to enhance code coverage for Apex Models; This ain't validating any specific business use case.
     * Enhances code coverage for PaymentMethodsRequest apex class
     */
     @isTest

@@ -2,7 +2,7 @@
 public class AdyenClientTest {
 
     /**
-    * Test method to enhance code coverage for Apex Modals; This ain't validating any specific business use case.
+    * Test method to enhance code coverage for Apex Models; This ain't validating any specific business use case.
     * Enhances code coverage for AdyenClient apex class
     */
     @isTest

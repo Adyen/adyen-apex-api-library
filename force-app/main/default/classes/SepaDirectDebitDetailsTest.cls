@@ -2,7 +2,7 @@
 public class SepaDirectDebitDetailsTest {
 
     /**
-    * Test method to enhance code coverage for Apex Modals; This ain't validating any specific business use case.
+    * Test method to enhance code coverage for Apex Models; This ain't validating any specific business use case.
     * Enhances code coverage for SepaDirectDebitDetails apex class
     */
     @isTest
