@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class PaymentsDetailsRequest {
+public with sharing class PaymentsDetailsRequest {
     /**
     * Get details
     * @return details

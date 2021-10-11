@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class ACHDetails implements PaymentMethodDetails {
+public with sharing class ACHDetails implements PaymentMethodDetails {
     /**
     * Get encryptedBankAccountNumber
     * @return encryptedBankAccountNumber

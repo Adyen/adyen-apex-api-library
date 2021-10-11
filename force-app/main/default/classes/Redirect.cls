@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class Redirect {
+public with sharing class Redirect {
     /**
     * When the redirect URL must be accessed via POST, use this data to post to the redirect URL.
     * @return data

@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class Item {
+public with sharing class Item {
     /**
     * The value to provide in the result.
     * @return id

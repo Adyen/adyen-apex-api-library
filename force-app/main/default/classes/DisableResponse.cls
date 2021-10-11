@@ -1,4 +1,4 @@
-global class DisableResponse {
+global with sharing class DisableResponse {
     /**
     * The response from Disable Request.
     * @return response

@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class Name {
+public with sharing class Name {
     /**
     * The first name.
     * @return firstName

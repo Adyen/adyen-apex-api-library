@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class PaymentMethodGroup {
+public with sharing class PaymentMethodGroup {
     /**
     * The name of the group.
     * @return name

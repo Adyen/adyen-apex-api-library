@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class Amount {
+public with sharing class Amount {
     /**
     * The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes).
     * @return currency

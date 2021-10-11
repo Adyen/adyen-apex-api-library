@@ -3,7 +3,7 @@
 */
 
 @namespaceAccessible
-public class CaptureRequest {
+public with sharing class CaptureRequest {
     public String originalReference;
     public Amount modificationAmount;
     public String reference;

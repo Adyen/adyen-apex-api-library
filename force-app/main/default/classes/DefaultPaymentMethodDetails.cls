@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class DefaultPaymentMethodDetails implements PaymentMethodDetails {
+public with sharing class DefaultPaymentMethodDetails implements PaymentMethodDetails {
     /**
     * @return type
     */

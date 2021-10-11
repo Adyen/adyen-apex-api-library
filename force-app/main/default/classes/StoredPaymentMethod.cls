@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class StoredPaymentMethod {
+public with sharing class StoredPaymentMethod {
     /**
     * The brand of the card.
     * @return brand

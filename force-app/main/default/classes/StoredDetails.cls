@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class StoredDetails {
+public with sharing class StoredDetails {
     /**
     * Get card
     * @return card

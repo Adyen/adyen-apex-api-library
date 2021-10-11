@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class PaymentMethodsRequest {
+public with sharing class PaymentMethodsRequest {
 
     /**
     * List of payments methods to be presented to the shopper. To refer to payment methods, use their `paymentMethod.type` from [Payment methods overview](https://docs.adyen.com/payment-methods).\n\nExample: `"allowedPaymentMethods":["ideal","giropay"]`

@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class PaymentsResponse {
+public with sharing class PaymentsResponse {
     /**
     * Action to be taken for completing the payment.
     * @return action

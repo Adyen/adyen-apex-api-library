@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class CardDetails implements PaymentMethodDetails {
+public with sharing class CardDetails implements PaymentMethodDetails {
     /**
     * Get cvc
     * @return cvc

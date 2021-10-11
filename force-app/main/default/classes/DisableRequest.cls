@@ -1,5 +1,5 @@
 @namespaceAccessible
-public class DisableRequest {
+public with sharing class DisableRequest {
     /**
     * The shopperReference from Stored payment.
     * @return shopperReference

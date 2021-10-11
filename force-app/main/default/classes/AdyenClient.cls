@@ -9,7 +9,7 @@
 */
 
 @namespaceAccessible
-public class AdyenClient {
+public with sharing class AdyenClient {
     public AdyenConfig config;
 
     @namespaceAccessible

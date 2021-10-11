@@ -1,5 +1,5 @@
 @namespaceAccessible
-public class ApiLibMock {
+public with sharing class ApiLibMock {
 
     @namespaceAccessible
     public static String mockPaymentsResponseSuccess() {
