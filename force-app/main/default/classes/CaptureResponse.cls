@@ -3,7 +3,7 @@
 */
 
 @namespaceAccessible
-public class CaptureResponse {
+public with sharing class CaptureResponse {
     public String pspReference;
     public String response;
     public CaptureResponse(){}

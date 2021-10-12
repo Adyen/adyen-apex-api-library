@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class SubInputDetail {
+public with sharing class SubInputDetail {
     /**
     * Configuration parameters for the required input.
     * @return configuration

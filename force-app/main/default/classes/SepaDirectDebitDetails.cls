@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class SepaDirectDebitDetails implements PaymentMethodDetails {
+public with sharing class SepaDirectDebitDetails implements PaymentMethodDetails {
     /**
     * Get ibanNumber
     * @return ibanNumber

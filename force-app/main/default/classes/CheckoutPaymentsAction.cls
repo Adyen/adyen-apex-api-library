@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class CheckoutPaymentsAction {
+public with sharing class CheckoutPaymentsAction {
     /**
     * When the redirect URL must be accessed via POST, use this data to post to the redirect URL.
     * @return data

@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class BrowserInfo {
+public with sharing class BrowserInfo {
     /**
     * The accept header value of the shopper\'s browser.
     * @return acceptHeader

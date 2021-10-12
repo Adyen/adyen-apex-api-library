@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class ApplicationInfo {
+public with sharing class ApplicationInfo {
     /**
     * Get adyenLibrary
     * @return adyenLibrary

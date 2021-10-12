@@ -8,7 +8,7 @@
 */
 
 @namespaceAccessible
-public class AdyenConfig {
+public with sharing class AdyenConfig {
     private String merchantAccount;
     private String environment;
     private String endpoint;

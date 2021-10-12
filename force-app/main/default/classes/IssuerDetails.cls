@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class IssuerDetails implements PaymentMethodDetails {
+public with sharing class IssuerDetails implements PaymentMethodDetails {
     /**
     * Get issuer
     * @return issuer

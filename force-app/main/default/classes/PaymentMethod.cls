@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class PaymentMethod {
+public with sharing class PaymentMethod {
     /**
     * List of possible brands. For example: visa, mc.
     * @return brands

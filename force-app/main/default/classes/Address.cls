@@ -8,7 +8,7 @@
 */
 
 @namespaceAccessible
-public class Address {
+public with sharing class Address {
     /**
     * The name of the city.
     * @return city

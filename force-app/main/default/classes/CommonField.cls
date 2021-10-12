@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class CommonField {
+public with sharing class CommonField {
     /**
     * Name of the field. For example, Name of External Platform.
     * @return name

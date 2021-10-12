@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class RecurringDetail {
+public with sharing class RecurringDetail {
     /**
     * List of possible brands. For example: visa, mc.
     * @return brands

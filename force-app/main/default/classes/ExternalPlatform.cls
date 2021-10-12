@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class ExternalPlatform {
+public with sharing class ExternalPlatform {
     /**
     * External platform integrator.
     * @return integrator

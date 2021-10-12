@@ -10,7 +10,7 @@
 */
 
 @namespaceAccessible
-public class InputDetail {
+public with sharing class InputDetail {
     /**
     * Configuration parameters for the required input.
     * @return configuration
