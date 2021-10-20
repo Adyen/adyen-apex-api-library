@@ -15,23 +15,27 @@ public with sharing class RecurringDetail {
     * List of possible brands. For example: visa, mc.
     * @return brands
     */
+    @namespaceAccessible
     public List<String> brands { get; set; }
 
     /**
     * The configuration of the payment method.
     * @return configuration
     */
+    @namespaceAccessible
     public Map<String, String> configuration { get; set; }
 
     /**
     * All input details to be provided to complete the payment with this payment method.
     * @return details
     */
+    @namespaceAccessible
     public List<InputDetail> details { get; set; }
 
     /**
     * The funding source of the payment method.
     */
+    @namespaceAccessible
     public enum FundingSourceEnum {
         CREDIT,
         DEBIT
@@ -41,54 +45,63 @@ public with sharing class RecurringDetail {
     * The funding source of the payment method.
     * @return fundingSource
     */
+    @namespaceAccessible
     public FundingSourceEnum fundingSource { get; set; }
 
     /**
     * Get group_x
     * @return group_x
     */
+    @namespaceAccessible
     public PaymentMethodGroup group_x { get; set; }
 
     /**
     * All input details to be provided to complete the payment with this payment method.
     * @return inputDetails
     */
+    @namespaceAccessible
     public List<InputDetail> inputDetails { get; set; }
 
     /**
     * The displayable name of this payment method.
     * @return name
     */
+    @namespaceAccessible
     public String name { get; set; }
 
     /**
     * Echo data required to send in next calls.
     * @return paymentMethodData
     */
+    @namespaceAccessible
     public String paymentMethodData { get; set; }
 
     /**
     * The reference that uniquely identifies the recurring detail.
     * @return recurringDetailReference
     */
+    @namespaceAccessible
     public String recurringDetailReference { get; set; }
 
     /**
     * Get storedDetails
     * @return storedDetails
     */
+    @namespaceAccessible
     public StoredDetails storedDetails { get; set; }
 
     /**
     * Indicates whether this payment method supports tokenization or not.
     * @return supportsRecurring
     */
+    @namespaceAccessible
     public Boolean supportsRecurring { get; set; }
 
     /**
     * The unique payment method code.
     * @return type
     */
+    @namespaceAccessible
     public String type { get; set; }
 
     private static final Map<String, String> propertyMappings = new Map<String, String>{

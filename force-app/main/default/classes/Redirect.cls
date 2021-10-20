@@ -15,11 +15,13 @@ public with sharing class Redirect {
     * When the redirect URL must be accessed via POST, use this data to post to the redirect URL.
     * @return data
     */
+    @namespaceAccessible
     public Map<String, String> data { get; set; }
 
     /**
     * The web method that you must use to access the redirect URL.\n\nPossible values: GET, POST.
     */
+    @namespaceAccessible
     public enum MethodEnum {
         GET,
         POST
@@ -29,12 +31,14 @@ public with sharing class Redirect {
     * The web method that you must use to access the redirect URL.\n\nPossible values: GET, POST.
     * @return method
     */
+    @namespaceAccessible
     public MethodEnum method { get; set; }
 
     /**
     * The URL, to which you must redirect a shopper to complete a payment.
     * @return url
     */
+    @namespaceAccessible
     public String url { get; set; }
 
     @namespaceAccessible

@@ -15,24 +15,28 @@ public with sharing class ACHDetails implements PaymentMethodDetails {
     * Get encryptedBankAccountNumber
     * @return encryptedBankAccountNumber
     */
+    @namespaceAccessible
     public String encryptedBankAccountNumber { get; set; }
 
     /**
     * Get encryptedBankLocationId
     * @return encryptedBankLocationId
     */
+    @namespaceAccessible
     public String encryptedBankLocationId { get; set; }
 
     /**
     * Get ownerName
     * @return ownerName
     */
+    @namespaceAccessible
     public String ownerName { get; set; }
 
     /**
     * **scheme**
     * @return type
     */
+    @namespaceAccessible
     public String type { get; set; }
 
     @namespaceAccessible

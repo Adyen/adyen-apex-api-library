@@ -15,24 +15,28 @@ public with sharing class PaymentMethodsResponse {
     * Groups of payment methods.
     * @return groups
     */
+    @namespaceAccessible
     public List<PaymentMethodGroup> groups { get; set; }
 
     /**
     * Detailed list of one-click payment methods.
     * @return oneClickPaymentMethods
     */
+    @namespaceAccessible
     public List<RecurringDetail> oneClickPaymentMethods { get; set; }
 
     /**
     * Detailed list of payment methods required to generate payment forms.
     * @return paymentMethods
     */
+    @namespaceAccessible
     public List<PaymentMethod> paymentMethods { get; set; }
 
     /**
     * List of all stored payment methods.
     * @return storedPaymentMethods
     */
+    @namespaceAccessible
     public List<StoredPaymentMethod> storedPaymentMethods { get; set; }
 
     @namespaceAccessible

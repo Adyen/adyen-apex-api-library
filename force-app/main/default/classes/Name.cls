@@ -15,11 +15,13 @@ public with sharing class Name {
     * The first name.
     * @return firstName
     */
+    @namespaceAccessible
     public String firstName { get; set; }
 
     /**
     * The gender.\n>The following values are permitted: `MALE`, `FEMALE`, `UNKNOWN`.
     */
+    @namespaceAccessible
     public enum GenderEnum {
         MALE,
         FEMALE,
@@ -30,18 +32,21 @@ public with sharing class Name {
     * The gender.\n>The following values are permitted: `MALE`, `FEMALE`, `UNKNOWN`.
     * @return gender
     */
+    @namespaceAccessible
     public GenderEnum gender { get; set; }
 
     /**
     * The name\'s infix, if applicable.\n>A maximum length of twenty (20) characters is imposed.
     * @return infix
     */
+    @namespaceAccessible
     public String infix { get; set; }
 
     /**
     * The last name.
     * @return lastName
     */
+    @namespaceAccessible
     public String lastName { get; set; }
 
     @namespaceAccessible

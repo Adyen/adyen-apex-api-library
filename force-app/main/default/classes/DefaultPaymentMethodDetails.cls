@@ -14,6 +14,7 @@ public with sharing class DefaultPaymentMethodDetails implements PaymentMethodDe
     /**
     * @return type
     */
+    @namespaceAccessible
     public String type { get; set; }
 
     @namespaceAccessible

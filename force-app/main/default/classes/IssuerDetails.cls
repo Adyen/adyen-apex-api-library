@@ -15,12 +15,14 @@ public with sharing class IssuerDetails implements PaymentMethodDetails {
     * Get issuer
     * @return issuer
     */
+    @namespaceAccessible
     public String issuer { get; set; }
 
     /**
     * **scheme**
     * @return type
     */
+    @namespaceAccessible
     public String type { get; set; }
 
     @namespaceAccessible

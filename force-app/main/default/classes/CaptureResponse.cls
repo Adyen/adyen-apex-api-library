@@ -4,7 +4,12 @@
 
 @namespaceAccessible
 public with sharing class CaptureResponse {
+    @namespaceAccessible
     public String pspReference;
+
+    @namespaceAccessible
     public String response;
+
+    @namespaceAccessible
     public CaptureResponse(){}
 }

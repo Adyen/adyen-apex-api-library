@@ -15,18 +15,21 @@ public with sharing class SepaDirectDebitDetails implements PaymentMethodDetails
     * Get ibanNumber
     * @return ibanNumber
     */
+    @namespaceAccessible
     public String ibanNumber { get; set; }
 
     /**
     * Get ownerName
     * @return ownerName
     */
+    @namespaceAccessible
     public String ownerName { get; set; }
 
     /**
     * **scheme**
     * @return type
     */
+    @namespaceAccessible
     public String type { get; set; }
 
     @namespaceAccessible

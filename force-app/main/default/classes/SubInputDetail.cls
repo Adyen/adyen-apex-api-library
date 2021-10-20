@@ -15,36 +15,42 @@ public with sharing class SubInputDetail {
     * Configuration parameters for the required input.
     * @return configuration
     */
+    @namespaceAccessible
     public Map<String, String> configuration { get; set; }
 
     /**
     * In case of a select, the items to choose from.
     * @return items
     */
+    @namespaceAccessible
     public List<Item> items { get; set; }
 
     /**
     * The value to provide in the result.
     * @return key
     */
+    @namespaceAccessible
     public String key { get; set; }
 
     /**
     * True if this input is optional to provide.
     * @return optional
     */
+    @namespaceAccessible
     public Boolean optional { get; set; }
 
     /**
     * The type of the required input.
     * @return type
     */
+    @namespaceAccessible
     public String type { get; set; }
 
     /**
     * The value can be pre-filled, if available.
     * @return value
     */
+    @namespaceAccessible
     public String value { get; set; }
 
     @namespaceAccessible

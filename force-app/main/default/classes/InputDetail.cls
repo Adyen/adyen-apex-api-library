@@ -15,54 +15,63 @@ public with sharing class InputDetail {
     * Configuration parameters for the required input.
     * @return configuration
     */
+    @namespaceAccessible
     public Map<String, String> configuration { get; set; }
 
     /**
     * Input details can also be provided recursively.
     * @return details
     */
+    @namespaceAccessible
     public List<SubInputDetail> details { get; set; }
 
     /**
     * Input details can also be provided recursively (deprecated).
     * @return inputDetails
     */
+    @namespaceAccessible
     public List<SubInputDetail> inputDetails { get; set; }
 
     /**
     * In case of a select, the URL from which to query the items.
     * @return itemSearchUrl
     */
+    @namespaceAccessible
     public String itemSearchUrl { get; set; }
 
     /**
     * In case of a select, the items to choose from.
     * @return items
     */
+    @namespaceAccessible
     public List<Item> items { get; set; }
 
     /**
     * The value to provide in the result.
     * @return key
     */
+    @namespaceAccessible
     public String key { get; set; }
 
     /**
     * True if this input value is optional.
     * @return optional
     */
+    @namespaceAccessible
     public Boolean optional { get; set; }
 
     /**
     * The type of the required input.
     * @return type
     */
+    @namespaceAccessible
     public String type { get; set; }
 
     /**
     * The value can be pre-filled, if available.
     * @return value
     */
+    @namespaceAccessible
     public String value { get; set; }
 
     @namespaceAccessible

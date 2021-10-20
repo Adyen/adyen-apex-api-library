@@ -15,12 +15,14 @@ public with sharing class Amount {
     * The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes).
     * @return currency
     */
+    @namespaceAccessible
     public String currency_x { get; set; }
 
     /**
     * The amount of the transaction, in [minor units](https://docs.adyen.com/development-resources/currency-codes).
     * @return value
     */
+    @namespaceAccessible
     public Long value { get; set; }
 
     private static final Map<String, String> propertyMappings = new Map<String, String>{
