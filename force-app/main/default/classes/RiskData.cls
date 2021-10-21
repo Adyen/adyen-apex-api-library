@@ -15,6 +15,7 @@ public with sharing class RiskData {
     * Contains client-side data, like the device fingerprint, cookies, and specific browser settings.
     * @return clientData
     */
+    @namespaceAccessible
     public String clientData { get; set; }
 
     @namespaceAccessible

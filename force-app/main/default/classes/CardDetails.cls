@@ -15,60 +15,70 @@ public with sharing class CardDetails implements PaymentMethodDetails {
     * Get cvc
     * @return cvc
     */
+    @namespaceAccessible
     public String cvc { get; set; }
 
     /**
     * Get encryptedCardNumber
     * @return encryptedCardNumber
     */
+    @namespaceAccessible
     public String encryptedCardNumber { get; set; }
 
     /**
     * Get encryptedExpiryMonth
     * @return encryptedExpiryMonth
     */
+    @namespaceAccessible
     public String encryptedExpiryMonth { get; set; }
 
     /**
     * Get encryptedExpiryYear
     * @return encryptedExpiryYear
     */
+    @namespaceAccessible
     public String encryptedExpiryYear { get; set; }
 
     /**
     * Get encryptedSecurityCode
     * @return encryptedSecurityCode
     */
+    @namespaceAccessible
     public String encryptedSecurityCode { get; set; }
 
     /**
     * Get expiryMonth
     * @return expiryMonth
     */
+    @namespaceAccessible
     public String expiryMonth { get; set; }
 
     /**
     * Get expiryYear
     * @return expiryYear
     */
+    @namespaceAccessible
     public String expiryYear { get; set; }
 
     /**
     * Get holderName
     * @return holderName
     */
+    @namespaceAccessible
     public String holderName { get; set; }
 
     /**
     * Get number_x
     * @return number_x
     */
+    @namespaceAccessible
     public String number_x { get; set; }
 
     /**
     * This is the `recurringDetailReference` returned in the response when you created the token.
     * @return storedPaymentMethodId
     */
+    @namespaceAccessible
     public String storedPaymentMethodId { get; set; }
 
     @namespaceAccessible
@@ -80,6 +90,7 @@ public with sharing class CardDetails implements PaymentMethodDetails {
     * **scheme**
     * @return type
     */
+    @namespaceAccessible
     public String type { get; set; }
 
     @namespaceAccessible

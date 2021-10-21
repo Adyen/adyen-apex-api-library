@@ -15,12 +15,14 @@ public with sharing class StoredDetails {
     * Get card
     * @return card
     */
+    @namespaceAccessible
     public Card card { get; set; }
 
     /**
     * The email associated with stored payment details.
     * @return emailAddress
     */
+    @namespaceAccessible
     public String emailAddress { get; set; }
 
     @namespaceAccessible

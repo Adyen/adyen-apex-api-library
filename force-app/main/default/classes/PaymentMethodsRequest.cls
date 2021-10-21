@@ -16,36 +16,42 @@ public with sharing class PaymentMethodsRequest {
     * List of payments methods to be presented to the shopper. To refer to payment methods, use their `paymentMethod.type` from [Payment methods overview](https://docs.adyen.com/payment-methods).\n\nExample: `"allowedPaymentMethods":["ideal","giropay"]`
     * @return allowedPaymentMethods
     */
+    @namespaceAccessible
     public List<String> allowedPaymentMethods { get; set; }
 
     /**
     * Get amount
     * @return amount
     */
+    @namespaceAccessible
     public Amount amount { get; set; }
 
     /**
     * The shopper\'s country code.
     * @return countryCode
     */
+    @namespaceAccessible
     public String countryCode { get; set; }
 
     /**
     * The merchant account identifier, with which you want to process the transaction.
     * @return merchantAccount
     */
+    @namespaceAccessible
     public String merchantAccount { get; set; }
 
     /**
     * The combination of a language code and a country code to specify the language to be used in the payment.
     * @return shopperLocale
     */
+    @namespaceAccessible
     public String shopperLocale { get; set; }
 
     /**
     * The shopper\'s reference to uniquely identify this shopper (e.g. user ID or account ID).\n> This field is required for recurring payments.
     * @return shopperReference
     */
+    @namespaceAccessible
     public String shopperReference { get; set; }
 
     @namespaceAccessible

@@ -15,42 +15,49 @@ public with sharing class CheckoutPaymentsAction {
     * When the redirect URL must be accessed via POST, use this data to post to the redirect URL.
     * @return data
     */
+    @namespaceAccessible
     public Map<String, String> data { get; set; }
 
     /**
     * Specifies the HTTP method, for example GET or POST.
     * @return method
     */
+    @namespaceAccessible
     public String method { get; set; }
 
     /**
     * When non-empty, contains a value that you must submit to the `/payments/details` endpoint. In some cases, required for polling.
     * @return paymentData
     */
+    @namespaceAccessible
     public String paymentData { get; set; }
 
     /**
     * Specifies the payment method.
     * @return paymentMethodType
     */
+    @namespaceAccessible
     public String paymentMethodType { get; set; }
 
     /**
     * Specifies the token of the action.
     * @return token
     */
+    @namespaceAccessible
     public String token { get; set; }
 
     /**
     * Specifies the type of the action.
     * @return type
     */
+    @namespaceAccessible
     public String type { get; set; }
 
     /**
     * Specifies the URL to redirect to.
     * @return url
     */
+    @namespaceAccessible
     public String url { get; set; }
 
     @namespaceAccessible

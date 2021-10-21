@@ -4,18 +4,21 @@ public with sharing class DisableRequest {
     * The shopperReference from Stored payment.
     * @return shopperReference
     */
+    @namespaceAccessible
     public String shopperReference { get; set; }
     
     /**
     * The recurringDetailReference of Stored payment.
     * @return recurringDetailReference
     */
+    @namespaceAccessible
     public String recurringDetailReference { get; set; }
     
     /**
     * The name of the Merchant account
     * @return merchantAccount
     */
+    @namespaceAccessible
     public String merchantAccount { get; set; }
     
     @namespaceAccessible

@@ -15,18 +15,21 @@ public with sharing class ExternalPlatform {
     * External platform integrator.
     * @return integrator
     */
+    @namespaceAccessible
     public String integrator { get; set; }
 
     /**
     * Name of the field. For example, Name of External Platform.
     * @return name
     */
+    @namespaceAccessible
     public String name { get; set; }
 
     /**
     * Version of the field. For example, Version of External Platform.
     * @return version
     */
+    @namespaceAccessible
     public String version { get; set; }
 
     @namespaceAccessible

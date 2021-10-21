@@ -15,60 +15,70 @@ public with sharing class StoredPaymentMethod {
     * The brand of the card.
     * @return brand
     */
+    @namespaceAccessible
     public String brand { get; set; }
 
     /**
     * The month the card expires.
     * @return expiryMonth
     */
+    @namespaceAccessible
     public String expiryMonth { get; set; }
 
     /**
     * The year the card expires.
     * @return expiryYear
     */
+    @namespaceAccessible
     public String expiryYear { get; set; }
 
     /**
     * The unique payment method code.
     * @return holderName
     */
+    @namespaceAccessible
     public String holderName { get; set; }
 
     /**
     * A unique identifier of this stored payment method.
     * @return id
     */
+    @namespaceAccessible
     public String id { get; set; }
 
     /**
     * The last four digits of the PAN.
     * @return lastFour
     */
+    @namespaceAccessible
     public String lastFour { get; set; }
 
     /**
     * The display name of the stored payment method.
     * @return name
     */
+    @namespaceAccessible
     public String name { get; set; }
 
     /**
     * The shopper’s email address.
     * @return shopperEmail
     */
+    @namespaceAccessible
     public String shopperEmail { get; set; }
 
     /**
     * The supported shopper interactions for this stored payment method.
     * @return supportedShopperInteractions
     */
+    @namespaceAccessible
     public List<String> supportedShopperInteractions { get; set; }
 
     /**
     * The type of payment method.
     * @return type
     */
+    @namespaceAccessible
     public String type { get; set; }
 
     @namespaceAccessible

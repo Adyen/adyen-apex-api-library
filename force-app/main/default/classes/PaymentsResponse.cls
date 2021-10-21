@@ -15,83 +15,97 @@ public with sharing class PaymentsResponse {
     * Action to be taken for completing the payment.
     * @return action
     */
+    @namespaceAccessible
     public CheckoutPaymentsAction action { get; set; }
 
     /**
     * This field contains additional data, which may be required to return in a particular payment response. To choose data fields to be returned, go to **Customer Area** > **Account** > **API URLs** > **Additional data settings**.
     * @return additionalData
     */
-
+    @namespaceAccessible
     public Map<String, String> additionalData { get; set; }
+
     /**
     * Get amount
     * @return amount
     */
+    @namespaceAccessible
     public Amount amount { get; set; }
 
     /**
     * Contains `threeds2.fingerprint` or `threeds2.challengeToken` values to be used in further calls to `/payments/details` endpoint.
     * @return authentication
     */
+    @namespaceAccessible
     public Map<String, String> authentication { get; set; }
 
     /**
     * When non-empty, contains all the fields that you must submit to the `/payments/details` endpoint.
     * @return details
     */
+    @namespaceAccessible
     public List<InputDetail> details { get; set; }
 
     /**
     * Get fraudResult
     * @return fraudResult
     */
+    @namespaceAccessible
     public FraudResult fraudResult { get; set; }
 
     /**
     * The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. We recommend using a unique value per payment; however, it is not a requirement.\nIf you need to provide multiple references for a transaction, separate them with hyphens ("-").\nMaximum length: 80 characters.
     * @return merchantReference
     */
+    @namespaceAccessible
     public String merchantReference { get; set; }
 
     /**
     * Contains the details that will be presented to the shopper.
     * @return outputDetails
     */
+    @namespaceAccessible
     public Map<String, String> outputDetails { get; set; }
 
     /**
     * When non-empty, contains a value that you must submit to the `/payments/details` endpoint.
     * @return paymentData
     */
+    @namespaceAccessible
     public String paymentData { get; set; }
 
     /**
     * Adyen\'s 16-character string reference associated with the transaction/request. This value is globally unique; quote it when communicating with us about this request.\n\n> `pspReference` is returned only for non-redirect payment methods.
     * @return pspReference
     */
+    @namespaceAccessible
     public String pspReference { get; set; }
 
     /**
     * Get redirect
     * @return redirect
     */
+    @namespaceAccessible
     public Redirect redirect { get; set; }
 
     /**
     * If the payment\'s authorisation is refused or an error occurs during authorisation, this field holds Adyen\'s mapped reason for the refusal or a description of the error. When a transaction fails, the authorisation response includes `resultCode` and `refusalReason` values.\n\nFor more information, see [Refusal reasons](https://docs.adyen.com/development-resources/refusal-reasons).
     * @return refusalReason
     */
+    @namespaceAccessible
     public String refusalReason { get; set; }
 
     /**
     * Code that specifies the refusal reason. For more information, see [Authorisation refusal reasons](https://docs.adyen.com/development-resources/refusal-reasons).
     * @return refusalReasonCode
     */
+    @namespaceAccessible
     public String refusalReasonCode { get; set; }
 
     /**
     * The result of the payment. For more information, see [Result codes](https://docs.adyen.com/checkout/payment-result-codes).\n\nPossible values:\n\n* **AuthenticationFinished** – The payment has been successfully authenticated with 3D Secure 2. Returned for 3D Secure 2 authentication-only transactions.\n* **AuthenticationNotRequired** – The transaction does not require 3D Secure authentication. Returned for [standalone authentication-only integrations](https://docs.adyen.com/checkout/3d-secure/other-3ds-flows/authentication-only).\n* **Authorised** – The payment was successfully authorised. This state serves as an indicator to proceed with the delivery of goods and services. This is a final state.\n* **Cancelled** – Indicates the payment has been cancelled (either by the shopper or the merchant) before processing was completed. This is a final state.\n* **ChallengeShopper** – The issuer requires further shopper interaction before the payment can be authenticated. Returned for 3D Secure 2 transactions.\n* **Error** – There was an error when the payment was being processed. The reason is given in the `refusalReason` field. This is a final state.\n* **IdentifyShopper** – The issuer requires the shopper\'s device fingerprint before the payment can be authenticated. Returned for 3D Secure 2 transactions.\n* **Pending** – Indicates that it is not possible to obtain the final status of the payment. This can happen if the systems providing final status information for the payment are unavailable, or if the shopper needs to take further action to complete the payment.\n* **PresentToShopper** – Indicates that the response contains additional information that you need to present to a shopper, so that they can use it to complete a payment.\n* **Received** – Indicates the payment has successfully been received by Adyen, and will be processed. This is the initial state for all payments.\n* **RedirectShopper** – Indicates the shopper should be redirected to an external web page or app to complete the authorisation.\n* **Refused** – Indicates the payment was refused. The reason is given in the `refusalReason` field. This is a final state.
     */
+    @namespaceAccessible
     public enum ResultCodeEnum {
         AUTHENTICATIONFINISHED,
         AUTHORISED,
@@ -110,6 +124,7 @@ public with sharing class PaymentsResponse {
     * The result of the payment. For more information, see [Result codes](https://docs.adyen.com/checkout/payment-result-codes).\n\nPossible values:\n\n* **AuthenticationFinished** – The payment has been successfully authenticated with 3D Secure 2. Returned for 3D Secure 2 authentication-only transactions.\n* **AuthenticationNotRequired** – The transaction does not require 3D Secure authentication. Returned for [standalone authentication-only integrations](https://docs.adyen.com/checkout/3d-secure/other-3ds-flows/authentication-only).\n* **Authorised** – The payment was successfully authorised. This state serves as an indicator to proceed with the delivery of goods and services. This is a final state.\n* **Cancelled** – Indicates the payment has been cancelled (either by the shopper or the merchant) before processing was completed. This is a final state.\n* **ChallengeShopper** – The issuer requires further shopper interaction before the payment can be authenticated. Returned for 3D Secure 2 transactions.\n* **Error** – There was an error when the payment was being processed. The reason is given in the `refusalReason` field. This is a final state.\n* **IdentifyShopper** – The issuer requires the shopper\'s device fingerprint before the payment can be authenticated. Returned for 3D Secure 2 transactions.\n* **Pending** – Indicates that it is not possible to obtain the final status of the payment. This can happen if the systems providing final status information for the payment are unavailable, or if the shopper needs to take further action to complete the payment.\n* **PresentToShopper** – Indicates that the response contains additional information that you need to present to a shopper, so that they can use it to complete a payment.\n* **Received** – Indicates the payment has successfully been received by Adyen, and will be processed. This is the initial state for all payments.\n* **RedirectShopper** – Indicates the shopper should be redirected to an external web page or app to complete the authorisation.\n* **Refused** – Indicates the payment was refused. The reason is given in the `refusalReason` field. This is a final state.
     * @return resultCode
     */
+    @namespaceAccessible
     public ResultCodeEnum resultCode { get; set; }
 
     @namespaceAccessible

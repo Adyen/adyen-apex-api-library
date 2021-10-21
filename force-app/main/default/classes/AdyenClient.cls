@@ -10,6 +10,8 @@
 
 @namespaceAccessible
 public with sharing class AdyenClient {
+
+    @namespaceAccessible
     public AdyenConfig config;
 
     @namespaceAccessible

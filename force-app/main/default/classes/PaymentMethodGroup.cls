@@ -15,18 +15,21 @@ public with sharing class PaymentMethodGroup {
     * The name of the group.
     * @return name
     */
+    @namespaceAccessible
     public String name { get; set; }
 
     /**
     * Echo data to be used if the payment method is displayed as part of this group.
     * @return paymentMethodData
     */
+    @namespaceAccessible
     public String paymentMethodData { get; set; }
 
     /**
     * The unique code of the group.
     * @return type
     */
+    @namespaceAccessible
     public String type { get; set; }
 
     @namespaceAccessible

@@ -15,24 +15,28 @@ public with sharing class ApplicationInfo {
     * Get adyenLibrary
     * @return adyenLibrary
     */
+    @namespaceAccessible
     public CommonField adyenLibrary { get; set; }
 
     /**
     * Get adyenPaymentSource
     * @return adyenPaymentSource
     */
+    @namespaceAccessible
     public CommonField adyenPaymentSource { get; set; }
 
     /**
     * Get externalPlatform
     * @return externalPlatform
     */
+    @namespaceAccessible
     public ExternalPlatform externalPlatform { get; set; }
 
     /**
     * Get merchantApplication
     * @return merchantApplication
     */
+    @namespaceAccessible
     public CommonField merchantApplication { get; set; }
 
     @namespaceAccessible

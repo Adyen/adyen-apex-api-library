@@ -15,12 +15,14 @@ public with sharing class Item {
     * The value to provide in the result.
     * @return id
     */
+    @namespaceAccessible
     public String id { get; set; }
 
     /**
     * The display name.
     * @return name
     */
+    @namespaceAccessible
     public String name { get; set; }
 
     @namespaceAccessible

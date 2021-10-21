@@ -4,9 +4,18 @@
 
 @namespaceAccessible
 public with sharing class CaptureRequest {
+    @namespaceAccessible
     public String originalReference;
+
+    @namespaceAccessible
     public Amount modificationAmount;
+
+    @namespaceAccessible
     public String reference;
+
+    @namespaceAccessible
     public String merchantAccount;
+
+    @namespaceAccessible
     public CaptureRequest(){}
 }
