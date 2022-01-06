@@ -3,9 +3,13 @@
 */
 
 @namespaceAccessible
-public with sharing class CaptureResponse {
+public with sharing class CancelResponse {
+
     @namespaceAccessible
-    public Amount amount;
+    public String errorCode;
+
+    @namespaceAccessible
+    public String errorType;
 
     @namespaceAccessible
     public String message;
@@ -26,5 +30,5 @@ public with sharing class CaptureResponse {
     public String status;
 
     @namespaceAccessible
-    public CaptureResponse(){}
+    public CancelResponse(){}
 }
