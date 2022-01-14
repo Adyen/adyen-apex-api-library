@@ -70,6 +70,12 @@ public without sharing class AuthorisationRequest {
     @namespaceAccessible
     public String shopperIP { get; set; }
 
+    /**
+    * Get billingAddress
+    * @return billingAddress
+    */
+    @namespaceAccessible
+    public Address billingAddress { get; set; }
 
     /**
     * Specifies the sales channel, through which the shopper gives their card details, and whether the shopper is a returning customer.\nFor the web service API, Adyen assumes Ecommerce shopper interaction by default.\n\nThis field has the following possible values:\n* `Ecommerce` - Online transactions where the cardholder is present (online). For better authorisation rates, we recommend sending the card security code (CSC) along with the request.\n* `ContAuth` - Card on file and/or subscription transactions, where the cardholder is known to the merchant (returning customer). If the shopper is present (online), you can supply also the CSC to improve authorisation (one-click payment).\n* `Moto` - Mail-order and telephone-order transactions where the shopper is in contact with the merchant via email or telephone.\n* `POS` - Point-of-sale transactions where the shopper is physically present to make a payment using a secure payment terminal.
