@@ -10,7 +10,7 @@
 
 @namespaceAccessible
 public with sharing class Company {
-	/**
+    /**
 	* The company website's home page.
 	* @return homepage
 	*/

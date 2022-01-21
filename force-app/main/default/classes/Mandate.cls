@@ -34,7 +34,7 @@ public with sharing class Mandate {
 
 	/**
 	* The number of the day, on which the recurring debit can happen. Should be within the same calendar month as the mandate recurring date.
-    * Possible values: 1-31 based on the frequency.
+	* Possible values: 1-31 based on the frequency.
 	* @return billingDay
 	*/
 	@namespaceAccessible
@@ -56,7 +56,7 @@ public with sharing class Mandate {
 	@namespaceAccessible
 	public Constants.FrequencyEnum frequency {get;set;}
 
-    /**
+	/**
 	* The message shown by UPI to the shopper on the approval screen.
 	* @return remarks
 	*/
@@ -70,33 +70,33 @@ public with sharing class Mandate {
 	@namespaceAccessible
 	public String startsAt {get;set;}
 
-    @namespaceAccessible
-    public static Mandate getExample() {
-        Mandate mandate = new Mandate();
-        mandate.amount = '';
-        mandate.amountRule = Constants.AmountRuleEnum.AMOUNT_RULE_MAX;
-        mandate.billingAttemptsRule = Constants.BillingAttemptsRuleEnum.BILLING_RULE_ON;
-        mandate.billingDay = '';
-        mandate.frequency = Constants.FrequencyEnum.FREQUENCY_DAILY;
-        mandate.endsAt = '';
-        mandate.remarks = 10;
-        mandate.startsAt = '';
-        return mandate;
-    }
+	@namespaceAccessible
+	public static Mandate getExample() {
+		Mandate mandate = new Mandate();
+		mandate.amount = '';
+		mandate.amountRule = Constants.AmountRuleEnum.AMOUNT_RULE_MAX;
+		mandate.billingAttemptsRule = Constants.BillingAttemptsRuleEnum.BILLING_RULE_ON;
+		mandate.billingDay = '';
+		mandate.frequency = Constants.FrequencyEnum.FREQUENCY_DAILY;
+		mandate.endsAt = '';
+		mandate.remarks = 10;
+		mandate.startsAt = '';
+		return mandate;
+	}
 
-    @namespaceAccessible
-    public Boolean equals(Object obj) {
-        if (obj instanceof Mandate) {
-            Mandate mandate = (Mandate) obj;
-            return this.amount == mandate.amount
-                && this.amountRule == mandate.amountRule
-                && this.billingAttemptsRule == mandate.billingAttemptsRule
-                && this.billingDay == mandate.billingDay
-                && this.frequency == mandate.frequency
-                && this.endsAt == mandate.endsAt
-                && this.remarks == mandate.remarks
-                && this.startsAt == mandate.startsAt;
-        }
-        return false;
-    }
+	@namespaceAccessible
+	public Boolean equals(Object obj) {
+		if (obj instanceof Mandate) {
+			Mandate mandate = (Mandate) obj;
+			return this.amount == mandate.amount
+				&& this.amountRule == mandate.amountRule
+				&& this.billingAttemptsRule == mandate.billingAttemptsRule
+				&& this.billingDay == mandate.billingDay
+				&& this.frequency == mandate.frequency
+				&& this.endsAt == mandate.endsAt
+				&& this.remarks == mandate.remarks
+				&& this.startsAt == mandate.startsAt;
+		}
+		return false;
+	}
 }
