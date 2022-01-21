@@ -29,21 +29,21 @@ public with sharing class Company {
     * @return registrationNumber
     */
     @namespaceAccessible
-	public Integer registrationNumber {get;set;}
+    public Integer registrationNumber {get;set;}
 
 	/**
     * Registry location of the company.
     * @return registryLocation
     */
     @namespaceAccessible
-	public String registryLocation {get;set;}
+    public String registryLocation {get;set;}
 
 	/**
     * Tax ID of the company.
     * @return taxId
     */
     @namespaceAccessible
-	public String taxId {get;set;}
+    public String taxId {get;set;}
 
 	/**
     * The company type.
@@ -76,17 +76,5 @@ public with sharing class Company {
                 && this.type == company.type;
         }
         return false;
-    }
-
-    @namespaceAccessible
-    public Integer hashCode() {
-        Integer hashCode = 43;
-        hashCode = (17 * hashCode) + (homepage == null ? 0 : System.hashCode(homepage));
-        hashCode = (17 * hashCode) + (name == null ? 0 : System.hashCode(name));
-        hashCode = (17 * hashCode) + (registrationNumber == null ? 0 : System.hashCode(registrationNumber));
-        hashCode = (17 * hashCode) + (registryLocation == null ? 0 : System.hashCode(registryLocation));
-        hashCode = (17 * hashCode) + (taxId == null ? 0 : System.hashCode(taxId));
-        hashCode = (17 * hashCode) + (type == null ? 0 : System.hashCode(type));
-        return hashCode;
     }
 }
