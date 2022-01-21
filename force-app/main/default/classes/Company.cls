@@ -38,7 +38,7 @@ public with sharing class Company {
     @namespaceAccessible
     public String registryLocation {get;set;}
 
-	/**
+    /**
     * Tax ID of the company.
     * @return taxId
     */
