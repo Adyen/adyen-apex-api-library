@@ -4,26 +4,55 @@
 
 @namespaceAccessible
 public with sharing class CaptureResponse {
-    @namespaceAccessible
-    public Amount amount;
 
+    /**
+    * Get payment amount
+    * @return amount
+    */
     @namespaceAccessible
-    public String message;
+    public Amount amount { get; set; }
 
+    /**
+    * Get message
+    * @return message
+    */
     @namespaceAccessible
-    public String merchantAccount;
+    public String message { get; set; }
 
+    /**
+    * Get merchant account name
+    * @return merchantAccount
+    */
     @namespaceAccessible
-    public String paymentPspReference;
+    public String merchantAccount { get; set; }
 
+    /**
+    * Get the original payment psp reference
+    * @return paymentPspReference
+    */
     @namespaceAccessible
-    public String pspReference;
+    public String paymentPspReference { get; set; }
 
+    /**
+    * Get this capture request psp reference
+    * @return pspReference
+    */
     @namespaceAccessible
-    public String reference;
+    public String pspReference { get; set; }
 
+    /**
+    * Get payment reference
+    * @return reference
+    */
     @namespaceAccessible
-    public String status;
+    public String reference { get; set; }
+
+    /**
+    * Get status
+    * @return status
+    */
+    @namespaceAccessible
+    public String status { get; set; }
 
     @namespaceAccessible
     public CaptureResponse(){}
