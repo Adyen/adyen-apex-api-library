@@ -1,10 +1,15 @@
 /*
-Represents the capture response object of the Adyen API
-  {"pspReference":"883567596365413G","response":"[capture-received]"}
- */
+* Represents the capture response object of the Adyen API
+*/
 
-public class CaptureResponse {
+@namespaceAccessible
+public with sharing class CaptureResponse {
+    @namespaceAccessible
     public String pspReference;
+
+    @namespaceAccessible
     public String response;
 
+    @namespaceAccessible
+    public CaptureResponse(){}
 }

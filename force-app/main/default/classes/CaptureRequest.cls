@@ -1,20 +1,21 @@
-//
-// Represents an Adyen Capture Request
-
 /*
-{
-  "originalReference": "COPY_PSP_REFERENCE_FROM_AUTHORISE_RESPONSE",
-  "modificationAmount": {
-    "value": 500,
-    "currency": "EUR"
-  },
-  "reference": "YourModificationReference",
-  "merchantAccount": "YOUR_MERCHANT_ACCOUNT"
-}
+* Represents an Adyen Capture Request
 */
-public class CaptureRequest {
+
+@namespaceAccessible
+public with sharing class CaptureRequest {
+    @namespaceAccessible
     public String originalReference;
+
+    @namespaceAccessible
     public Amount modificationAmount;
+
+    @namespaceAccessible
     public String reference;
+
+    @namespaceAccessible
     public String merchantAccount;
+
+    @namespaceAccessible
+    public CaptureRequest(){}
 }
