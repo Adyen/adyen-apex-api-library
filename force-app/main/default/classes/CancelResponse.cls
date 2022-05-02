@@ -1,16 +1,22 @@
 /*
 * Represents the capture response object of the Adyen API
 */
-
 @namespaceAccessible
-public with sharing class CaptureResponse {
+public with sharing class CancelResponse {
 
     /**
-    * Get payment amount
-    * @return amount
+    * Get errorCode
+    * @return errorCode
     */
     @namespaceAccessible
-    public Amount amount { get; set; }
+    public String errorCode { get; set; }
+
+    /**
+    * Get errorType
+    * @return errorType
+    */
+    @namespaceAccessible
+    public String errorType { get; set; }
 
     /**
     * Get message
@@ -20,28 +26,28 @@ public with sharing class CaptureResponse {
     public String message { get; set; }
 
     /**
-    * Get merchant account name
+    * Get merchantAccount
     * @return merchantAccount
     */
     @namespaceAccessible
     public String merchantAccount { get; set; }
 
     /**
-    * Get the original payment psp reference
+    * Get paymentPspReference
     * @return paymentPspReference
     */
     @namespaceAccessible
     public String paymentPspReference { get; set; }
 
     /**
-    * Get this capture request psp reference
+    * Get pspReference
     * @return pspReference
     */
     @namespaceAccessible
     public String pspReference { get; set; }
 
     /**
-    * Get payment reference
+    * Get reference
     * @return reference
     */
     @namespaceAccessible
@@ -55,5 +61,5 @@ public with sharing class CaptureResponse {
     public String status { get; set; }
 
     @namespaceAccessible
-    public CaptureResponse(){}
+    public CancelResponse(){}
 }
