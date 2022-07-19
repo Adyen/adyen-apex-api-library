@@ -57,7 +57,7 @@ public with sharing class CheckoutCaptureResponse implements CheckoutModificatio
     }
 
     /**
-    * Get this capture request psp reference
+    * Get the pspReference of the payment to capture.
     * @return paymentPspReference
     */
     @namespaceAccessible
@@ -71,6 +71,23 @@ public with sharing class CheckoutCaptureResponse implements CheckoutModificatio
     @namespaceAccessible
     public void setPaymentPSPReference(String paymentPspReference) {
         this.paymentPspReference = paymentPspReference;
+    }
+
+    /**
+    * Get the reference for the capture request
+    * @return reference
+    */
+    @namespaceAccessible
+    public String reference { get; set; }
+
+    @namespaceAccessible
+    public String getReference() {
+        return reference;
+    }
+
+    @namespaceAccessible
+    public void setReference(String reference) {
+        this.reference = reference;
     }
 
     /**

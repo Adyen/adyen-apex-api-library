@@ -74,6 +74,23 @@ public with sharing class CheckoutRefundResponse implements CheckoutModification
     }
 
     /**
+    * Get the reference for the capture request
+    * @return reference
+    */
+    @namespaceAccessible
+    public String reference { get; set; }
+
+    @namespaceAccessible
+    public String getReference() {
+        return reference;
+    }
+
+    @namespaceAccessible
+    public void setReference(String reference) {
+        this.reference = reference;
+    }
+
+    /**
     * Get status
     * @return status
     */

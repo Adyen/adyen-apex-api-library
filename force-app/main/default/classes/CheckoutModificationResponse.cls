@@ -15,4 +15,7 @@ public interface CheckoutModificationResponse {
 
     String getStatus();
     void setStatus(String status);
+
+    String getReference();
+    void setReference(String reference);
 }
