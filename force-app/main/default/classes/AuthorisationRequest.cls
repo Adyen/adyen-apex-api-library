@@ -79,47 +79,8 @@ public without sharing class AuthorisationRequest {
     @namespaceAccessible
     public String shopperReference { get; set; }
 
-
     @namespaceAccessible
     public AuthorisationRequest() {
     }
 
-    @namespaceAccessible
-    public static AuthorisationRequest getExample() {
-        AuthorisationRequest authRequest = new AuthorisationRequest();
-        authRequest.amount = Amount.getExample();
-        authRequest.merchantAccount = '';
-        authRequest.paymentMethod = CardDetails.getExample();
-        authRequest.reference = '';
-        authRequest.shopperIP = '';
-        authRequest.shopperInteraction = ShopperInteractionEnum.ECOMMERCE;
-        return authRequest;
-    }
-
-    @namespaceAccessible
-    public Boolean equals(Object obj) {
-        if (obj instanceof AuthorisationRequest) {
-            AuthorisationRequest authRequest = (AuthorisationRequest) obj;
-            return this.amount == authRequest.amount
-                && this.merchantAccount == authRequest.merchantAccount
-                && this.paymentMethod == authRequest.paymentMethod
-                && this.reference == authRequest.reference
-                && this.shopperIP == authRequest.shopperIP
-                && this.shopperInteraction == authRequest.shopperInteraction
-                && this.shopperReference == authRequest.shopperReference;
-        }
-        return false;
-    }
-
-    @namespaceAccessible
-    public Integer hashCode() {
-        Integer hashCode = 43;
-        hashCode = (17 * hashCode) + (amount == null ? 0 : System.hashCode(amount));
-        hashCode = (17 * hashCode) + (merchantAccount == null ? 0 : System.hashCode(merchantAccount));
-        hashCode = (17 * hashCode) + (reference == null ? 0 : System.hashCode(reference));
-        hashCode = (17 * hashCode) + (paymentMethod == null ? 0 : System.hashCode(paymentMethod));
-        hashCode = (17 * hashCode) + (shopperIP == null ? 0 : System.hashCode(shopperIP));
-        hashCode = (17 * hashCode) + (shopperInteraction == null ? 0 : System.hashCode(shopperInteraction));
-        return hashCode;
-    }
 }

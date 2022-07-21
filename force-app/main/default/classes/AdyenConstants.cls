@@ -14,7 +14,7 @@ public with sharing class AdyenConstants {
     public static final String NOTIFICATION_REQUEST_TYPE_CAPTURE_FAILED = 'capture-failed';
 
     @namespaceAccessible
-    @TestVisible public static final String NOTIFICATION_REQUEST_TYPE_CAPTURE  = 'capture';
+    public static final String NOTIFICATION_REQUEST_TYPE_CAPTURE  = 'capture';
 
     @namespaceAccessible
     public static final String NOTIFICATION_REQUEST_TYPE_REFUND   = 'refund';
@@ -23,7 +23,7 @@ public with sharing class AdyenConstants {
     public static final String NOTIFICATION_ACCEPTED_RESPONSE     = '[accepted]';
 
     @namespaceAccessible
-    @TestVisible public static final String NOTIFICATION_RECEIVED_CHECKOUT  = 'received';
+    public static final String NOTIFICATION_RECEIVED_CHECKOUT  = 'received';
 
     @namespaceAccessible
     public static final CommercePayments.SalesforceResultCodeInfo SUCCESS_SALESFORCE_RESULT_CODE_INFO =
@@ -42,8 +42,8 @@ public with sharing class AdyenConstants {
             new CommercePayments.SalesforceResultCodeInfo(CommercePayments.SalesforceResultCode.ValidationError);
 
 	@namespaceAccessible
-     public static final Integer HTTP_SUCCESS_CODE      = 200;
+    public static final Integer HTTP_SUCCESS_CODE      = 200;
 
     @namespaceAccessible
-     public static final Integer HTTP_ERROR_CODE        = 400;
+    public static final Integer HTTP_ERROR_CODE        = 400;
 }
