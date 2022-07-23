@@ -26,6 +26,21 @@ public with sharing class AdyenConstants {
     public static final String NOTIFICATION_RECEIVED_CHECKOUT  = 'received';
 
     @namespaceAccessible
+    public static final String TEST_MERCHANT_ACCOUNT = 'TEST_MERCHANT_ACCOUNT';
+
+    @namespaceAccessible
+    public static final String TEST_REFERENCE = 'TEST_REFERENCE';
+
+    @namespaceAccessible
+    public static final String TEST_STATUS = 'TEST_STATUS';
+
+    @namespaceAccessible
+    public static final String TEST_PSP_REFERENCE = 'TEST_PSP_REFERENCE';
+
+    @namespaceAccessible
+    public static final String TEST_PAYMENT_PSP_REFERENCE = 'TEST_PAYMENT_PSP_REFERENCE';
+
+    @namespaceAccessible
     public static final CommercePayments.SalesforceResultCodeInfo SUCCESS_SALESFORCE_RESULT_CODE_INFO =
             new CommercePayments.SalesforceResultCodeInfo(CommercePayments.SalesforceResultCode.Success);
 
@@ -42,8 +57,8 @@ public with sharing class AdyenConstants {
             new CommercePayments.SalesforceResultCodeInfo(CommercePayments.SalesforceResultCode.ValidationError);
 
 	@namespaceAccessible
-    public static final Integer HTTP_SUCCESS_CODE      = 200;
+     public static final Integer HTTP_SUCCESS_CODE      = 200;
 
     @namespaceAccessible
-    public static final Integer HTTP_ERROR_CODE        = 400;
+     public static final Integer HTTP_ERROR_CODE        = 400;
 }
