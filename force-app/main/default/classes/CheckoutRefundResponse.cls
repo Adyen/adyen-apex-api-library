@@ -1,32 +1,25 @@
 /*
-* Represents the capture response object of the Adyen API
+* Represents the Checkout refund response (v69) object of the Adyen API
 */
 
 @namespaceAccessible
-public with sharing class CaptureResponse implements ModificationResponse {
+public with sharing class CheckoutRefundResponse implements CheckoutModificationResponse {
 
     /**
-    * Get payment amount
+    * Get amount
     * @return amount
     */
     @namespaceAccessible
     public Amount amount { get; set; }
 
-    /**
-    * Get message
-    * @return message
-    */
     @namespaceAccessible
-    public String message { get; set; }
-
-    @namespaceAccessible
-    public String getMessage() {
-        return message;
+    public Amount getAmount() {
+        return amount;
     }
 
     @namespaceAccessible
-    public void setMessage(String message) {
-        this.message = message;
+    public void setAmount(Amount amount) {
+        this.amount = amount;
     }
 
     /**
@@ -36,15 +29,35 @@ public with sharing class CaptureResponse implements ModificationResponse {
     @namespaceAccessible
     public String merchantAccount { get; set; }
 
+    @namespaceAccessible
+    public String getMerchantAccount() {
+        return merchantAccount;
+    }
+
+    @namespaceAccessible
+    public void setMerchantAccount(String merchantAccount) {
+        this.merchantAccount = merchantAccount;
+    }
+
     /**
-    * Get the original payment psp reference
+    * Get pspreference of the payment to refund
     * @return paymentPspReference
     */
     @namespaceAccessible
     public String paymentPspReference { get; set; }
 
+    @namespaceAccessible
+    public String getPaymentPspReference() {
+        return paymentPspReference;
+    }
+
+    @namespaceAccessible
+    public void setPaymentPspReference(String paymentPspReference) {
+        this.paymentPspReference = paymentPspReference;
+    }
+
     /**
-    * Get this capture request psp reference
+    * Get this refund request psp reference
     * @return pspReference
     */
     @namespaceAccessible
@@ -61,7 +74,7 @@ public with sharing class CaptureResponse implements ModificationResponse {
     }
 
     /**
-    * Get payment reference
+    * Get the reference for the capture request
     * @return reference
     */
     @namespaceAccessible
@@ -95,5 +108,5 @@ public with sharing class CaptureResponse implements ModificationResponse {
     }
 
     @namespaceAccessible
-    public CaptureResponse(){}
+    public CheckoutRefundResponse(){}
 }
