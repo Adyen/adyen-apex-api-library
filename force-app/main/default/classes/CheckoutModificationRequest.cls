@@ -9,4 +9,7 @@ public interface CheckoutModificationRequest {
 
     String getMerchantAccount();
     void setMerchantAccount(String merchantAccount);
+
+    Map<String, Object> getAdditionalData();
+    void setAdditionalData(Map<String, Object> additionalData);
 }
