@@ -1,9 +1,9 @@
 /*
-* Represents the capture response object of the Adyen API
+* Represents the refund response object of the Adyen API
 */
 
 @namespaceAccessible
-public with sharing class CaptureResponse implements ModificationResponse {
+public with sharing class RefundResponse implements ModificationResponse {
 
     /**
     * Get payment amount
@@ -44,7 +44,7 @@ public with sharing class CaptureResponse implements ModificationResponse {
     public String paymentPspReference { get; set; }
 
     /**
-    * Get this capture request psp reference
+    * Get this refund request psp reference
     * @return pspReference
     */
     @namespaceAccessible
@@ -94,6 +94,8 @@ public with sharing class CaptureResponse implements ModificationResponse {
         this.status = status;
     }
 
+
     @namespaceAccessible
-    public CaptureResponse(){}
+    public RefundResponse(){}
+
 }

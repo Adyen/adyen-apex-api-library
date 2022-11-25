@@ -1,9 +1,9 @@
 /*
-* Represents an Adyen Capture Request
+* Represents an Adyen Refund Request
 */
 @namespaceAccessible
-public with sharing class CaptureRequest implements ModificationRequest {
-    
+public with sharing class RefundRequest implements ModificationRequest {
+
     /**
     * additional data
     * @return additionalData
@@ -56,14 +56,14 @@ public with sharing class CaptureRequest implements ModificationRequest {
     }
 
     /**
-    * Payment capture amount
+    * Payment refund amount
     * @return amount
     */
     @namespaceAccessible
     public Amount modificationAmount { get; set; }
 
     /**
-    * Payment capture amount
+    * Payment refund amount
     * @return amount
     */
     @namespaceAccessible
@@ -114,5 +114,6 @@ public with sharing class CaptureRequest implements ModificationRequest {
     }
 
     @namespaceAccessible
-    public CaptureRequest(){}
+    public RefundRequest(){}
+
 }

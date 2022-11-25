@@ -2,65 +2,7 @@
 * Represents an Adyen Capture Request
 */
 @namespaceAccessible
-public with sharing class CaptureRequest implements ModificationRequest {
-    
-    /**
-    * additional data
-    * @return additionalData
-    */
-    @namespaceAccessible
-    public String additionalData { get; set; }
-
-    @namespaceAccessible
-    public String getAdditionalData() {
-        return additionalData;
-    }
-
-    @namespaceAccessible
-    public void setAdditionalData(String additionalData) {
-        this.additionalData = additionalData;
-    }
-
-    /**
-    * application info
-    * @return applicationInfo
-    */
-    @namespaceAccessible
-    public ApplicationInfo applicationInfo { get; set; }
-
-    @namespaceAccessible
-    public ApplicationInfo getApplicationInfo() {
-        return applicationInfo;
-    }
-
-    @namespaceAccessible
-    public void setApplicationInfo(ApplicationInfo applicationInfo) {
-        this.applicationInfo = applicationInfo;
-    }
-
-    /**
-    * original payment reference
-    * @return originalReference
-    */
-    @namespaceAccessible
-    public String originalReference { get; set; }
-
-    @namespaceAccessible
-    public String getOriginalReference() {
-        return originalReference;
-    }
-
-    @namespaceAccessible
-    public void setOriginalReference(String originalReference) {
-        this.originalReference = originalReference;
-    }
-
-    /**
-    * Payment capture amount
-    * @return amount
-    */
-    @namespaceAccessible
-    public Amount modificationAmount { get; set; }
+public with sharing class CheckoutCaptureRequest implements CheckoutModificationRequest {
 
     /**
     * Payment capture amount
@@ -114,5 +56,5 @@ public with sharing class CaptureRequest implements ModificationRequest {
     }
 
     @namespaceAccessible
-    public CaptureRequest(){}
+    public CheckoutCaptureRequest(){}
 }

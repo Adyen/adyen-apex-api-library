@@ -5,7 +5,8 @@
             "default": true,
             "package": "API Library Apex Adyen",
             "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT"
+            "versionNumber": "0.1.0.NEXT",
+            "ancestorVersion": "HIGHEST"
         }
     ],
     "name": "adyen-apex-api-lib-2GP",
@@ -15,6 +16,7 @@
     "packageAliases": {
         "API Library Apex Adyen": "0Ho4T0000000043SAA",
         "API Library Apex Adyen@0.1.0-1": "04t4T000001VvbqQAC",
-        "API Library Apex Adyen@1.0.0-0": "04t4T000001VvfJQAS"
+        "API Library Apex Adyen@1.0.0-0": "04t4T000001VvfJQAS",
+        "API Library Apex Adyen@2.0.0-0": "04t4T000001HohPQAS"
     }
 }
