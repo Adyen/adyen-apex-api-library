@@ -29,7 +29,7 @@ public with sharing class AdyenClient {
 
     private HttpResponse sendRequest(HttpRequest request){
         Http httpClient = new Http();
-        return httpClient.send(request);
+        return (new CommercePayments.PaymentsHttp()).send(request);
     }
 
     private HttpRequest createHttpRequest(AdyenConfig config, String request){
