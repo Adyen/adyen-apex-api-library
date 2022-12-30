@@ -61,4 +61,7 @@ public with sharing class AdyenConstants {
 
     @namespaceAccessible
      public static final Integer HTTP_ERROR_CODE        = 400;
+
+      @namespaceAccessible
+      public  final static String HTTP_SERVER_ERROR_CODE = '500';
 }

@@ -55,6 +55,23 @@ public with sharing class CheckoutCaptureRequest implements CheckoutModification
         this.merchantAccount = merchantAccount;
     }
 
+   /**
+    * Additional Data
+    * @return additionalData
+    */
+    @namespaceAccessible
+    public Map<String, Object> additionalData { get; set; }
+
+    @namespaceAccessible
+    public Map<String, Object> getAdditionalData() {
+        return additionalData;
+    }
+
+    @namespaceAccessible
+    public void setAdditionalData(Map<String, Object> additionalData) {
+        this.additionalData = additionalData;
+    }
+
     @namespaceAccessible
     public CheckoutCaptureRequest(){}
 }

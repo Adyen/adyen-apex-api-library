@@ -28,7 +28,7 @@ public with sharing class AdyenClient {
     }
 
     private HttpResponse sendRequest(HttpRequest request){
-        Http httpClient = new Http();
+        commercepayments.PaymentsHttp httpClient = new commercepayments.PaymentsHttp();
         return httpClient.send(request);
     }
 
