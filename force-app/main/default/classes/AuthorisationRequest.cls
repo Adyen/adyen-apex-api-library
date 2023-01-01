@@ -79,6 +79,13 @@ public without sharing class AuthorisationRequest {
     @namespaceAccessible
     public String shopperReference { get; set; }
 
+    /**
+    * Defines a recurring payment type.
+    * @return recurringProcessingModel
+    */
+    @namespaceAccessible
+    public String recurringProcessingModel { get; set; }
+
     @namespaceAccessible
     public AuthorisationRequest() {
     }
