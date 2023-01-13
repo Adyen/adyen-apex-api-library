@@ -79,6 +79,23 @@ public without sharing class AuthorisationRequest {
     @namespaceAccessible
     public String shopperReference { get; set; }
 
+    /**
+    * Specifies the recurringProcessingModel
+    */
+    @namespaceAccessible
+    public enum RecurringProcessingModelEnum {
+        Subscription,
+        CardOnFile,
+        UnscheduledCardOnFile
+    }
+
+    /**
+    * Defines a recurring payment type.
+    * @return recurringProcessingModel
+    */
+    @namespaceAccessible
+    public RecurringProcessingModelEnum recurringProcessingModel { get; set; }
+
     @namespaceAccessible
     public AuthorisationRequest() {
     }
