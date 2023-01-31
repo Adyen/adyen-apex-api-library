@@ -1,3 +1,7 @@
+/*
+* Represents an incoming Adyen Webhook Notification
+* https://docs.adyen.com/development-resources/webhooks/understand-notifications
+*/
 @namespaceAccessible
 public with sharing class AdyenNotification {
 
