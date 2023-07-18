@@ -1,78 +1,71 @@
 /*
 * Represents an Adyen Checkout Refund Request
 */
-@namespaceAccessible
+@NamespaceAccessible
 public with sharing class CheckoutRefundRequest implements CheckoutModificationRequest {
 
 	/**
 	* Payment refund amount
-	* @return amount
 	*/
-	@namespaceAccessible
+	@NamespaceAccessible
 	public Amount amount { get; set; }
 
-	@namespaceAccessible
+	@NamespaceAccessible
 	public Amount getAmount() {
 		return amount;
 	}
 
-	@namespaceAccessible
+	@NamespaceAccessible
 	public void setAmount(Amount amount) {
 		this.amount = amount;
 	}
 
 	/**
 	* The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. We recommend using a unique value per payment; however, it is not a requirement.\nIf you need to provide multiple references for a transaction, separate them with hyphens ("-").\nMaximum length: 80 characters.
-	* @return reference
 	*/
-	@namespaceAccessible
+	@NamespaceAccessible
 	public String reference { get; set; }
 
-	@namespaceAccessible
+	@NamespaceAccessible
 	public String getReference() {
 		return reference;
 	}
 
-	@namespaceAccessible
+	@NamespaceAccessible
 	public void setReference(String reference) {
 		this.reference = reference;
 	}
 
 	/**
 	* Merchant account name
-	* @return merchantAccount
 	*/
-	@namespaceAccessible
+	@NamespaceAccessible
 	public String merchantAccount { get; set; }
 
-	@namespaceAccessible
+	@NamespaceAccessible
 	public String getMerchantAccount() {
 		return merchantAccount;
 	}
 
-	@namespaceAccessible
+	@NamespaceAccessible
 	public void setMerchantAccount(String merchantAccount) {
 		this.merchantAccount = merchantAccount;
 	}
 
-   /**
-    * Additional Data
-    * @return additionalData
-    */
-    @namespaceAccessible
-    public Map<String, Object> additionalData { get; set; }
+	@NamespaceAccessible
+	public List<LineItem> lineItems { get; set; }
 
-    @namespaceAccessible
-    public Map<String, Object> getAdditionalData() {
-        return additionalData;
-    }
+	@NamespaceAccessible
+	public List<LineItem> getLineItems() {
+		return lineItems;
+	}
 
-    @namespaceAccessible
-    public void setAdditionalData(Map<String, Object> additionalData) {
-        this.additionalData = additionalData;
-    }
+	@NamespaceAccessible
+	public void setLineItems(List<LineItem> lineItems) {
+		this.lineItems = lineItems;
+	}
 
-	@namespaceAccessible
+	@NamespaceAccessible
 	public CheckoutRefundRequest(){}
 
 }
