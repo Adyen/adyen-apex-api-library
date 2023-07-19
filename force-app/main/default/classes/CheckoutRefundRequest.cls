@@ -22,7 +22,8 @@ public with sharing class CheckoutRefundRequest implements CheckoutModificationR
 	}
 
 	/**
-	* The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. We recommend using a unique value per payment; however, it is not a requirement.\nIf you need to provide multiple references for a transaction, separate them with hyphens ("-").\nMaximum length: 80 characters.
+	* The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status.
+	* We recommend using a unique value per payment; however, it is not a requirement.\nIf you need to provide multiple references for a transaction, separate them with hyphens ("-").\nMaximum length: 80 characters.
 	* @return reference
 	*/
 	@namespaceAccessible
