@@ -20,5 +20,8 @@ public class CheckoutRefundRequestTest {
 
         testRefundRequest.setMerchantAccount(AdyenConstants.TEST_MERCHANT_ACCOUNT);
         System.assertEquals(testRefundRequest.getMerchantAccount(), AdyenConstants.TEST_MERCHANT_ACCOUNT);
+
+        testRefundRequest.setLineItems(new List<LineItem>{new LineItem()});
+        System.assertEquals(1, testRefundRequest.getLineItems().size());
     }
 }
