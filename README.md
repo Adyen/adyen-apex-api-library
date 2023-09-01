@@ -7,7 +7,7 @@ This library will be used in combination with other Salesforce managed packages 
 
 The library supports the following services:
  
-* [Checkout API](https://docs.adyen.com/api-explorer/#/CheckoutService/v64/overview) - Payments: Our latest integration for accepting online payments. Current supported version: **v64**
+* [Checkout API](https://docs.adyen.com/api-explorer/Checkout/64/overview) - Payments: Our latest integration for accepting online payments. Current supported version: **v64**
 
 ## Prerequisites
 -   [Adyen test account](https://docs.adyen.com/get-started-with-adyen)
