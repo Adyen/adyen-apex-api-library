@@ -1,4 +1,4 @@
-@namespaceAccessible
+@NamespaceAccessible
 public interface CheckoutModificationRequest {
     //interface to declare common methods from CheckoutCaptureRequest and CheckoutRefundRequest
     Amount getAmount();
@@ -9,4 +9,7 @@ public interface CheckoutModificationRequest {
 
     String getMerchantAccount();
     void setMerchantAccount(String merchantAccount);
+
+    List<LineItem> getLineItems();
+    void setLineItems(List<LineItem> lineItems);
 }

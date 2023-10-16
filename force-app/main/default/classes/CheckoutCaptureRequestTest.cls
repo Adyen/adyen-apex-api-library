@@ -20,5 +20,8 @@ public class CheckoutCaptureRequestTest {
 
         testCaptureRequest.setMerchantAccount(AdyenConstants.TEST_MERCHANT_ACCOUNT);
         System.assertEquals(testCaptureRequest.getMerchantAccount(), AdyenConstants.TEST_MERCHANT_ACCOUNT );
+
+        testCaptureRequest.setLineItems(new List<LineItem>{new LineItem()});
+        System.assertEquals(1, testCaptureRequest.getLineItems().size());
     }
 }
