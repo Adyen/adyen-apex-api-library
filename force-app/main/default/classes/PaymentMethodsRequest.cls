@@ -54,6 +54,13 @@ public with sharing class PaymentMethodsRequest {
     @namespaceAccessible
     public String shopperReference { get; set; }
 
+    /**
+    * List of payments methods to be not presented to the shopper. To refer to payment methods, use their `paymentMethod.type` from [Payment methods overview](https://docs.adyen.com/payment-methods).\n\nExample: `"blockedPaymentMethods":["ideal","giropay"]`
+    * @return blockedPaymentMethods
+    */
+    @namespaceAccessible
+    public List<String> blockedPaymentMethods {get;set;}
+
     @namespaceAccessible
     public PaymentMethodsRequest() {
         allowedPaymentMethods = new List<String>();
@@ -68,6 +75,7 @@ public with sharing class PaymentMethodsRequest {
         paymentMethodsRequest.merchantAccount = '';
         paymentMethodsRequest.shopperLocale = '';
         paymentMethodsRequest.shopperReference = '';
+        paymentMethodsRequest.blockedPaymentMethods = new List<String>{''};
         return paymentMethodsRequest;
     }
 
@@ -80,7 +88,8 @@ public with sharing class PaymentMethodsRequest {
                 && this.countryCode == paymentMethodsRequest.countryCode
                 && this.merchantAccount == paymentMethodsRequest.merchantAccount
                 && this.shopperLocale == paymentMethodsRequest.shopperLocale
-                && this.shopperReference == paymentMethodsRequest.shopperReference;
+                && this.shopperReference == paymentMethodsRequest.shopperReference
+                && this.blockedPaymentMethods == paymentMethodsRequest.blockedPaymentMethods;
         }
         return false;
     }
