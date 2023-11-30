@@ -12,4 +12,8 @@ public interface CheckoutModificationRequest {
 
     List<LineItem> getLineItems();
     void setLineItems(List<LineItem> lineItems);
+
+    ApplicationInfo getApplicationInfo();
+    void setApplicationInfo(ApplicationInfo applicationInfo);
+
 }

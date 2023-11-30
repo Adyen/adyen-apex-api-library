@@ -68,6 +68,23 @@ public with sharing class CheckoutCaptureRequest implements CheckoutModification
         this.lineItems = lineItems;
     }
 
+	/**
+    * Application info
+    * @return applicationInfo
+    */
+    @namespaceAccessible
+    public ApplicationInfo applicationInfo { get; set; }
+
+	@namespaceAccessible
+    public ApplicationInfo getApplicationInfo() {
+        return applicationInfo;
+    }
+
+	@namespaceAccessible
+    public void setApplicationInfo(ApplicationInfo applicationInfo) {
+		this.applicationInfo = applicationInfo;
+    }
+
     @NamespaceAccessible
     public CheckoutCaptureRequest(){}
 }
