@@ -23,5 +23,9 @@ public class CheckoutCaptureRequestTest {
 
         testCaptureRequest.setLineItems(new List<LineItem>{new LineItem()});
         System.assertEquals(1, testCaptureRequest.getLineItems().size());
+
+		testCaptureRequest.setApplicationInfo(ApplicationInfo.getExample());
+        System.assertEquals(testCaptureRequest.getApplicationInfo().adyenLibrary.name, '');
+
     }
 }
