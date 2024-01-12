@@ -48,18 +48,6 @@ public without sharing class PaymentsRequest {
     public BrowserInfo browserInfo { get; set; }
 
     /**
-    * Get card
-    */
-    @NamespaceAccessible
-    public Card card { get; set; }
-
-    /**
-    * Get cardDetails
-    */
-    @NamespaceAccessible
-    public CardDetails cardDetails { get; set; }
-
-    /**
     * Get channel
     */
     @NamespaceAccessible
@@ -212,8 +200,6 @@ public without sharing class PaymentsRequest {
         paymentsRequest.applicationInfo = ApplicationInfo.getExample();
         paymentsRequest.billingAddress = Address.getExample();
         paymentsRequest.browserInfo = BrowserInfo.getExample();
-        paymentsRequest.card = Card.getExample();
-        paymentsRequest.cardDetails = CardDetails.getExample();
         paymentsRequest.channel = '';
         paymentsRequest.deliveryAddress = Address.getExample();
         paymentsRequest.deviceFingerprint = '';
@@ -244,8 +230,6 @@ public without sharing class PaymentsRequest {
                 && this.applicationInfo == paymentsRequest.applicationInfo
                 && this.billingAddress == paymentsRequest.billingAddress
                 && this.browserInfo == paymentsRequest.browserInfo
-                && this.card == paymentsRequest.card
-                && this.cardDetails == paymentsRequest.cardDetails
                 && this.channel == paymentsRequest.channel
                 && this.deliveryAddress == paymentsRequest.deliveryAddress
                 && this.deviceFingerprint == paymentsRequest.deviceFingerprint
@@ -275,8 +259,6 @@ public without sharing class PaymentsRequest {
         hashCode = (17 * hashCode) + (applicationInfo == null ? 0 : System.hashCode(applicationInfo));
         hashCode = (17 * hashCode) + (billingAddress == null ? 0 : System.hashCode(billingAddress));
         hashCode = (17 * hashCode) + (browserInfo == null ? 0 : System.hashCode(browserInfo));
-        hashCode = (17 * hashCode) + (card == null ? 0 : System.hashCode(card));
-        hashCode = (17 * hashCode) + (cardDetails == null ? 0 : System.hashCode(cardDetails));
         hashCode = (17 * hashCode) + (channel == null ? 0 : System.hashCode(channel));
         hashCode = (17 * hashCode) + (deliveryAddress == null ? 0 : System.hashCode(deliveryAddress));
         hashCode = (17 * hashCode) + (deviceFingerprint == null ? 0 : System.hashCode(deviceFingerprint));
