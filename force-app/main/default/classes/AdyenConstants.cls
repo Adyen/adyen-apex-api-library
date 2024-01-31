@@ -1,67 +1,70 @@
-@namespaceAccessible
+@NamespaceAccessible
 public with sharing class AdyenConstants {
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static final String DEFAULT_ADAPTER_NAME = 'AdyenDefault';
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static final String NOTIFICATION_REQUEST_TYPE_CANCEL = 'cancellation';
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static final String NOTIFICATION_REQUEST_TYPE_AUTHORISE = 'authorization';
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static final String NOTIFICATION_REQUEST_TYPE_CAPTURE_FAILED = 'capture-failed';
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static final String NOTIFICATION_REQUEST_TYPE_CAPTURE  = 'capture';
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static final String NOTIFICATION_REQUEST_TYPE_REFUND   = 'refund';
 
-    @namespaceAccessible
+    @NamespaceAccessible
+    public static final String NOTIFICATION_REQUEST_TYPE_RECURRING_CONTRACT   = 'recurring_contract';
+
+    @NamespaceAccessible
     public static final String NOTIFICATION_ACCEPTED_RESPONSE     = '[accepted]';
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static final String NOTIFICATION_RECEIVED_CHECKOUT  = 'received';
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static final String TEST_MERCHANT_ACCOUNT = 'TEST_MERCHANT_ACCOUNT';
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static final String TEST_REFERENCE = 'TEST_REFERENCE';
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static final String TEST_STATUS = 'TEST_STATUS';
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static final String TEST_PSP_REFERENCE = 'TEST_PSP_REFERENCE';
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static final String TEST_PAYMENT_PSP_REFERENCE = 'TEST_PAYMENT_PSP_REFERENCE';
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static final CommercePayments.SalesforceResultCodeInfo SUCCESS_SALESFORCE_RESULT_CODE_INFO =
             new CommercePayments.SalesforceResultCodeInfo(CommercePayments.SalesforceResultCode.Success);
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static final CommercePayments.SalesforceResultCodeInfo DECLINE_SALESFORCE_RESULT_CODE_INFO =
             new CommercePayments.SalesforceResultCodeInfo(CommercePayments.SalesforceResultCode.Decline);
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static final CommercePayments.SalesforceResultCodeInfo SYSTEM_ERROR_SALESFORCE_RESULT_CODE_INFO =
             new CommercePayments.SalesforceResultCodeInfo(CommercePayments.SalesforceResultCode.SystemError);
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static final CommercePayments.SalesforceResultCodeInfo VALIDATION_ERROR_SALESFORCE_RESULT_CODE_INFO =
             new CommercePayments.SalesforceResultCodeInfo(CommercePayments.SalesforceResultCode.ValidationError);
 
-	@namespaceAccessible
+	@NamespaceAccessible
      public static final Integer HTTP_SUCCESS_CODE      = 200;
 
-    @namespaceAccessible
+    @NamespaceAccessible
      public static final Integer HTTP_ERROR_CODE        = 400;
 
-      @namespaceAccessible
+      @NamespaceAccessible
       public  final static String HTTP_SERVER_ERROR_CODE = '500';
 }
