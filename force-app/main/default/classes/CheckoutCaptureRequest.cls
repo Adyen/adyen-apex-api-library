@@ -75,12 +75,12 @@ public with sharing class CheckoutCaptureRequest implements CheckoutModification
     @namespaceAccessible
     public ApplicationInfo applicationInfo { get; set; }
 
-	@namespaceAccessible
+	  @namespaceAccessible
     public ApplicationInfo getApplicationInfo() {
         return applicationInfo;
     }
 
-	@namespaceAccessible
+  	@namespaceAccessible
     public void setApplicationInfo(ApplicationInfo applicationInfo) {
 		this.applicationInfo = applicationInfo;
     }

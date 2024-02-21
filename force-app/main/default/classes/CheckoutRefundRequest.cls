@@ -66,21 +66,21 @@ public with sharing class CheckoutRefundRequest implements CheckoutModificationR
 	}
 
 	/**
-    * Application info
-    * @return applicationInfo
-    */
-    @namespaceAccessible
-    public ApplicationInfo applicationInfo { get; set; }
+  * Application info
+  * @return applicationInfo
+  */
+  @namespaceAccessible
+  public ApplicationInfo applicationInfo { get; set; }
 
 	@namespaceAccessible
-    public ApplicationInfo getApplicationInfo() {
-        return applicationInfo;
-    }
+  public ApplicationInfo getApplicationInfo() {
+    return applicationInfo;
+  }
 
 	@namespaceAccessible
-    public void setApplicationInfo(ApplicationInfo applicationInfo) {
-		this.applicationInfo = applicationInfo;
-    }
+  public void setApplicationInfo(ApplicationInfo applicationInfo) {
+    this.applicationInfo = applicationInfo;
+  }
 
 	@NamespaceAccessible
 	public CheckoutRefundRequest(){}

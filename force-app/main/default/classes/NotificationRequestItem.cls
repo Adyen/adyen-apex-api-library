@@ -1,6 +1,7 @@
 /*
 * Represents an Adyen Webhook Notification Request Item
 */
+
 @NamespaceAccessible
 public with sharing class NotificationRequestItem {
 
@@ -36,4 +37,5 @@ public with sharing class NotificationRequestItem {
 
     @NamespaceAccessible
     public Map<String,String> additionalData {get;set;}
+  
 }

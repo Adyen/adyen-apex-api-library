@@ -59,12 +59,12 @@ public with sharing class AdyenConstants {
     public static final CommercePayments.SalesforceResultCodeInfo VALIDATION_ERROR_SALESFORCE_RESULT_CODE_INFO =
             new CommercePayments.SalesforceResultCodeInfo(CommercePayments.SalesforceResultCode.ValidationError);
 
-	@NamespaceAccessible
-     public static final Integer HTTP_SUCCESS_CODE      = 200;
+	  @NamespaceAccessible
+    public static final Integer HTTP_SUCCESS_CODE = 200;
 
     @NamespaceAccessible
-     public static final Integer HTTP_ERROR_CODE        = 400;
+    public static final Integer HTTP_ERROR_CODE = 400;
 
-      @NamespaceAccessible
-      public  final static String HTTP_SERVER_ERROR_CODE = '500';
+    @NamespaceAccessible
+    public  final static String HTTP_SERVER_ERROR_CODE = '500';
 }
