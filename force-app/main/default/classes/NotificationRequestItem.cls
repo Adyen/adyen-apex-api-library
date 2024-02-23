@@ -1,37 +1,41 @@
 /*
 * Represents an Adyen Webhook Notification Request Item
 */
-@namespaceAccessible
+
+@NamespaceAccessible
 public with sharing class NotificationRequestItem {
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public Amount amount {get;set;}
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public String eventCode {get;set;}
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public String eventDate {get;set;}
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public String merchantAccountCode {get;set;}
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public String paymentMethod {get;set;}
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public String originalReference {get;set;}
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public String paymentPspReference {get;set;}
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public String pspReference {get;set;}
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public String reason {get;set;}
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public String success {get;set;}
 
+    @NamespaceAccessible
+    public Map<String,String> additionalData {get;set;}
+  
 }

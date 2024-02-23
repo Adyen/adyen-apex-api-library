@@ -23,5 +23,9 @@ public class CheckoutRefundRequestTest {
 
         testRefundRequest.setLineItems(new List<LineItem>{new LineItem()});
         System.assertEquals(1, testRefundRequest.getLineItems().size());
+
+        testRefundRequest.setApplicationInfo(ApplicationInfo.getExample());
+        System.assertEquals(testRefundRequest.getApplicationInfo().adyenLibrary.name, '');
+
     }
 }
