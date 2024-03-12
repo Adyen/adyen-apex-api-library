@@ -21,7 +21,7 @@ private class HMACValidatorTest {
         String hmac = validator.calculateHMAC(requestItem, hmacKey);
 
         // Assert that the HMAC is not null
-        System.assertNotEquals(null, hmac);
+        Assert.isNotNull(hmac);
     }
 
     @isTest
@@ -48,7 +48,7 @@ private class HMACValidatorTest {
 
         Boolean isValid = validator.validateHMAC(requestItem, hmacKey);
 
-        System.assertEquals(true, isValid);
+        Assert.isTrue(isValid);
     }
 
     @isTest
@@ -76,7 +76,7 @@ private class HMACValidatorTest {
         HMACValidator validator = new HMACValidator();
         Boolean isValid = validator.validateHMAC(requestItem, hmacKey);
 
-        System.assertEquals(false, isValid);
+        Assert.isFalse(isValid);
     }
 
     // Tests the correct HMAC creation
@@ -97,6 +97,6 @@ private class HMACValidatorTest {
 
         HMACValidator validator = new HMACValidator();
         String expectedHmac = validator.calculateHMAC(requestItem, hmacKey);
-        System.assertEquals('coqCmt/IZ4E3CzPvMY8zTjQVL5hYJUiBRg8UU+iCWo0=', expectedHmac);
+        Assert.areEqual('coqCmt/IZ4E3CzPvMY8zTjQVL5hYJUiBRg8UU+iCWo0=', expectedHmac);
     }
 }

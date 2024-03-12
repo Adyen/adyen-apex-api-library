@@ -2,6 +2,7 @@
 public with sharing class HMACValidator {
     private static final String HMAC_SHA256_ALGORITHM = 'HmacSHA256';
     private static final String DATA_SEPARATOR = ':';
+    private class HmacValidationException extends Exception {}
 
     @TestVisible
     private String calculateHMAC(NotificationRequestItem notificationRequestItem, String key){
@@ -44,15 +45,11 @@ public with sharing class HMACValidator {
 
    public Boolean validateHMAC(NotificationRequestItem notificationRequestItem, String hmacKey){
         if (notificationRequestItem.additionalData == null || hmacKey == null) {
-            throw new AuraHandledException('Missing notification data or key');
+            throw new HmacValidationException('Missing notification data or key');
         }
         String calculatedSignature = calculateHMAC(notificationRequestItem, hmacKey);
         String hmacSignature = notificationRequestItem.additionalData.get('hmacSignature');
 
-        if (compareHMAC(calculatedSignature, hmacSignature)){
-            return true;
-        }
-
-        return false;
+        return compareHMAC(calculatedSignature, hmacSignature);
     }
 }
