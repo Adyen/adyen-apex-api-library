@@ -99,4 +99,18 @@ private class HMACValidatorTest {
         String expectedHmac = validator.calculateHMAC(requestItem, hmacKey);
         Assert.areEqual('coqCmt/IZ4E3CzPvMY8zTjQVL5hYJUiBRg8UU+iCWo0=', expectedHmac);
     }
+
+    @isTest
+    static void testHMACException() {
+        try{
+            NotificationRequestItem requestItem = new NotificationRequestItem();
+            String hmacKey = null;
+            HMACValidator validator = new HMACValidator();
+            Boolean isValid = validator.validateHMAC(requestItem, hmacKey);
+            Assert.fail();
+        }
+        catch(HMACValidator.HmacValidationException e){
+            Assert.areEqual('Missing notification data or key', e.getMessage());
+        }
+    }
 }

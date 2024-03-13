@@ -2,6 +2,8 @@
 public with sharing class HMACValidator {
     private static final String HMAC_SHA256_ALGORITHM = 'HmacSHA256';
     private static final String DATA_SEPARATOR = ':';
+    
+    @TestVisible
     private class HmacValidationException extends Exception {}
 
     @TestVisible
