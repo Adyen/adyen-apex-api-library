@@ -110,7 +110,7 @@ private class HMACValidatorTest {
             Assert.fail();
         }
         catch(HMACValidator.HmacValidationException e){
-            Assert.areEqual('Missing notification data or key', e.getMessage());
+            Assert.areEqual('Missing notification data', e.getMessage());
         }
     }
 }
