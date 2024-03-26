@@ -3,6 +3,7 @@ public with sharing class HMACValidator {
     private static final String HMAC_SHA256_ALGORITHM = 'HmacSHA256';
     private static final String DATA_SEPARATOR = ':';
     
+    @namespaceAccessible
     public class HmacValidationException extends Exception {}
 
     @TestVisible
@@ -43,7 +44,7 @@ public with sharing class HMACValidator {
         return bitwiseComparison == 0;
     }
     
-
+   @namespaceAccessible
    public Boolean validateHMAC(NotificationRequestItem notificationRequestItem, String hmacKey){
         String hmacSignature = notificationRequestItem.additionalData?.get('hmacSignature');
         if (String.isBlank(hmacSignature)) {
