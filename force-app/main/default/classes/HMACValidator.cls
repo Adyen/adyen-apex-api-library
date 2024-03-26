@@ -3,8 +3,8 @@ public with sharing class HMACValidator {
     private static final String HMAC_SHA256_ALGORITHM = 'HmacSHA256';
     private static final String DATA_SEPARATOR = ':';
     
-    @TestVisible
-    private class HmacValidationException extends Exception {}
+    @namespaceAccessible
+    public class HmacValidationException extends Exception {}
 
     @TestVisible
     private String calculateHMAC(NotificationRequestItem notificationRequestItem, String key){
@@ -44,13 +44,13 @@ public with sharing class HMACValidator {
         return bitwiseComparison == 0;
     }
     
-
+   @namespaceAccessible
    public Boolean validateHMAC(NotificationRequestItem notificationRequestItem, String hmacKey){
-        if (notificationRequestItem.additionalData == null || hmacKey == null) {
-            throw new HmacValidationException('Missing notification data or key');
+        String hmacSignature = notificationRequestItem.additionalData?.get('hmacSignature');
+        if (String.isBlank(hmacSignature)) {
+            throw new HmacValidationException('Missing notification data');
         }
         String calculatedSignature = calculateHMAC(notificationRequestItem, hmacKey);
-        String hmacSignature = notificationRequestItem.additionalData.get('hmacSignature');
 
         return compareHMAC(calculatedSignature, hmacSignature);
     }
