@@ -1,21 +1,19 @@
-@isTest
+@IsTest
 public class PaymentsRequestTest {
-
     /**
     * Test method to enhance code coverage for Apex Models; This ain't validating any specific business use case.
     * Enhances code coverage for PaymentRequest apex class
     */
-    @isTest
+    @IsTest
     private static void testAllMethodsFromPaymentsRequest(){
         PaymentsRequest testInstance1 = PaymentsRequest.getExample();
-
-        Boolean retBooleanVal = testInstance1.equals(testInstance1);
-        System.assertEquals(retBooleanVal, true);
-
-        Boolean retBooleanVal2 = testInstance1.equals('');
-        System.assertEquals(retBooleanVal2, false);
-
+        PaymentsRequest testInstance2 = PaymentsRequest.getExample();
         Integer retIntValue = testInstance1.hashCode();
+        testInstance2.channel = 'web';
+
+        Assert.areEqual(testInstance1, testInstance1);
+        Assert.areNotEqual(testInstance1, testInstance2);
+        Assert.isNotNull(retIntValue);
     }
 
 }
