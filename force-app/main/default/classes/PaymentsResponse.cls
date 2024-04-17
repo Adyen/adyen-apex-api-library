@@ -127,6 +127,9 @@ public with sharing class PaymentsResponse {
     @namespaceAccessible
     public ResultCodeEnum resultCode { get; set; }
 
+	@namespaceAccessible
+    public Map<String, String> paymentMethod { get; set; }
+
     @namespaceAccessible
     public PaymentsResponse() {
         authentication = new Map<String, String>();
@@ -151,6 +154,7 @@ public with sharing class PaymentsResponse {
         paymentsResponse.refusalReason = '';
         paymentsResponse.refusalReasonCode = '';
         paymentsResponse.resultCode = ResultCodeEnum.AUTHENTICATIONFINISHED;
+		paymentsResponse.paymentMethod = new Map<String, String>{'key'=>''};
         return paymentsResponse;
     }
 
@@ -171,6 +175,7 @@ public with sharing class PaymentsResponse {
                 && this.redirect == paymentsResponse.redirect
                 && this.refusalReason == paymentsResponse.refusalReason
                 && this.refusalReasonCode == paymentsResponse.refusalReasonCode
+				&& this.paymentMethod == paymentsResponse.paymentMethod
                 && this.resultCode == paymentsResponse.resultCode;
         }
         return false;
@@ -192,6 +197,7 @@ public with sharing class PaymentsResponse {
         hashCode = (17 * hashCode) + (redirect == null ? 0 : System.hashCode(redirect));
         hashCode = (17 * hashCode) + (refusalReason == null ? 0 : System.hashCode(refusalReason));
         hashCode = (17 * hashCode) + (refusalReasonCode == null ? 0 : System.hashCode(refusalReasonCode));
+		hashCode = (17 * hashCode) + (paymentMethod == null ? 0 : System.hashCode(paymentMethod));
         hashCode = (17 * hashCode) + (resultCode == null ? 0 : System.hashCode(resultCode));
         return hashCode;
     }
