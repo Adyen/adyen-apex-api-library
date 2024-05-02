@@ -127,7 +127,7 @@ public with sharing class PaymentsResponse {
     @namespaceAccessible
     public ResultCodeEnum resultCode { get; set; }
 
-	@namespaceAccessible
+    @namespaceAccessible
     public Map<String, String> paymentMethod { get; set; }
 
     @namespaceAccessible
