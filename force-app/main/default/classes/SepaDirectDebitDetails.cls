@@ -12,11 +12,11 @@
 @namespaceAccessible
 public with sharing class SepaDirectDebitDetails implements PaymentMethodDetails {
     /**
-    * Get ibanNumber
-    * @return ibanNumber
+    * Get iban
+    * @return iban
     */
     @namespaceAccessible
-    public String ibanNumber { get; set; }
+    public String iban { get; set; }
 
     /**
     * Get ownerName
@@ -50,7 +50,7 @@ public with sharing class SepaDirectDebitDetails implements PaymentMethodDetails
     @namespaceAccessible
     public static SepaDirectDebitDetails getExample() {
         SepaDirectDebitDetails sepaDirectDebitDetails = new SepaDirectDebitDetails();
-        sepaDirectDebitDetails.ibanNumber = '';
+        sepaDirectDebitDetails.iban = '';
         sepaDirectDebitDetails.ownerName = '';
         sepaDirectDebitDetails.type = '';
         return sepaDirectDebitDetails;
@@ -60,7 +60,7 @@ public with sharing class SepaDirectDebitDetails implements PaymentMethodDetails
     public Boolean equals(Object obj) {
         if (obj instanceof SepaDirectDebitDetails) {
             SepaDirectDebitDetails sepaDirectDebitDetails = (SepaDirectDebitDetails) obj;
-            return this.ibanNumber == sepaDirectDebitDetails.ibanNumber
+            return this.iban == sepaDirectDebitDetails.iban
                 && this.ownerName == sepaDirectDebitDetails.ownerName
                 && this.type == sepaDirectDebitDetails.type;
         }
@@ -70,7 +70,7 @@ public with sharing class SepaDirectDebitDetails implements PaymentMethodDetails
     @namespaceAccessible
     public Integer hashCode() {
         Integer hashCode = 43;
-        hashCode = (17 * hashCode) + (ibanNumber == null ? 0 : System.hashCode(ibanNumber));
+        hashCode = (17 * hashCode) + (iban == null ? 0 : System.hashCode(iban));
         hashCode = (17 * hashCode) + (ownerName == null ? 0 : System.hashCode(ownerName));
         hashCode = (17 * hashCode) + (type == null ? 0 : System.hashCode(type));
         return hashCode;
