@@ -12,7 +12,8 @@ The library supports the following services:
 -   Access to your [Salesforce org](https://login.salesforce.com/).
 
 ## Installation
-The package needs to be installed on your Salesforce org as explained on their [docs](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_dev2gp_install_pkg.htm)
+The package needs to be installed on your Salesforce org as explained on their [docs](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_dev2gp_install_pkg.htm).  
+Link for the package installation: [Apex Library in AppExchange](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3u00000PraxuEAB)
 
 ## Using the library
 After installing the package on your Salesforce org, other managed packages from Adyen will use this library as reference model.
