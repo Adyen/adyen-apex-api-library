@@ -9,63 +9,68 @@
 * Do not edit the class manually.
 */
 
-@namespaceAccessible
+@NamespaceAccessible
 public with sharing class CheckoutPaymentsAction {
     /**
     * When the redirect URL must be accessed via POST, use this data to post to the redirect URL.
-    * @return data
     */
-    @namespaceAccessible
+    @NamespaceAccessible
     public Map<String, String> data { get; set; }
 
     /**
     * Specifies the HTTP method, for example GET or POST.
-    * @return method
     */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String method { get; set; }
 
     /**
     * When non-empty, contains a value that you must submit to the `/payments/details` endpoint. In some cases, required for polling.
-    * @return paymentData
     */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String paymentData { get; set; }
 
     /**
     * Specifies the payment method.
-    * @return paymentMethodType
     */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String paymentMethodType { get; set; }
 
     /**
     * Specifies the token of the action.
-    * @return token
     */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String token { get; set; }
 
     /**
     * Specifies the type of the action.
-    * @return type
     */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String type { get; set; }
 
     /**
     * Specifies the URL to redirect to.
-    * @return url
     */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String url { get; set; }
 
-    @namespaceAccessible
+    /**
+    * A token needed to authorise a payment.
+    */
+    @NamespaceAccessible
+    public String authorisationToken { get; set; }
+
+    /**
+    * A subtype of the token.
+    */
+    @NamespaceAccessible
+    public String subtype { get; set; }
+
+    @NamespaceAccessible
     public CheckoutPaymentsAction() {
         data = new Map<String, String>();
     }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static CheckoutPaymentsAction getExample() {
         CheckoutPaymentsAction checkoutPaymentsAction = new CheckoutPaymentsAction();
         checkoutPaymentsAction.data = new Map<String, String>{'key'=>''};
@@ -74,10 +79,13 @@ public with sharing class CheckoutPaymentsAction {
         checkoutPaymentsAction.paymentMethodType = '';
         checkoutPaymentsAction.type = '';
         checkoutPaymentsAction.url = '';
+        checkoutPaymentsAction.authorisationToken = '';
+        checkoutPaymentsAction.token = '';
+        checkoutPaymentsAction.subtype = '';
         return checkoutPaymentsAction;
     }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public Boolean equals(Object obj) {
         if (obj instanceof CheckoutPaymentsAction) {
             CheckoutPaymentsAction checkoutRedirectAction = (CheckoutPaymentsAction) obj;
@@ -86,12 +94,15 @@ public with sharing class CheckoutPaymentsAction {
                 && this.paymentData == checkoutRedirectAction.paymentData
                 && this.paymentMethodType == checkoutRedirectAction.paymentMethodType
                 && this.type == checkoutRedirectAction.type
-                && this.url == checkoutRedirectAction.url;
+                && this.url == checkoutRedirectAction.url
+                && this.token == checkoutRedirectAction.token
+                && this.authorisationToken == checkoutRedirectAction.authorisationToken
+                && this.subtype == checkoutRedirectAction.subtype;
         }
         return false;
     }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public Integer hashCode() {
         Integer hashCode = 43;
         hashCode = (17 * hashCode) + (data == null ? 0 : System.hashCode(data));
@@ -100,6 +111,9 @@ public with sharing class CheckoutPaymentsAction {
         hashCode = (17 * hashCode) + (paymentMethodType == null ? 0 : System.hashCode(paymentMethodType));
         hashCode = (17 * hashCode) + (type == null ? 0 : System.hashCode(type));
         hashCode = (17 * hashCode) + (url == null ? 0 : System.hashCode(url));
+        hashCode = (17 * hashCode) + (subtype == null ? 0 : System.hashCode(subtype));
+        hashCode = (17 * hashCode) + (authorisationToken == null ? 0 : System.hashCode(authorisationToken));
+        hashCode = (17 * hashCode) + (token == null ? 0 : System.hashCode(token));
         return hashCode;
     }
 }
