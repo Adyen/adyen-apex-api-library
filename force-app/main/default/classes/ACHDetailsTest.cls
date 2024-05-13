@@ -1,7 +1,7 @@
 @IsTest
 public class ACHDetailsTest {
     @IsTest
-    private static void ACHDetailsEqualityTest() {
+    private static void AchDetailsEqualityTest() {
         // given
         ACHDetails achTest1 = ACHDetails.getExample();
         ACHDetails achTest2 = ACHDetails.getExample();
