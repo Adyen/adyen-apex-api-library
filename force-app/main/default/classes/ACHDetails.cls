@@ -79,16 +79,15 @@ public with sharing class ACHDetails implements PaymentMethodDetails {
     public Boolean equals(Object obj) {
         if (obj instanceof ACHDetails) {
             ACHDetails otherACHDetails = (ACHDetails) obj;
-            return
-                this.bankAccountNumber == otherACHDetails.bankAccountNumber &&
-                this.bankAccountType == otherACHDetails.bankAccountType &&
-                this.bankLocationId == otherACHDetails.bankLocationId &&
-                this.checkoutAttemptId == otherACHDetails.checkoutAttemptId &&
-                this.encryptedBankAccountNumber == otherACHDetails.encryptedBankAccountNumber &&
-                this.encryptedBankLocationId == otherACHDetails.encryptedBankLocationId &&
-                this.ownerName == otherACHDetails.ownerName &&
-                this.storedPaymentMethodId == otherACHDetails.storedPaymentMethodId &&
-                this.type == otherACHDetails.type
+            return this.bankAccountNumber == otherACHDetails.bankAccountNumber
+                && this.bankAccountType == otherACHDetails.bankAccountType
+                && this.bankLocationId == otherACHDetails.bankLocationId
+                && this.checkoutAttemptId == otherACHDetails.checkoutAttemptId
+                && this.encryptedBankAccountNumber == otherACHDetails.encryptedBankAccountNumber
+                && this.encryptedBankLocationId == otherACHDetails.encryptedBankLocationId
+                && this.ownerName == otherACHDetails.ownerName
+                && this.storedPaymentMethodId == otherACHDetails.storedPaymentMethodId
+                && this.type == otherACHDetails.type
             ;
         }
         return false;
