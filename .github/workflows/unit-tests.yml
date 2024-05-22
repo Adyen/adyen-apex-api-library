@@ -25,8 +25,14 @@ jobs:
       - name: Install Salesforce CLI
         run: npm install @salesforce/cli --global
 
+      - name: debug only - printing secret
+        run: echo ${PBO_AUTH_URL}
+
+      - name: Create authentication file from secret
+        run: echo ${PBO_AUTH_URL} > secret.json
+
       - name: Authenticate to Dev Hub
-        run: sf org login sfdx-url -f ${PBO_AUTH_URL} --set-default-dev-hub
+        run: sf org login sfdx-url -f secret.json --set-default-dev-hub
 
       - name: Create Scratch Org
         run: sf org create scratch -f config/project-scratch-def.json --set-default --alias ScratchOrg --no-namespace -y 1
