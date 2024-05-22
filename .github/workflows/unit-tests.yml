@@ -25,9 +25,6 @@ jobs:
       - name: Install Salesforce CLI
         run: npm install @salesforce/cli --global
 
-      - name: debug only - printing secret
-        run: echo ${PBO_AUTH_URL}
-
       - name: Create authentication file from secret
         run: echo ${PBO_AUTH_URL} > secret.json
 
@@ -41,10 +38,7 @@ jobs:
         run: sf project deploy start --target-org ScratchOrg
 
       - name: Run Apex tests
-        run: sf apex run test --target-org ScratchOrg --result-format tap --output-dir test-results --code-coverage
-
-      - name: Generate Code Coverage Report
-        run: sf apex test report --result-dir test-results --code-coverage
+        run: sf apex run test --target-org ScratchOrg --code-coverage -w 5
 
       - name: Delete Scratch Org
         if: always()
