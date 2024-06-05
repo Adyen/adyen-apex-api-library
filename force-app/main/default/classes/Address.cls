@@ -7,51 +7,45 @@
 * Do not edit the class manually.
 */
 
-@namespaceAccessible
+@NamespaceAccessible
 public with sharing class Address {
     /**
     * The name of the city.
-    * @return city
     */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String city { get; set; }
 
     /**
     * The two-character country code as defined in ISO-3166-1 alpha-2. For example, **US**.\n> If you don\'t know the country or are not collecting the country from the shopper, provide `country` as `ZZ`.
-    * @return country
     */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String country { get; set; }
 
     /**
     * The number or name of the house.
-    * @return houseNumberOrName
     */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String houseNumberOrName { get; set; }
 
     /**
     * A maximum of five digits for an address in the US, or a maximum of ten characters for an address in all other countries.
-    * @return postalCode
     */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String postalCode { get; set; }
 
     /**
     * State or province codes as defined in ISO 3166-2. For example, **CA** in the US or **ON** in Canada.\n> Required for the US and Canada.
-    * @return stateOrProvince
     */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String stateOrProvince { get; set; }
 
     /**
     * The name of the street.\n> The house number should not be included in this field; it should be separately provided via `houseNumberOrName`.
-    * @return street
     */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String street { get; set; }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public static Address getExample() {
         Address address = new Address();
         address.city = '';
@@ -63,7 +57,7 @@ public with sharing class Address {
         return address;
     }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public Boolean equals(Object obj) {
         if (obj instanceof Address) {
             Address address = (Address) obj;
@@ -77,7 +71,7 @@ public with sharing class Address {
         return false;
     }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public Integer hashCode() {
         Integer hashCode = 43;
         hashCode = (17 * hashCode) + (city == null ? 0 : System.hashCode(city));
