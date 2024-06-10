@@ -5,7 +5,7 @@
       "default": true,
       "package": "API Library Apex Adyen",
       "versionName": "ver 3.1",
-      "versionNumber": "3.1.0.NEXT",
+      "versionNumber": "3.1.1.NEXT",
       "ancestorVersion": "HIGHEST"
     }
   ],
@@ -20,6 +20,7 @@
     "API Library Apex Adyen@2.0.0-0": "04t4T000001HohPQAS",
     "API Library Apex Adyen@3.0.0-0": "04t4T000001y7BWQAY",
     "API Library Apex Adyen@3.0.1-1": "04tRP0000000A5pYAE",
-    "API Library Apex Adyen@3.1.0-1": "04tRP0000000D25YAE"
+    "API Library Apex Adyen@3.1.0-1": "04tRP0000000D25YAE",
+    "API Library Apex Adyen@3.1.1-1": "04tRP0000000XGvYAM"
   }
 }
