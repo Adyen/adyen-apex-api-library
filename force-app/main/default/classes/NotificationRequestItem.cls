@@ -28,9 +28,6 @@ public with sharing class NotificationRequestItem {
     public String originalReference {get;set;}
 
     @NamespaceAccessible
-    public String paymentPspReference {get;set;}
-
-    @NamespaceAccessible
     public String pspReference {get;set;}
 
     @NamespaceAccessible
