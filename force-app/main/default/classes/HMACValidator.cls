@@ -1,13 +1,28 @@
-@namespaceAccessible
+@NamespaceAccessible
 public with sharing class HMACValidator {
     private static final String HMAC_SHA256_ALGORITHM = 'HmacSHA256';
     private static final String DATA_SEPARATOR = ':';
-    
-    @namespaceAccessible
+    private final NotificationRequestItem notificationRequestItem;
+    private final String hmacKey;
+
+    public HMACValidator(NotificationRequestItem notificationRequestItem, String hmacKey) {
+        if (notificationRequestItem == null) {
+            throw new HmacValidationException('Invalid notification request item');
+        }
+
+        if (String.isBlank(hmacKey)) {
+            throw new HmacValidationException('Invalid HMAC Key');
+        }
+
+        this.notificationRequestItem = notificationRequestItem;
+        this.hmacKey = hmacKey;
+    }
+
+    @NamespaceAccessible
     public class HmacValidationException extends Exception {}
 
     @TestVisible
-    private String calculateHMAC(NotificationRequestItem notificationRequestItem, String key){
+    private String calculateHMAC() {
         List<Object> payloadParts = new List<Object>{
             notificationRequestItem.pspReference,
             notificationRequestItem.originalReference,
@@ -18,11 +33,11 @@ public with sharing class HMACValidator {
             notificationRequestItem.eventCode,
             notificationRequestItem.success
         };
-        
+
         String payload = String.join(payloadParts, DATA_SEPARATOR);
         Blob binaryPayload = Blob.valueOf(payload); // Convert payload to binary
 
-        Blob binaryKey = EncodingUtil.convertFromHex(key); // Convert hexadecimal string to binary
+        Blob binaryKey = EncodingUtil.convertFromHex(hmacKey); // Convert hexadecimal string to binary
 
         Blob hmac = Crypto.generateMac(HMAC_SHA256_ALGORITHM, binaryPayload, binaryKey);
         String hmacBase64 = EncodingUtil.base64Encode(hmac);
@@ -31,27 +46,27 @@ public with sharing class HMACValidator {
 
     // Prevents timing attacks
     @TestVisible
-    private Boolean compareHMAC(String hmacSignature, String merchantSignature) {
-        if (hmacSignature.length() != merchantSignature.length()) {
+    private static Boolean compareHMAC(String calculatedSignature, String merchantSignature) {
+        if (calculatedSignature.length() != merchantSignature.length()) {
             return false;
         }
-        
+
         Integer bitwiseComparison = 0;
-        for (Integer i = 0; i < hmacSignature.length(); i++) {
-            bitwiseComparison |= hmacSignature.charAt(i) ^ merchantSignature.charAt(i);
+        for (Integer i = 0; i < calculatedSignature.length(); i++) {
+            bitwiseComparison |= calculatedSignature.charAt(i) ^ merchantSignature.charAt(i);
         }
-        
+
         return bitwiseComparison == 0;
     }
-    
-   @namespaceAccessible
-   public Boolean validateHMAC(NotificationRequestItem notificationRequestItem, String hmacKey){
-        String hmacSignature = notificationRequestItem.additionalData?.get('hmacSignature');
-        if (String.isBlank(hmacSignature)) {
+
+    @NamespaceAccessible
+    public Boolean validateHMAC() {
+        String merchantSignature = notificationRequestItem.additionalData?.get('hmacSignature');
+        if (String.isBlank(merchantSignature)) {
             throw new HmacValidationException('Missing notification data');
         }
-        String calculatedSignature = calculateHMAC(notificationRequestItem, hmacKey);
+        String calculatedSignature = calculateHMAC();
 
-        return compareHMAC(calculatedSignature, hmacSignature);
+        return compareHMAC(calculatedSignature, merchantSignature);
     }
 }
