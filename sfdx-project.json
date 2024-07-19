@@ -4,8 +4,8 @@
       "path": "force-app",
       "default": true,
       "package": "API Library Apex Adyen",
-      "versionName": "ver 3.1",
-      "versionNumber": "3.1.1.NEXT",
+      "versionName": "version 3.2",
+      "versionNumber": "3.2.0.NEXT",
       "ancestorVersion": "HIGHEST"
     }
   ],
@@ -21,6 +21,7 @@
     "API Library Apex Adyen@3.0.0-0": "04t4T000001y7BWQAY",
     "API Library Apex Adyen@3.0.1-1": "04tRP0000000A5pYAE",
     "API Library Apex Adyen@3.1.0-1": "04tRP0000000D25YAE",
-    "API Library Apex Adyen@3.1.1-1": "04tRP0000000XGvYAM"
+    "API Library Apex Adyen@3.1.1-1": "04tRP0000000XGvYAM",
+    "API Library Apex Adyen@3.2.0-2": "04tRP0000000j5BYAQ"
   }
 }
