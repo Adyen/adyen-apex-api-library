@@ -5,6 +5,7 @@ public with sharing class HMACValidator {
     private final NotificationRequestItem notificationRequestItem;
     private final String hmacKey;
 
+    @NamespaceAccessible
     public HMACValidator(NotificationRequestItem notificationRequestItem, String hmacKey) {
         if (notificationRequestItem == null) {
             throw new HmacValidationException('Invalid notification request item');
