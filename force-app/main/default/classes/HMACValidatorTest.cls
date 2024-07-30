@@ -47,7 +47,10 @@ private class HMACValidatorTest {
         };
 
         Boolean isValid = validator.validateHMAC();
+        Assert.isTrue(isValid);
 
+        HMACValidator validator2 = new HMACValidator();
+        isValid = validator2.validateHMAC(requestItem, hmacKey);
         Assert.isTrue(isValid);
     }
 
