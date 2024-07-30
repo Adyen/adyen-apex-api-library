@@ -2,9 +2,13 @@
 public with sharing class HMACValidator {
     private static final String HMAC_SHA256_ALGORITHM = 'HmacSHA256';
     private static final String DATA_SEPARATOR = ':';
-    private final NotificationRequestItem notificationRequestItem;
-    private final String hmacKey;
+    private NotificationRequestItem notificationRequestItem;
+    private String hmacKey;
 
+    @NamespaceAccessible
+    public HMACValidator() {}
+
+    @NamespaceAccessible
     public HMACValidator(NotificationRequestItem notificationRequestItem, String hmacKey) {
         if (notificationRequestItem == null) {
             throw new HmacValidationException('Invalid notification request item');
@@ -68,5 +72,12 @@ public with sharing class HMACValidator {
         String calculatedSignature = calculateHMAC();
 
         return compareHMAC(calculatedSignature, merchantSignature);
+    }
+
+    @NamespaceAccessible
+    public Boolean validateHMAC(NotificationRequestItem notificationRequestItem, String hmacKey) {
+        this.notificationRequestItem = notificationRequestItem;
+        this.hmacKey = hmacKey;
+        return validateHMAC();
     }
 }
