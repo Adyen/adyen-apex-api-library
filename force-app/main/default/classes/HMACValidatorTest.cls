@@ -1,7 +1,7 @@
-@isTest
+@IsTest
 private class HMACValidatorTest {
 
-    @isTest
+    @IsTest
     static void testCalculateHMAC() {
         NotificationRequestItem requestItem = new NotificationRequestItem();
         requestItem.amount = new Amount();
@@ -17,14 +17,14 @@ private class HMACValidatorTest {
 
         String hmacKey = '0123456789ABCDEF';
 
-        HMACValidator validator = new HMACValidator();
-        String hmac = validator.calculateHMAC(requestItem, hmacKey);
+        HMACValidator validator = new HMACValidator(requestItem, hmacKey);
+        String hmac = validator.calculateHMAC();
 
         // Assert that the HMAC is not null
         Assert.isNotNull(hmac);
     }
 
-    @isTest
+    @IsTest
     static void testValidateHMAC() {
         NotificationRequestItem requestItem = new NotificationRequestItem();
         requestItem.amount = new Amount();
@@ -39,19 +39,22 @@ private class HMACValidatorTest {
 
         String hmacKey = '0123456789ABCDEF';
 
-        HMACValidator validator = new HMACValidator();
-        String expectedHmac = validator.calculateHMAC(requestItem, hmacKey);
+        HMACValidator validator = new HMACValidator(requestItem, hmacKey);
+        String expectedHmac = validator.calculateHMAC();
 
         requestItem.additionalData = new Map<String, String>{
             'hmacSignature' => expectedHmac
         };
 
-        Boolean isValid = validator.validateHMAC(requestItem, hmacKey);
+        Boolean isValid = validator.validateHMAC();
+        Assert.isTrue(isValid);
 
+        HMACValidator validator2 = new HMACValidator();
+        isValid = validator2.validateHMAC(requestItem, hmacKey);
         Assert.isTrue(isValid);
     }
 
-    @isTest
+    @IsTest
     static void testInvalidHMAC() {
         NotificationRequestItem requestItem = new NotificationRequestItem();
 
@@ -73,14 +76,14 @@ private class HMACValidatorTest {
             'hmacSignature' => 'coqCmt/IZ4E3CzPvMY8zTjQVL5hYJUiBRg8UU+iCWo0'
         };
 
-        HMACValidator validator = new HMACValidator();
-        Boolean isValid = validator.validateHMAC(requestItem, hmacKey);
+        HMACValidator validator = new HMACValidator(requestItem, hmacKey);
+        Boolean isValid = validator.validateHMAC();
 
         Assert.isFalse(isValid);
     }
 
     // Tests the correct HMAC creation
-    @isTest
+    @IsTest
     static void testCorrectHMACSignatureCreation() {
         NotificationRequestItem requestItem = new NotificationRequestItem();
         requestItem.amount = new Amount();
@@ -95,22 +98,37 @@ private class HMACValidatorTest {
 
         String hmacKey = '44782DEF547AAA06C910C43932B1EB0C71FC68D9D0C057550C48EC2ACF6BA056';
 
-        HMACValidator validator = new HMACValidator();
-        String expectedHmac = validator.calculateHMAC(requestItem, hmacKey);
+        HMACValidator validator = new HMACValidator(requestItem, hmacKey);
+        String expectedHmac = validator.calculateHMAC();
         Assert.areEqual('coqCmt/IZ4E3CzPvMY8zTjQVL5hYJUiBRg8UU+iCWo0=', expectedHmac);
     }
 
-    @isTest
+    @IsTest
     static void testHMACException() {
-        try{
-            NotificationRequestItem requestItem = new NotificationRequestItem();
-            String hmacKey = null;
-            HMACValidator validator = new HMACValidator();
-            Boolean isValid = validator.validateHMAC(requestItem, hmacKey);
+        NotificationRequestItem requestItem = new NotificationRequestItem();
+        String hmacKey = 'some key';
+        HMACValidator validator;
+        // given no Notification Request Item
+        try { // when
+            validator = new HMACValidator(null, hmacKey);
             Assert.fail();
+        } catch(HMACValidator.HmacValidationException ex) { // then
+            Assert.isTrue(ex.getMessage().containsIgnoreCase('Invalid'));
         }
-        catch(HMACValidator.HmacValidationException e){
-            Assert.areEqual('Missing notification data', e.getMessage());
+        // given no hmac key
+        try { // when
+            validator = new HMACValidator(requestItem, null);
+            Assert.fail();
+        } catch(HMACValidator.HmacValidationException ex) { // then
+            Assert.isTrue(ex.getMessage().containsIgnoreCase('Invalid'));
+        }
+        // given no merchant signature
+        try { // when
+            validator = new HMACValidator(requestItem, hmacKey);
+            validator.validateHMAC();
+            Assert.fail();
+        } catch(HMACValidator.HmacValidationException ex) { // then
+            Assert.isTrue(ex.getMessage().containsIgnoreCase('Missing'));
         }
     }
 }

@@ -8,31 +8,31 @@
 *
 */
 
-@namespaceAccessible
+@NamespaceAccessible
 public with sharing class AdyenClient {
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public AdyenConfig config;
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public AdyenClient(String apiKey, String endpoint) {
         this.config = new AdyenConfig();
         this.config.setApiKey(apiKey);
         this.config.setEndpoint(endpoint);
     }
 
-    @namespaceAccessible
-    public HttpResponse request(AdyenConfig config, String request){
+    @NamespaceAccessible
+    public HttpResponse request(AdyenConfig config, String request) {
         HttpRequest httpRequest = createHttpRequest(config, request);
         return sendRequest(httpRequest);
     }
 
-    private HttpResponse sendRequest(HttpRequest request){
-        commercepayments.PaymentsHttp httpClient = new commercepayments.PaymentsHttp();
+    private static HttpResponse sendRequest(HttpRequest request) {
+        CommercePayments.PaymentsHttp httpClient = new CommercePayments.PaymentsHttp();
         return httpClient.send(request);
     }
 
-    private HttpRequest createHttpRequest(AdyenConfig config, String request){
+    private static HttpRequest createHttpRequest(AdyenConfig config, String request) {
         HttpRequest httpReq = new HttpRequest();
         httpReq.setEndpoint(config.getEndpoint());
         httpReq.setMethod('POST');
