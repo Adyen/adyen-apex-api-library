@@ -1,118 +1,95 @@
 /*
 * Represents an Adyen Capture Request
 */
-@namespaceAccessible
+@NamespaceAccessible
 public with sharing class CaptureRequest implements ModificationRequest {
-    
-    /**
-    * additional data
-    * @return additionalData
-    */
-    @namespaceAccessible
+
+    @NamespaceAccessible
     public String additionalData { get; set; }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public String getAdditionalData() {
         return additionalData;
     }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public void setAdditionalData(String additionalData) {
         this.additionalData = additionalData;
     }
 
-    /**
-    * application info
-    * @return applicationInfo
-    */
-    @namespaceAccessible
+    @NamespaceAccessible
     public ApplicationInfo applicationInfo { get; set; }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public ApplicationInfo getApplicationInfo() {
         return applicationInfo;
     }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public void setApplicationInfo(ApplicationInfo applicationInfo) {
         this.applicationInfo = applicationInfo;
     }
 
-    /**
-    * original payment reference
-    * @return originalReference
-    */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String originalReference { get; set; }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public String getOriginalReference() {
         return originalReference;
     }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public void setOriginalReference(String originalReference) {
         this.originalReference = originalReference;
     }
 
-    /**
-    * Payment capture amount
-    * @return amount
-    */
-    @namespaceAccessible
+    @NamespaceAccessible
     public Amount modificationAmount { get; set; }
 
-    /**
-    * Payment capture amount
-    * @return amount
-    */
-    @namespaceAccessible
+    @NamespaceAccessible
     public Amount amount { get; set; }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public Amount getAmount() {
         return amount;
     }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public void setAmount(Amount amount) {
         this.amount = amount;
     }
 
     /**
-    * The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. We recommend using a unique value per payment; however, it is not a requirement.\nIf you need to provide multiple references for a transaction, separate them with hyphens ("-").\nMaximum length: 80 characters.
-    * @return reference
+    * The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status.
+    * We recommend using a unique value per payment; however, it is not a requirement.
+    * If you need to provide multiple references for a transaction, separate them with hyphens ("-"). Maximum length: 80 characters.
     */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String reference { get; set; }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public String getReference() {
         return reference;
     }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public void setReference(String reference) {
         this.reference = reference;
     }
 
-    /**
-    * Merchant account name
-    * @return merchantAccount
-    */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String merchantAccount { get; set; }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public String getMerchantAccount() {
         return merchantAccount;
     }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public void setMerchantAccount(String merchantAccount) {
         this.merchantAccount = merchantAccount;
     }
 
-    @namespaceAccessible
+    @NamespaceAccessible
     public CaptureRequest(){}
 }

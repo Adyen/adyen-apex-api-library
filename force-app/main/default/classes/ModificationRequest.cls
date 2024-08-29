@@ -1,4 +1,4 @@
-@namespaceAccessible
+@NamespaceAccessible
 public interface ModificationRequest {
     //interface to declare common methods from CaptureRequest and RefundRequest
     String getAdditionalData();
