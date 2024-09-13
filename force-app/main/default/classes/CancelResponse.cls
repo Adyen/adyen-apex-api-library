@@ -1,65 +1,33 @@
 /*
 * Represents the capture response object of the Adyen API
 */
-@namespaceAccessible
+@NamespaceAccessible
 public with sharing class CancelResponse {
 
-    /**
-    * Get errorCode
-    * @return errorCode
-    */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String errorCode { get; set; }
 
-    /**
-    * Get errorType
-    * @return errorType
-    */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String errorType { get; set; }
 
-    /**
-    * Get message
-    * @return message
-    */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String message { get; set; }
 
-    /**
-    * Get merchantAccount
-    * @return merchantAccount
-    */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String merchantAccount { get; set; }
 
-    /**
-    * Get paymentPspReference
-    * @return paymentPspReference
-    */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String paymentPspReference { get; set; }
 
-    /**
-    * Get pspReference
-    * @return pspReference
-    */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String pspReference { get; set; }
 
-    /**
-    * Get reference
-    * @return reference
-    */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String reference { get; set; }
 
-    /**
-    * Get status
-    * @return status
-    */
-    @namespaceAccessible
+    @NamespaceAccessible
     public String status { get; set; }
 
-    @namespaceAccessible
-    public CancelResponse(){}
+    @NamespaceAccessible
+    public CancelResponse() {}
 }
