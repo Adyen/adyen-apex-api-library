@@ -56,12 +56,12 @@ public with sharing class PaymentLinkRequest {
     @NamespaceAccessible
     public Integer hashCode() {
         List<Object> requestFields = new List<Object>{
-            amount, 
-            applicationInfo, 
-            expiresAt, 
-            merchantAccount, 
-            reference, 
-            returnUrl, 
+            amount,
+            applicationInfo,
+            expiresAt,
+            merchantAccount,
+            reference,
+            returnUrl,
             themeId
         };
         return computeHashCode(requestFields);
