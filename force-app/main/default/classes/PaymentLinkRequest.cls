@@ -55,14 +55,23 @@ public with sharing class PaymentLinkRequest {
 
     @NamespaceAccessible
     public Integer hashCode() {
-        Integer hashCode = 43;
-        hashCode = (17 * hashCode) + (amount == null ? 0 : System.hashCode(amount));
-        hashCode = (17 * hashCode) + (applicationInfo == null ? 0 : System.hashCode(applicationInfo));
-        hashCode = (17 * hashCode) + (expiresAt == null ? 0 : System.hashCode(expiresAt));
-        hashCode = (17 * hashCode) + (merchantAccount == null ? 0 : System.hashCode(merchantAccount));
-        hashCode = (17 * hashCode) + (reference == null ? 0 : System.hashCode(reference));
-        hashCode = (17 * hashCode) + (returnUrl == null ? 0 : System.hashCode(returnUrl));
-        hashCode = (17 * hashCode) + (themeId == null ? 0 : System.hashCode(themeId));
-        return hashCode;
+        List<Object> requestFields = new List<Object>{
+            amount, 
+            applicationInfo, 
+            expiresAt, 
+            merchantAccount, 
+            reference, 
+            returnUrl, 
+            themeId
+        };
+        return computeHashCode(requestFields);
+    }
+
+    private Integer computeHashCode(List<Object> requestFields) {
+        Integer hash = 43;
+        for (Object field : requestFields) {
+            hash = (17 * hash) + (field == null ? 0 : System.hashCode(field));
+        }
+        return hash;
     }
 }
