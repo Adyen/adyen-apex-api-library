@@ -71,12 +71,12 @@ public with sharing class PaymentLinkResponse {
     @NamespaceAccessible
     public Integer hashCode() {
         List<Object> responseFields = new List<Object>{
-            amount, 
-            applicationInfo, 
-            expiresAt, 
-            merchantAccount, 
-            reference, 
-            returnUrl, 
+            amount,
+            applicationInfo,
+            expiresAt,
+            merchantAccount,
+            reference,
+            returnUrl,
             themeId,
             url,
             status,

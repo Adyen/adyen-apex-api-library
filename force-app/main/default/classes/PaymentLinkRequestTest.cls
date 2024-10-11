@@ -1,15 +1,16 @@
- @IsTest
- private class PaymentLinkRequestTest {
-     @IsTest
-     static void getExampleTest() {
+@IsTest
+private class PaymentLinkRequestTest {
+    @IsTest
+    static void getExampleTest() {
         PaymentLinkRequest paymentLinkRequest = PaymentLinkRequest.getExample();
-         Assert.isNotNull(paymentLinkRequest);
-         Assert.isNotNull(paymentLinkRequest.amount);
-         Assert.isNotNull(paymentLinkRequest.merchantAccount);
-         Assert.isNotNull(paymentLinkRequest.reference);
-     }
+        Assert.isNotNull(paymentLinkRequest);
+        Assert.isNotNull(paymentLinkRequest.allowedPaymentMethods);
+        Assert.isNotNull(paymentLinkRequest.amount);
+        Assert.isNotNull(paymentLinkRequest.merchantAccount);
+        Assert.isNotNull(paymentLinkRequest.reference);
+    }
 
-     @IsTest
+    @IsTest
     static void testEqualsTrue() {
         // Given
         PaymentLinkRequest req1 = PaymentLinkRequest.getExample();
@@ -33,7 +34,7 @@
         Boolean result = req1.equals(req2);
 
         // Then
-        Assert.isTrue(!result, 'Expected PaymentLinkRequest objects to be different');
+        Assert.isFalse(result, 'Expected PaymentLinkRequest objects to be different');
     }
 
     @IsTest
@@ -51,7 +52,7 @@
     }
 
     @IsTest
-    static void testHashCodeDifferent() {
+        static void testHashCodeDifferent() {
         // Given
         PaymentLinkRequest req1 = PaymentLinkRequest.getExample();
         PaymentLinkRequest req2 = PaymentLinkRequest.getExample();
@@ -64,4 +65,4 @@
         // Then
         Assert.areNotEqual(hashCode1, hashCode2, 'Expected different objects to have different hash codes');
     }
- }
+}
