@@ -5,6 +5,9 @@
 public with sharing class PaymentLinkRequest {
 
     @NamespaceAccessible
+    public List<String> allowedPaymentMethods { get; set; }
+
+    @NamespaceAccessible
     public Amount amount { get; set; }
 
     @NamespaceAccessible
@@ -28,6 +31,7 @@ public with sharing class PaymentLinkRequest {
     @NamespaceAccessible
     public static PaymentLinkRequest getExample() {
         PaymentLinkRequest paymentLinkRequest = new PaymentLinkRequest();
+        paymentLinkRequest.allowedPaymentMethods = new List<String>{'ideal'};
         paymentLinkRequest.amount = Amount.getExample();
         paymentLinkRequest.applicationInfo = ApplicationInfo.getExample();
         paymentLinkRequest.expiresAt = '2024-12-31T23:59:59+01:00';
@@ -42,7 +46,8 @@ public with sharing class PaymentLinkRequest {
     public Boolean equals(Object obj) {
         if (obj instanceof PaymentLinkRequest) {
             PaymentLinkRequest paymentLinkRequest = (PaymentLinkRequest) obj;
-            return this.amount == paymentLinkRequest.amount
+            return this.allowedPaymentMethods == paymentLinkRequest.allowedPaymentMethods
+                && this.amount == paymentLinkRequest.amount
                 && this.applicationInfo.equals(paymentLinkRequest.applicationInfo)
                 && this.expiresAt.equals(paymentLinkRequest.expiresAt)
                 && this.merchantAccount.equals(paymentLinkRequest.merchantAccount)
@@ -56,6 +61,7 @@ public with sharing class PaymentLinkRequest {
     @NamespaceAccessible
     public Integer hashCode() {
         List<Object> requestFields = new List<Object>{
+            allowedPaymentMethods,
             amount, 
             applicationInfo, 
             expiresAt, 
@@ -67,7 +73,7 @@ public with sharing class PaymentLinkRequest {
         return computeHashCode(requestFields);
     }
 
-    private Integer computeHashCode(List<Object> requestFields) {
+    private static Integer computeHashCode(List<Object> requestFields) {
         Integer hash = 43;
         for (Object field : requestFields) {
             hash = (17 * hash) + (field == null ? 0 : System.hashCode(field));
