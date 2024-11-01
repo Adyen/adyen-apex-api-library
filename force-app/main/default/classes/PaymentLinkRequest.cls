@@ -152,7 +152,7 @@ public with sharing class PaymentLinkRequest {
 
     @NamespaceAccessible
     public Boolean equals(Object obj) {
-        if ( !(obj instanceof PaymentLinkRequest) ) return false;
+        if (obj == null || !(obj instanceof PaymentLinkRequest)) return false;
 
         PaymentLinkRequest other = (PaymentLinkRequest) obj;
         return this.allowedPaymentMethods == other.allowedPaymentMethods
