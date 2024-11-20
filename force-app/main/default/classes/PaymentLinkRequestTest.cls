@@ -52,7 +52,7 @@ private class PaymentLinkRequestTest {
     }
 
     @IsTest
-        static void testHashCodeDifferent() {
+    static void testHashCodeDifferent() {
         // Given
         PaymentLinkRequest req1 = PaymentLinkRequest.getExample();
         PaymentLinkRequest req2 = PaymentLinkRequest.getExample();

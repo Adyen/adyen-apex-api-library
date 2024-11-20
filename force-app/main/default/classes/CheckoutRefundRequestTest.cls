@@ -1,31 +1,91 @@
-@isTest
+@IsTest
 public class CheckoutRefundRequestTest {
 
-    /**
-    * Test method to enhance code coverage for Apex Models; This ain't validating any specific business use case.
-    * Enhances code coverage for CheckoutRefundRequest apex class
-    */
-    @isTest
-    private static void testAllMethodsFromCheckoutRefundRequest(){
-        CheckoutRefundRequest testRefundRequest = new CheckoutRefundRequest();
+    @IsTest
+    static void getExampleTest() {
+        CheckoutRefundRequest refundRequest = CheckoutRefundRequest.getExample();
+        Assert.isNotNull(refundRequest);
+        Assert.isNotNull(refundRequest.amount);
+        Assert.isNotNull(refundRequest.applicationInfo);
+        Assert.isNotNull(refundRequest.capturePspReference);
+        Assert.isNotNull(refundRequest.lineItems);
+        Assert.isNotNull(refundRequest.merchantAccount);
+        Assert.isNotNull(refundRequest.merchantRefundReason);
+        Assert.isNotNull(refundRequest.reference);
+        Assert.isNotNull(refundRequest.store);
+    }
 
-        Amount testAmount = new Amount();
-        testAmount.value = 123456789L;
+    @IsTest
+    static void testEqualsTrue() {
+        // Given
+        CheckoutRefundRequest req1 = CheckoutRefundRequest.getExample();
+        CheckoutRefundRequest req2 = CheckoutRefundRequest.getExample();
 
-        testRefundRequest.setAmount(testAmount);
-        System.assertEquals(testRefundRequest.getAmount().value, 123456789L);
+        // When
+        Boolean result = req1.equals(req2);
 
-        testRefundRequest.setReference(AdyenConstants.TEST_REFERENCE);
-        System.assertEquals(testRefundRequest.getReference(), AdyenConstants.TEST_REFERENCE);
+        // Then
+        Assert.isTrue(result, 'Expected both CheckoutRefundRequest objects to be equal');
+    }
 
-        testRefundRequest.setMerchantAccount(AdyenConstants.TEST_MERCHANT_ACCOUNT);
-        System.assertEquals(testRefundRequest.getMerchantAccount(), AdyenConstants.TEST_MERCHANT_ACCOUNT);
+    @IsTest
+    static void testEqualsFalse() {
+        // Given
+        CheckoutRefundRequest req1 = CheckoutRefundRequest.getExample();
+        CheckoutRefundRequest req2 = CheckoutRefundRequest.getExample();
+        req2.reference = 'DIFFERENT_REFERENCE_NUMBER';
 
-        testRefundRequest.setLineItems(new List<LineItem>{new LineItem()});
-        System.assertEquals(1, testRefundRequest.getLineItems().size());
+        // When
+        Boolean result = req1.equals(req2);
 
-        testRefundRequest.setApplicationInfo(ApplicationInfo.getExample());
-        System.assertEquals(testRefundRequest.getApplicationInfo().adyenLibrary.name, '');
+        // Then
+        Assert.isFalse(result, 'Expected CheckoutRefundRequest objects to be different');
+    }
 
+    @IsTest
+    static void testHashCodeSame() {
+        // Given
+        CheckoutRefundRequest req1 = CheckoutRefundRequest.getExample();
+        CheckoutRefundRequest req2 = CheckoutRefundRequest.getExample();
+
+        // When
+        Integer hashCode1 = req1.hashCode();
+        Integer hashCode2 = req2.hashCode();
+
+        // Then
+        Assert.areEqual(hashCode1, hashCode2, 'Expected identical objects to have the same hash code');
+    }
+
+    @IsTest
+    static void testHashCodeDifferent() {
+        // Given
+        CheckoutRefundRequest req1 = CheckoutRefundRequest.getExample();
+        CheckoutRefundRequest req2 = CheckoutRefundRequest.getExample();
+        req2.reference = 'DIFFERENT_REFERENCE_NUMBER';
+
+        // When
+        Integer hashCode1 = req1.hashCode();
+        Integer hashCode2 = req2.hashCode();
+
+        // Then
+        Assert.areNotEqual(hashCode1, hashCode2, 'Expected different objects to have different hash codes');
+    }
+
+    @IsTest
+    static void gettersAndSettersTest() {
+        // Given
+        CheckoutRefundRequest refundRequest = new CheckoutRefundRequest();
+        refundRequest.setAmount(Amount.getExample());
+        refundRequest.setApplicationInfo(ApplicationInfo.getExample());
+        refundRequest.setLineItems(new List<LineItem>());
+        refundRequest.setMerchantAccount(AdyenConstants.TEST_MERCHANT_ACCOUNT);
+        refundRequest.setReference(AdyenConstants.TEST_REFERENCE);
+
+        // Then
+        Assert.areEqual(Amount.getExample(), refundRequest.getAmount());
+        Assert.areEqual(ApplicationInfo.getExample(), refundRequest.getApplicationInfo());
+        Assert.isNotNull(refundRequest.getLineItems());
+        Assert.areEqual(AdyenConstants.TEST_MERCHANT_ACCOUNT, refundRequest.getMerchantAccount());
+        Assert.areEqual(AdyenConstants.TEST_REFERENCE, refundRequest.getReference());
     }
 }
