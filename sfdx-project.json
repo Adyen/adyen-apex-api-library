@@ -4,15 +4,15 @@
       "path": "force-app",
       "default": true,
       "package": "API Library Apex Adyen",
-      "versionName": "version 3.3",
-      "versionNumber": "3.3.0.NEXT",
+      "versionName": "version 3.4",
+      "versionNumber": "3.4.0.NEXT",
       "ancestorVersion": "HIGHEST"
     }
   ],
   "name": "adyen-apex-api-lib-2GP",
   "namespace": "adyen_payment",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "61.0",
+  "sourceApiVersion": "62.0",
   "packageAliases": {
     "API Library Apex Adyen": "0Ho4T0000000043SAA",
     "API Library Apex Adyen@0.1.0-1": "04t4T000001VvbqQAC",
@@ -23,6 +23,7 @@
     "API Library Apex Adyen@3.1.0-1": "04tRP0000000D25YAE",
     "API Library Apex Adyen@3.1.1-1": "04tRP0000000XGvYAM",
     "API Library Apex Adyen@3.2.0-5": "04tRP0000000lwbYAA",
-    "API Library Apex Adyen@3.3.0-1": "04tRP0000000vZNYAY"
+    "API Library Apex Adyen@3.3.0-1": "04tRP0000000vZNYAY",
+    "API Library Apex Adyen@3.4.0-6": "04tRP0000001UQfYAM"
   }
 }
