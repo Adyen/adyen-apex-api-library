@@ -72,6 +72,6 @@ private class WebhookSetupResponseTest {
         Integer hashCode2 = res2.hashCode();
         
         // Then
-        Assert.areEqual(hashCode1, hashCode2, 'Expected different objects to have different hash codes');
+        Assert.areNotEqual(hashCode1, hashCode2, 'Expected different objects to have different hash codes');
     }
 }
