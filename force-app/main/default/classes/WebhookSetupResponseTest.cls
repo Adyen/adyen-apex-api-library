@@ -7,29 +7,11 @@ private class WebhookSetupResponseTest {
         WebhookSetupResponse res1 = WebhookSetupResponse.getExample();
         WebhookSetupResponse res2 = WebhookSetupResponse.getExample();
         
-        res1.additionalSettings = new WebhookSetupResponse.AdditionalSettings();
-        res1.additionalSettings.includeEventCodes = new List<String>{
-            AdyenConstants.NOTIFICATION_REQUEST_TYPE_AUTHORISE,
-            AdyenConstants.NOTIFICATION_REQUEST_TYPE_CAPTURE
-        };
-        res1.additionalSettings.excludeEventCodes = new List<String>{
-            'REFUND'
-        };
-        
-        res2.additionalSettings = new WebhookSetupResponse.AdditionalSettings();
-        res2.additionalSettings.includeEventCodes = new List<String>{
-            AdyenConstants.NOTIFICATION_REQUEST_TYPE_AUTHORISE,
-            AdyenConstants.NOTIFICATION_REQUEST_TYPE_CAPTURE
-        };
-        res2.additionalSettings.excludeEventCodes = new List<String>{
-            'REFUND'
-        };
-        
         // When
         Boolean result = res1.equals(res2);
         
         // Then
-        System.assert(result, 'Expected both WebhookSetupResponse objects to be equal');
+        Assert.isTrue(result, 'Expected both WebhookSetupResponse objects to be equal');
     }
     
     @IsTest
@@ -43,7 +25,7 @@ private class WebhookSetupResponseTest {
         Boolean result = res1.equals(res2);
         
         // Then
-        System.assert(!result, 'Expected WebhookSetupResponse objects to be different');
+        Assert.isFalse(result, 'Expected WebhookSetupResponse objects to be different');
     }
     
     @IsTest
@@ -75,7 +57,7 @@ private class WebhookSetupResponseTest {
         Integer hashCode2 = res2.hashCode();
         
         // Then
-        System.assertEquals(hashCode1, hashCode2, 'Expected identical objects to have the same hash code');
+        Assert.areEqual(hashCode1, hashCode2, 'Expected identical objects to have the same hash code');
     }
     
     @IsTest
@@ -90,6 +72,6 @@ private class WebhookSetupResponseTest {
         Integer hashCode2 = res2.hashCode();
         
         // Then
-        System.assertNotEquals(hashCode1, hashCode2, 'Expected different objects to have different hash codes');
+        Assert.areEqual(hashCode1, hashCode2, 'Expected different objects to have different hash codes');
     }
 }
