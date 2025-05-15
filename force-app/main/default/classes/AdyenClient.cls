@@ -38,6 +38,10 @@ public with sharing class AdyenClient {
         httpReq.setMethod('POST');
         httpReq.setHeader('X-API-KEY', config.getApiKey());
         httpReq.setHeader('Content-Type', 'application/json');
+        Integer timeout = config.getTimeout();
+        if (timeout != null) {
+            httpReq.setTimeout(timeout);
+        }
         httpReq.setBody(request);
         return httpReq;
     }
