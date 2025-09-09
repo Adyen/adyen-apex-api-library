@@ -23,6 +23,12 @@ public with sharing class WebhookSetupRequest {
     public String encryptionProtocol { get; set; }
     
     @NamespaceAccessible
+    public String filterMerchantAccountType { get; set; }
+    
+    @NamespaceAccessible
+    public List<String> filterMerchantAccounts { get; set; }
+    
+    @NamespaceAccessible
     public Boolean equals(Object obj) {
         if (obj == null || !(obj instanceof WebhookSetupRequest)) return false;
 
@@ -33,7 +39,9 @@ public with sharing class WebhookSetupRequest {
             && this.communicationFormat == other.communicationFormat
             && this.type == other.type
             && this.encryptionProtocol == other.encryptionProtocol
-            && this.additionalSettings.equals(other.additionalSettings);
+            && this.filterMerchantAccountType == other.filterMerchantAccountType
+            && (this.filterMerchantAccounts != null ? this.filterMerchantAccounts.equals(other.filterMerchantAccounts) : other.filterMerchantAccounts == null)
+            && (this.additionalSettings != null ? this.additionalSettings.equals(other.additionalSettings) : other.additionalSettings == null);
     }
     
     @NamespaceAccessible
@@ -45,6 +53,8 @@ public with sharing class WebhookSetupRequest {
             communicationFormat,
             type,
             encryptionProtocol,
+            filterMerchantAccountType,
+            filterMerchantAccounts,
             additionalSettings
         };
         return ApiLibUtils.computeHashCode(requestFields);
@@ -60,6 +70,8 @@ public with sharing class WebhookSetupRequest {
         example.type = 'standard';
         example.encryptionProtocol = 'TLSv1.3';
         example.description = 'Webhook for payment notifications';
+        example.filterMerchantAccountType = 'includeAccounts';
+        example.filterMerchantAccounts = new List<String>{'TestMerchantAccount'};
         example.additionalSettings  = new AdditionalSettings();
         example.additionalSettings.includeEventCodes = new List<String>{
             AdyenConstants.NOTIFICATION_REQUEST_TYPE_AUTHORISE,
@@ -76,7 +88,9 @@ public with sharing class WebhookSetupRequest {
         public Boolean equals(Object obj) {
             if (obj == null || !(obj instanceof AdditionalSettings)) return false;
             AdditionalSettings other = (AdditionalSettings) obj;
-            return this.includeEventCodes == other.includeEventCodes;
+            return (this.includeEventCodes != null
+                ? this.includeEventCodes.equals(other.includeEventCodes)
+                : other.includeEventCodes == null);
         }
 
         public Integer hashCode() {
@@ -84,4 +98,4 @@ public with sharing class WebhookSetupRequest {
         }
     }
 
-} 
+}

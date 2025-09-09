@@ -29,6 +29,12 @@ public with sharing class WebhookSetupResponse {
     public AdditionalSettings additionalSettings { get; set; }
     
     @NamespaceAccessible
+    public String filterMerchantAccountType { get; set; }
+    
+    @NamespaceAccessible
+    public List<String> filterMerchantAccounts { get; set; }
+    
+    @NamespaceAccessible
     public Boolean equals(Object obj) {
         if (obj == null || !(obj instanceof WebhookSetupResponse)) return false;
 
@@ -41,7 +47,9 @@ public with sharing class WebhookSetupResponse {
             && this.type == other.type
             && this.encryptionProtocol == other.encryptionProtocol
             && this.hasError == other.hasError
-            && this.additionalSettings.equals(other.additionalSettings);
+            && this.filterMerchantAccountType == other.filterMerchantAccountType
+            && (this.filterMerchantAccounts != null ? this.filterMerchantAccounts.equals(other.filterMerchantAccounts) : other.filterMerchantAccounts == null)
+            && (this.additionalSettings != null ? this.additionalSettings.equals(other.additionalSettings) : other.additionalSettings == null);
     }
     
     
@@ -56,8 +64,9 @@ public with sharing class WebhookSetupResponse {
             type,
             encryptionProtocol,
             hasError,
-            additionalSettings != null ? additionalSettings.includeEventCodes : null,
-            additionalSettings != null ? additionalSettings.excludeEventCodes : null
+            additionalSettings,
+            filterMerchantAccountType,
+            filterMerchantAccounts
         };
         return ApiLibUtils.computeHashCode(responseFields);
     }
@@ -73,6 +82,8 @@ public with sharing class WebhookSetupResponse {
         example.type = 'standard';
         example.encryptionProtocol = 'TLSv1.3';
         example.hasError = false;
+        example.filterMerchantAccountType = 'includeAccounts';
+        example.filterMerchantAccounts = new List<String>{'TestMerchantAccount'};
         
         example.additionalSettings = new AdditionalSettings();
         example.additionalSettings.includeEventCodes = new List<String>{
@@ -94,8 +105,10 @@ public with sharing class WebhookSetupResponse {
         public Boolean equals(Object obj) {
             if (obj == null || !(obj instanceof AdditionalSettings)) return false;
             AdditionalSettings other = (AdditionalSettings) obj;
-            return this.includeEventCodes == other.includeEventCodes
-                && this.excludeEventCodes == other.excludeEventCodes;
+            Boolean includeCodesEqual = (this.includeEventCodes != null ? this.includeEventCodes.equals(other.includeEventCodes) : other.includeEventCodes == null);
+            Boolean excludeCodesEqual = (this.excludeEventCodes != null ? this.excludeEventCodes.equals(other.excludeEventCodes) : other.excludeEventCodes == null);
+
+            return includeCodesEqual && excludeCodesEqual;
         }
 
         public Integer hashCode() {
@@ -104,4 +117,4 @@ public with sharing class WebhookSetupResponse {
         
     }
     
-} 
+}
