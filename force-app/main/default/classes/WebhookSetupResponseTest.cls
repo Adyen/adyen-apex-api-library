@@ -2,6 +2,19 @@
 private class WebhookSetupResponseTest {
     
     @IsTest
+    static void getExampleTest() {
+        // When
+        WebhookSetupResponse response = WebhookSetupResponse.getExample();
+
+        // Then
+        Assert.isNotNull(response);
+        Assert.isNotNull(response.id);
+        Assert.isNotNull(response.url);
+        Assert.isNotNull(response.filterMerchantAccountType);
+        Assert.isNotNull(response.filterMerchantAccounts);
+    }
+    
+    @IsTest
     static void testEqualsTrue() {
         // Given
         WebhookSetupResponse res1 = WebhookSetupResponse.getExample();
@@ -33,7 +46,7 @@ private class WebhookSetupResponseTest {
         // Given
         WebhookSetupResponse res1 = WebhookSetupResponse.getExample();
         WebhookSetupResponse res2 = WebhookSetupResponse.getExample();
-        
+
         res1.additionalSettings = new WebhookSetupResponse.AdditionalSettings();
         res1.additionalSettings.includeEventCodes = new List<String>{
             AdyenConstants.NOTIFICATION_REQUEST_TYPE_AUTHORISE,
@@ -59,7 +72,7 @@ private class WebhookSetupResponseTest {
         // Then
         Assert.areEqual(hashCode1, hashCode2, 'Expected identical objects to have the same hash code');
     }
-    
+
     @IsTest
     static void testHashCodeDifferent() {
         // Given
