@@ -13,6 +13,7 @@ public with sharing class AdyenConfig {
     private String environment;
     private String endpoint;
     private String apiKey;
+    private Integer timeout;
 
     @namespaceAccessible
     public void setEnvironment(String environment){
@@ -37,5 +38,15 @@ public with sharing class AdyenConfig {
     @namespaceAccessible
     public String getApiKey(){
         return this.apiKey;
+    }
+
+    @namespaceAccessible
+    public void setTimeout(Integer timeout){
+        this.timeout = timeout;
+    }
+
+    @namespaceAccessible
+    public Integer getTimeout(){
+        return this.timeout;
     }
 }
