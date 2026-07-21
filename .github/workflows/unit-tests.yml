@@ -29,7 +29,7 @@ jobs:
         run: npm install @salesforce/cli --global
 
       - name: Authenticate to Dev Hub
-        run: echo "${PBO_AUTH_URL}" | sf org login sfdx-url --sfdx-url-stdin --set-default-dev-hub
+        run: echo "${PBO_AUTH_URL}" | sf org login sfdx-url --set-default-dev-hub --sfdx-url-stdin
 
       - name: Create Scratch Org
         run: sf org create scratch -f config/project-scratch-def.json --set-default --alias ScratchOrg --no-namespace -y 1
